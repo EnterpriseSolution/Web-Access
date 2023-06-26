@@ -1,0 +1,2730 @@
+USE [master]
+GO
+/****** Object:  Database [Framework]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE DATABASE [Framework] ON  PRIMARY 
+( NAME = N'Framework_Data', FILENAME = N'H:\Reactor\Framework.mdf' , SIZE = 264064KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
+ LOG ON 
+( NAME = N'Framework_Log', FILENAME = N'H:\Reactor\Framework.ldf' , SIZE = 1024KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Framework] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Framework].[dbo].[sp_fulltext_database] @action = 'disable'
+end
+GO
+ALTER DATABASE [Framework] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Framework] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Framework] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Framework] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Framework] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Framework] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Framework] SET AUTO_SHRINK ON 
+GO
+ALTER DATABASE [Framework] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Framework] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Framework] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Framework] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Framework] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Framework] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Framework] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Framework] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Framework] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Framework] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Framework] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Framework] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Framework] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Framework] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Framework] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Framework] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [Framework] SET  MULTI_USER 
+GO
+ALTER DATABASE [Framework] SET PAGE_VERIFY TORN_PAGE_DETECTION  
+GO
+ALTER DATABASE [Framework] SET DB_CHAINING OFF 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Framework', N'ON'
+GO
+USE [Framework]
+GO
+/****** Object:  Table [dbo].[AuditTrail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AuditTrail](
+	[LOG_NO] [bigint] NOT NULL,
+	[DATE] [datetime] NULL,
+	[USER_ID] [nvarchar](10) NULL,
+	[FUNCTION_CODE] [nvarchar](8) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REMARKS] [nvarchar](100) NULL,
+ CONSTRAINT [PK_AuditTrail] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AuditTrailColumnDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AuditTrailColumnDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOG_NO] [bigint] NOT NULL,
+	[TABLE_NO] [int] NOT NULL,
+	[COLUMN_NO] [int] NOT NULL,
+	[COLUMN_NAME] [nvarchar](100) NOT NULL,
+	[OLD_VALUE] [nvarchar](max) NULL,
+	[NEW_VALUE] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_AuditTrailColumnDetail] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC,
+	[TABLE_NO] ASC,
+	[COLUMN_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AuditTrailSetting]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AuditTrailSetting](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[ENTITY_NAME] [nvarchar](100) NOT NULL,
+	[TABLE_NAME] [nvarchar](400) NULL,
+	[SUSPENDED] [nvarchar](1) NOT NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_AuditTrailSetting] PRIMARY KEY CLUSTERED 
+(
+	[ENTITY_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AuditTrailTableDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AuditTrailTableDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOG_NO] [bigint] NOT NULL,
+	[TABLE_NO] [int] NOT NULL,
+	[ACTION] [int] NULL,
+	[ENTITY_NAME] [nvarchar](60) NULL,
+	[KEY_VALUE] [nvarchar](200) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_AuditTrailTableDetail] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC,
+	[TABLE_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Chart]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Chart](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[FUNCTION_CODE] [nvarchar](20) NOT NULL,
+	[DESCRIPTION] [nvarchar](200) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[DATA_SOURCE] [int] NULL,
+	[SQL] [nvarchar](max) NULL,
+	[CHART_TYPE] [nvarchar](50) NULL,
+	[XLABEL_FORMAT] [nvarchar](50) NULL,
+	[YLABEL_FORMAT] [nvarchar](50) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_Chart] PRIMARY KEY CLUSTERED 
+(
+	[FUNCTION_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ChartSeries]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChartSeries](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[FUNCTION_CODE] [nvarchar](20) NOT NULL,
+	[SERIES] [nvarchar](20) NOT NULL,
+	[CHART_TYPE] [nvarchar](50) NULL,
+	[DESCRIPTION] [nvarchar](200) NULL,
+	[XCOLUMN] [nvarchar](50) NULL,
+	[YCOLUMN] [nvarchar](50) NULL,
+	[XVALUE_TYPE] [nvarchar](50) NULL,
+	[YVALUE_TYPE] [nvarchar](50) NULL,
+ CONSTRAINT [PK_ChartSeries] PRIMARY KEY CLUSTERED 
+(
+	[FUNCTION_CODE] ASC,
+	[SERIES] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Company]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Company](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[COMPANY_CODE] [nvarchar](10) NOT NULL,
+	[COMPANY_NAME] [nvarchar](50) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[DB_SERVER] [nvarchar](128) NULL,
+	[DB_DATABASE] [nvarchar](128) NULL,
+	[DB_USER] [nvarchar](128) NULL,
+	[DB_PASSWORD] [nvarchar](128) NULL,
+	[DB_DRIVER] [nvarchar](20) NULL,
+	[DB_REPT_DRIVER] [nvarchar](20) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[ACCT_ANLYS1_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS2_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS3_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS4_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS1_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS2_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS3_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS4_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS5_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS6_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS1_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS2_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS3_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS4_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS1_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS2_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS3_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS4_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS1_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS2_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS3_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS4_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS1_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS2_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS3_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS4_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS5_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS6_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS1_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS2_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS3_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS4_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS5_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS6_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS1_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS2_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS3_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS4_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS5_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS6_OPT] [nvarchar](1) NULL,
+	[AREVISED_DATE] [datetime] NULL,
+	[AREVISED_BY] [nvarchar](10) NULL,
+	[JORD_ANLYS1_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS2_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS3_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS4_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS5_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS6_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS7_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS8_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS7_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS8_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS7_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS8_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS7_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS8_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS7_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS8_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS1_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS2_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS3_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS4_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS5_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS6_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS7_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS8_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS1_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS2_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS3_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS4_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS5_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS6_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS7_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS8_OPT] [nvarchar](1) NULL,
+	[ODBC] [nvarchar](4000) NULL,
+	[MASTER_COMPANY] [nvarchar](1) NULL,
+	[ACCT_ANLYS5_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS6_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS7_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS8_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS9_OPT] [nvarchar](1) NULL,
+	[ACCT_ANLYS10_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS5_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS6_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS7_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS8_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS9_OPT] [nvarchar](1) NULL,
+	[ITEM_ANLYS10_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS5_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS6_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS7_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS8_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS9_OPT] [nvarchar](1) NULL,
+	[CUST_ANLYS10_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS5_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS6_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS7_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS8_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS9_OPT] [nvarchar](1) NULL,
+	[VEND_ANLYS10_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS9_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS10_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS11_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS12_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS13_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS14_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS15_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS16_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS17_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS18_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS19_OPT] [nvarchar](1) NULL,
+	[SALE_ANLYS20_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS9_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS10_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS11_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS12_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS13_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS14_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS15_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS16_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS17_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS18_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS19_OPT] [nvarchar](1) NULL,
+	[PURC_ANLYS20_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS9_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS10_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS11_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS12_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS13_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS14_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS15_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS16_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS17_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS18_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS19_OPT] [nvarchar](1) NULL,
+	[MVMT_ANLYS20_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS9_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS10_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS11_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS12_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS13_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS14_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS15_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS16_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS17_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS18_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS19_OPT] [nvarchar](1) NULL,
+	[JORD_ANLYS20_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS9_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS10_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS11_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS12_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS13_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS14_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS15_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS16_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS17_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS18_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS19_OPT] [nvarchar](1) NULL,
+	[AR_ANLYS20_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS9_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS10_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS11_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS12_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS13_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS14_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS15_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS16_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS17_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS18_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS19_OPT] [nvarchar](1) NULL,
+	[AP_ANLYS20_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS9_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS10_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS11_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS12_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS13_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS14_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS15_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS16_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS17_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS18_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS19_OPT] [nvarchar](1) NULL,
+	[VOCH_ANLYS20_OPT] [nvarchar](1) NULL,
+	[OLAP_SERVER] [nvarchar](128) NULL,
+	[OLAP_DATABASE] [nvarchar](128) NULL,
+	[EXPIRY_DATE] [datetime] NULL,
+	[MAX_USERS] [int] NULL,
+	[BI_DATABASE] [nvarchar](128) NULL,
+ CONSTRAINT [ADCOMP_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[COMPANY_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CompanyDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CompanyDetail](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[COMPANY_CODE] [nvarchar](10) NOT NULL,
+	[COMPANY_NAME] [nvarchar](50) NULL,
+	[SUBSIDIARY_COMPANY_CODE] [nvarchar](10) NOT NULL,
+	[SUBSIDIARY_COMPANY_NAME] [nvarchar](120) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+ CONSTRAINT [PK_ADCOMD] PRIMARY KEY CLUSTERED 
+(
+	[COMPANY_CODE] ASC,
+	[SUBSIDIARY_COMPANY_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Configuration]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Configuration](
+	[LOG_NO] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[NAME] [nvarchar](120) NOT NULL,
+	[DESCRIPTION] [nvarchar](max) NULL,
+	[PRESENTATION] [nvarchar](max) NULL,
+	[LOGIC] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NOT NULL,
+	[CREATED_BY] [nvarchar](10) NOT NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_Configuration] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Data]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Data](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[LOG_NO] [decimal](18, 0) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[COMPANY_CODE] [nvarchar](30) NOT NULL,
+	[DESCRIPTION] [nvarchar](200) NULL,
+	[SQL] [nvarchar](max) NULL,
+	[DATABASE_ENGINE] [nvarchar](400) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_RevisionRow] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Error]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Error](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[ERROR_ID] [uniqueidentifier] NOT NULL,
+	[APPLICATION] [nvarchar](60) NOT NULL,
+	[HOST] [nvarchar](50) NOT NULL,
+	[TYPE] [nvarchar](100) NOT NULL,
+	[SOURCE] [nvarchar](60) NOT NULL,
+	[MESSAGE] [nvarchar](max) NOT NULL,
+	[USER_ID] [nvarchar](50) NOT NULL,
+	[STATUS_CODE] [int] NOT NULL,
+	[TIME] [datetime] NOT NULL,
+	[DATA] [varbinary](max) NULL,
+	[REMARKS] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_ELMAH_Error] PRIMARY KEY NONCLUSTERED 
+(
+	[ERROR_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Exception]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Exception](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[EXCEPTION] [nvarchar](255) NOT NULL,
+	[DESCRIPTION] [nvarchar](max) NULL,
+	[LOG_ERROR] [nvarchar](1) NULL,
+ CONSTRAINT [PK_Exception] PRIMARY KEY CLUSTERED 
+(
+	[EXCEPTION] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Form]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Form](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[NAME] [nvarchar](30) NOT NULL,
+	[DESCRIPTION] [nvarchar](200) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[TABLE_NAME] [nvarchar](30) NULL,
+ CONSTRAINT [PK_Form] PRIMARY KEY CLUSTERED 
+(
+	[NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FormDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FormDetail](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[FORM_NAME] [nvarchar](30) NOT NULL,
+	[ENTRY_NO] [decimal](6, 0) NOT NULL,
+	[FIELD_TYPE] [nvarchar](2) NULL,
+	[FIELD_NAME] [nvarchar](30) NULL,
+	[CAPTION] [nvarchar](30) NULL,
+	[LENGTH] [decimal](18, 0) NULL,
+	[FIELD_VALIDATOR] [nvarchar](30) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[NULLABLE] [nvarchar](1) NULL,
+	[PRECISION] [decimal](6, 0) NULL,
+	[SCALE] [decimal](6, 0) NULL,
+	[DEFAULT_VALUE] [nvarchar](4000) NULL,
+	[LOOKUP_NAME] [nvarchar](120) NULL,
+	[LOOKUP_FILTER] [nvarchar](120) NULL,
+ CONSTRAINT [PK_FormDetail] PRIMARY KEY CLUSTERED 
+(
+	[FORM_NAME] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FormLayout]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FormLayout](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LAYOUT_NAME] [nvarchar](16) NOT NULL,
+	[LAYOUT_DESCRIPTION] [nvarchar](100) NULL,
+	[LAYOUT_TYPE] [int] NOT NULL,
+	[FORM_NAME] [nvarchar](128) NOT NULL,
+	[SUSPENDED] [bit] NULL,
+	[LAYOUT] [varbinary](max) NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+ CONSTRAINT [PK_FormLayout] PRIMARY KEY CLUSTERED 
+(
+	[LAYOUT_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FormLayoutDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FormLayoutDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LAYOUT_NAME] [nvarchar](16) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+ CONSTRAINT [PK_FormLayoutDetail] PRIMARY KEY CLUSTERED 
+(
+	[LAYOUT_NAME] ASC,
+	[USER_GROUP] ASC,
+	[USER_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FormProfile]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FormProfile](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[FORM_NAME] [nvarchar](128) NOT NULL,
+	[PREFERENCE] [nvarchar](128) NULL,
+	[FORM_WIDTH] [int] NULL,
+	[FORM_HEIGHT] [int] NULL,
+	[FORM_LEFT] [int] NULL,
+	[FORM_TOP] [int] NULL,
+	[LAYOUT] [varbinary](max) NULL,
+ CONSTRAINT [PK_FormProfile] PRIMARY KEY CLUSTERED 
+(
+	[USER_ID] ASC,
+	[FORM_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Job]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Job](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[JOB_NO] [nvarchar](60) NOT NULL,
+	[JOB_GROUP] [nvarchar](120) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[DESCRIPTION] [nvarchar](max) NULL,
+	[JOB_TYPE] [nvarchar](400) NULL,
+	[DURABLE] [bit] NULL,
+	[RECOVER] [bit] NULL,
+	[JOB_DATA_MAP] [nvarchar](max) NULL,
+	[JOB_TRIGGER] [nvarchar](max) NULL,
+	[DATA] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_Job] PRIMARY KEY CLUSTERED 
+(
+	[JOB_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[JobLog]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[JobLog](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[JOB_NO] [nvarchar](60) NOT NULL,
+	[LINE_NO] [decimal](18, 0) NOT NULL,
+	[OPEN_TIME] [datetime] NULL,
+	[CLOSE_TIME] [datetime] NULL,
+	[DATA] [nvarchar](max) NULL,
+ CONSTRAINT [PK_JobLog] PRIMARY KEY CLUSTERED 
+(
+	[JOB_NO] ASC,
+	[LINE_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Language]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Language](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[LANGUAGE_CODE] [nvarchar](1) NOT NULL,
+	[KEY_TEXT] [nvarchar](200) NOT NULL,
+	[DISPLAY_TEXT] [nvarchar](200) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_ADLANG] PRIMARY KEY CLUSTERED 
+(
+	[KEY_TEXT] ASC,
+	[LANGUAGE_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LookupDialog]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LookupDialog](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOOKUP_NAME] [nvarchar](64) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[QUERY_ID] [nvarchar](64) NULL,
+	[KEY_FIELD1] [nvarchar](64) NULL,
+	[KEY_FIELD2] [nvarchar](64) NULL,
+	[KEY_FIELD3] [nvarchar](64) NULL,
+	[SUSPENDED] [bit] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+ CONSTRAINT [PK_LookupDataSource] PRIMARY KEY CLUSTERED 
+(
+	[LOOKUP_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LookupDialogFilter]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LookupDialogFilter](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOOKUP_NAME] [nvarchar](64) NOT NULL,
+	[FILTER_NAME] [nvarchar](32) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[FILTER] [nvarchar](max) NULL,
+ CONSTRAINT [PK_LookupDialogFilter] PRIMARY KEY CLUSTERED 
+(
+	[LOOKUP_NAME] ASC,
+	[FILTER_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LookupDialogFilterColumnDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LookupDialogFilterColumnDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOOKUP_NAME] [nvarchar](64) NOT NULL,
+	[FILTER_NAME] [nvarchar](32) NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[FIELD_NAME] [nvarchar](64) NOT NULL,
+ CONSTRAINT [PK_LookupDialogFilterColumnDetail] PRIMARY KEY CLUSTERED 
+(
+	[LOOKUP_NAME] ASC,
+	[FILTER_NAME] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LookupDialogFilterDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LookupDialogFilterDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOOKUP_NAME] [nvarchar](64) NOT NULL,
+	[FILTER_NAME] [nvarchar](32) NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[ENTITY_NAME] [nvarchar](64) NULL,
+	[FIELD_NAME] [nvarchar](64) NULL,
+	[FIELD_VALUE] [nvarchar](64) NULL,
+	[OPERATOR] [int] NULL,
+ CONSTRAINT [PK_LookupFilterDetail] PRIMARY KEY CLUSTERED 
+(
+	[LOOKUP_NAME] ASC,
+	[FILTER_NAME] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PolicyCode]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PolicyCode](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[POLICY_CODE] [nvarchar](12) NOT NULL,
+	[DESCRIPTION] [nvarchar](40) NULL,
+	[DEFAULT_TEXT] [nvarchar](max) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [ADMNUI_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[POLICY_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportControl]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportControl](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[AGREEMENT] [int] NULL,
+	[ACTUAL] [int] NULL,
+	[DATA] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_ReportControl] PRIMARY KEY CLUSTERED 
+(
+	[USER_ID] ASC,
+	[REPORT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportDialog]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportDialog](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[SUSPENDED] [bit] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[FILTER_BY_SALESMAN_CODE] [bit] NULL,
+	[FILTER_BY_BUYER_CODE] [bit] NULL,
+	[REPORT_TYPE] [int] NULL,
+	[DATA_SOURCE] [int] NULL,
+ CONSTRAINT [PK_ReportDialog] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportDialogAlternateReport]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportDialogAlternateReport](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[ALTERNATE_REPORT_ID] [nvarchar](16) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+ CONSTRAINT [PK_ReportDialogAlternateReport] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[ALTERNATE_REPORT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportDialogOption]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportDialogOption](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[OPTION_NO] [int] NOT NULL,
+	[SEQ_NO] [int] NULL,
+	[CAPTION] [nvarchar](30) NULL,
+	[FIELD_NAME] [nvarchar](64) NULL,
+	[FIELD_TYPE] [int] NULL,
+	[STYLE] [int] NULL,
+	[DATA_TYPE] [int] NULL,
+	[CAPSLOCK] [bit] NULL,
+	[LOOKUP_NAME] [nvarchar](64) NULL,
+	[LOOKUP_FILTER_NAME] [nvarchar](64) NULL,
+	[REQUIRED] [bit] NULL,
+ CONSTRAINT [PK_ReportDialogOption] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[OPTION_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportDialogOptionItem]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportDialogOptionItem](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[OPTION_NO] [int] NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[CAPTION] [nvarchar](30) NULL,
+	[VALUE] [nvarchar](50) NULL,
+ CONSTRAINT [PK_ReportDialogOptionItem] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[OPTION_NO] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportFile]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportFile](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NOT NULL,
+	[DESCRIPTION] [nvarchar](200) NULL,
+	[DATA] [varbinary](max) NULL,
+	[REMARK] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_ReportFile] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportProfile]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportProfile](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[PROFILE_NAME] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_ReportDialogProfile_1] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[USER_ID] ASC,
+	[PROFILE_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportProfileDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportProfileDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[PROFILE_NAME] [nvarchar](32) NOT NULL,
+	[FIELD_NAME] [nvarchar](64) NOT NULL,
+	[FIELD_SELECTION] [int] NULL,
+	[FIELD_VALUE1] [nvarchar](4000) NULL,
+	[FIELD_VALUE2] [nvarchar](4000) NULL,
+ CONSTRAINT [PK_ReportProfileDetail] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[USER_ID] ASC,
+	[PROFILE_NAME] ASC,
+	[FIELD_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ReportSubscription]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReportSubscription](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REPORT_ID] [nvarchar](16) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[PROFILE_NAME] [nvarchar](32) NOT NULL,
+	[DELIVERY] [nvarchar](10) NULL,
+	[FORMAT] [nvarchar](10) NULL,
+	[SCHEDULER] [nvarchar](max) NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+ CONSTRAINT [PK_ReportSubscription] PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC,
+	[USER_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Revision]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Revision](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[REV_DATE] [datetime] NOT NULL,
+	[REV_NAME] [nvarchar](8) NOT NULL,
+	[MEMO] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [REVSQL_PK] PRIMARY KEY CLUSTERED 
+(
+	[REV_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Server]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Server](
+	[RECNUM] [decimal](18, 0) IDENTITY(1,1) NOT NULL,
+	[LINE_NO] [decimal](18, 0) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NOT NULL,
+	[INTEGRATED_SECURITY] [nvarchar](20) NOT NULL,
+	[HOST] [nvarchar](400) NULL,
+	[DATA_SOURCE] [nvarchar](120) NULL,
+	[INITIAL_CATALOG] [nvarchar](120) NULL,
+	[PORT] [int] NULL,
+	[USER_ID] [nvarchar](400) NULL,
+	[PASSWORD] [nvarchar](400) NULL,
+	[EXTENSION] [nvarchar](max) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [PK_Server_1] PRIMARY KEY CLUSTERED 
+(
+	[LINE_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SystemFunction]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SystemFunction](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[MODULE_CODE] [nvarchar](4) NOT NULL,
+	[FUNCTION_NO] [smallint] NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[SERIES_OPTION] [nvarchar](1) NOT NULL,
+	[SERIES_CODE] [nvarchar](8) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[ICON] [decimal](4, 0) NULL,
+	[FILE] [nvarchar](60) NULL,
+	[PAGE] [decimal](4, 0) NULL,
+	[ATTACHMENT] [nvarchar](1) NULL,
+	[APPROVAL] [nvarchar](1) NULL,
+	[EXTENSION] [nvarchar](400) NULL,
+ CONSTRAINT [ADFUNC_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[MODULE_CODE] ASC,
+	[FUNCTION_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SystemFunctionHelp]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SystemFunctionHelp](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[MODULE_CODE] [nvarchar](4) NOT NULL,
+	[FUNCTION_NO] [smallint] NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NOT NULL,
+	[LINE_NO] [decimal](6, 0) NOT NULL,
+	[CONTROL_ID] [nvarchar](400) NULL,
+	[CAPTION] [nvarchar](4000) NULL,
+	[ENGLISH] [nvarchar](4000) NULL,
+	[SIMPLIFIED_CHINESE] [nvarchar](4000) NULL,
+	[TRADITIONAL_CHINESE] [nvarchar](4000) NULL,
+	[HELP_LINK] [nvarchar](4000) NULL,
+ CONSTRAINT [PK_ADFUNH_1] PRIMARY KEY CLUSTERED 
+(
+	[MODULE_CODE] ASC,
+	[FUNCTION_NO] ASC,
+	[LINE_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SystemModule]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SystemModule](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[MODULE_CODE] [nvarchar](4) NOT NULL,
+	[DESCRIPTION] [nvarchar](120) NOT NULL,
+	[DESKTOP_BMP] [nvarchar](40) NULL,
+	[INSTALLED] [nvarchar](1) NULL,
+	[LAST_LINE_NO] [smallint] NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [ADMODU_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[MODULE_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SystemParameter]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SystemParameter](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[REG_CODE] [nvarchar](12) NULL,
+	[REG_NAME] [nvarchar](50) NULL,
+	[SERIAL_NO] [nvarchar](20) NULL,
+	[MAX_DB] [smallint] NULL,
+	[MAX_USERS] [smallint] NULL,
+	[EXPIRY_DATE] [datetime] NULL,
+	[DEFAULT_COMPANY] [nvarchar](10) NULL,
+	[PREVIEW_PGM] [nvarchar](40) NULL,
+	[PREVIEW_CHAIN] [nvarchar](1) NULL,
+	[PREVIEW_PATH] [nvarchar](30) NULL,
+	[MENU_ICON] [nvarchar](20) NULL,
+	[ENTRY_ICON] [nvarchar](20) NULL,
+	[QUERY_ICON] [nvarchar](20) NULL,
+	[REPORT_ICON] [nvarchar](20) NULL,
+	[AUTO_CLR_SAVE] [nvarchar](1) NULL,
+	[AUTO_CAPS_KEYS] [nvarchar](1) NULL,
+	[AUTO_CAPS_OTHER] [nvarchar](1) NULL,
+	[MULTI_LANGUAGE] [nvarchar](1) NULL,
+	[WITH_TAXATION] [nvarchar](1) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[CHECK_FLAG] [nvarchar](2) NULL,
+	[DIS_OLD_CONSIGNMENT] [nvarchar](1) NULL,
+	[TAILOR_LINKTECH] [bit] NULL,
+	[TAILOR_KEENWAY] [bit] NULL,
+	[TAILOR_APEX] [bit] NULL,
+	[TAILOR_NEWLEAF] [bit] NULL,
+	[TAILOR_SUGA] [bit] NULL,
+	[TAILOR_CITY] [bit] NULL,
+	[TAILOR_PEACEMARK] [bit] NULL,
+	[TAILOR_KINYAT] [bit] NULL,
+	[TAILOR_WINSUN] [bit] NULL,
+	[TAILOR_LIPHING] [bit] NULL,
+	[TAILOR_GFT] [bit] NULL,
+	[TAILOR_SINOJOINT] [bit] NULL,
+	[GLARIM_VAR_SLSHSE] [bit] NULL,
+	[TAILOR_ARTFIELD] [bit] NULL,
+	[TAILOR_PRPECS_AUTO_MARKUP] [bit] NOT NULL,
+	[TAILOR_PRE_LOT] [bit] NOT NULL,
+	[TAILOR_CRYSTAL] [bit] NOT NULL,
+	[ISSUE_REP_REQ] [bit] NULL,
+	[TAILOR_COMP_BREAKDOWN] [bit] NOT NULL,
+	[COMP_BREAKDOWN_CHARGE_TYPE] [nvarchar](6) NULL,
+	[GLARIM_GLORYTOP] [bit] NULL,
+	[DEFAULT_CLONE_COMPANY] [nvarchar](10) NULL,
+	[TAILOR_PO_MAX_QTY] [bit] NULL,
+	[USE_INV_NO_IN_VOU_DETAIL_LREF] [bit] NOT NULL,
+	[TAILOR_CTRL_DOC_LEN] [bit] NULL,
+	[ENABLE_AUDIT_TRAIL] [bit] NULL,
+	[GEN_AP_TRAN_BY_TDATE] [bit] NOT NULL,
+	[TAILOR_BOLEY] [bit] NULL,
+	[TAILOR_BSC_AP_PO] [bit] NULL,
+	[SLSOOT_SHOW_ADDINFO] [bit] NULL,
+	[TAILOR_POA_IGNORE_MIN_QTY] [bit] NULL,
+	[TAILOR_POA_IGNORE_STD_QTY] [bit] NULL,
+	[TAILOR_GLARDN_SHOW_QTY] [bit] NULL,
+	[COMBINED_SYS_DB] [bit] NULL,
+	[ENABLE_USER_LOG] [bit] NULL,
+	[PLAN_ORD_RLS_PO_APPRV] [bit] NULL,
+	[BOM_ALTERNATE_UOM] [bit] NULL,
+	[TAILOR_KAYUE] [bit] NULL,
+	[TAILOR_MRB] [bit] NULL,
+	[TAILOR_TRADPOST] [bit] NULL,
+	[TAILOR_LONGSHORE] [bit] NULL,
+	[TM_WK_PRSFWC_DEF_DATE] [bit] NULL,
+	[MULTI_VENDOR_ADDR] [bit] NULL,
+	[TAILOR_HEILEI] [bit] NULL,
+	[TAILOR_DAYTON] [bit] NULL,
+	[EMPOWER_CLOUDING] [bit] NULL,
+	[TAILOR_WAICHING] [bit] NULL,
+	[TAILOR_SHUIHING_PRELOT] [bit] NULL,
+	[TAILOR_GARMENT_INDUSTRY] [bit] NULL,
+	[ENABLE_ERROR_LOG] [bit] NULL,
+	[CCY_DATA_SOURCE] [nvarchar](4000) NULL,
+ CONSTRAINT [ADPARM_INDEX00] PRIMARY KEY CLUSTERED 
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Udq]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Udq](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NOT NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[ALLOW_DUPLICATES] [bit] NULL,
+	[SUSPENDED] [bit] NULL,
+	[DATA_SOURCE] [int] NULL,
+	[USE_AS_ENQUIRY] [bit] NULL,
+	[USE_AS_LOOKUP] [bit] NULL,
+	[USE_AS_ALERT] [bit] NULL,
+	[USE_AS_COMPARATION] [bit] NULL,
+	[FUNCTION_CODE] [nvarchar](10) NULL,
+	[PRIMARY_KEY_FIELDS] [nvarchar](64) NULL,
+	[CUSTOMER_NO_ENTITY_NAME] [nvarchar](64) NULL,
+	[CUSTOMER_NO_FIELD_NAME] [nvarchar](64) NULL,
+	[VENDOR_NO_ENTITY_NAME] [nvarchar](64) NULL,
+	[VENDOR_NO_FIELD_NAME] [nvarchar](64) NULL,
+	[FILTER] [nvarchar](max) NULL,
+	[SQL] [nvarchar](max) NULL,
+ CONSTRAINT [PK_UserDefinedQuery] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqColumn]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqColumn](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[ENTITY_NAME] [nvarchar](64) NOT NULL,
+	[COLUMN_NAME] [nvarchar](64) NOT NULL,
+	[CAPTION] [nvarchar](64) NULL,
+	[INDEX] [int] NULL,
+	[FUNCTION] [int] NULL,
+	[SORT_DIRECTION] [int] NULL,
+	[DRILL_DOWN_FUNCTION_CODE] [nvarchar](16) NULL,
+	[DRILL_DOWN_FUNCTION_TYPE] [int] NULL,
+	[LOOKUP_NAME] [nvarchar](64) NULL,
+	[LOOKUP_FILTER_NAME] [nvarchar](64) NULL,
+ CONSTRAINT [PK_UserDefinedQueryColumn] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqColumnDrillDown]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqColumnDrillDown](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[TARGET_COLUMN] [nvarchar](64) NOT NULL,
+	[SOURCE_COLUMN] [nvarchar](64) NULL,
+	[STATIC_VALUE] [nvarchar](64) NULL,
+ CONSTRAINT [PK_UdqColumnDrillDown] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[ENTRY_NO] ASC,
+	[TARGET_COLUMN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqParameter]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqParameter](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[PARAMETER_NAME] [nvarchar](16) NOT NULL,
+	[COLUMN_NAME] [nvarchar](64) NULL,
+	[FIELD_TYPE] [int] NULL,
+	[DESCRIPTION] [nvarchar](64) NULL,
+	[DEFAULT_OPERATOR] [int] NULL,
+	[LOOKUP_NAME] [nvarchar](64) NULL,
+	[LOOKUP_FILTER_NAME] [nvarchar](64) NULL,
+ CONSTRAINT [PK_UdqParameter] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[PARAMETER_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqRelation]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqRelation](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[RELATION_NO] [int] NOT NULL,
+	[PRIMARY_ENTITY] [nvarchar](64) NOT NULL,
+	[FOREIGN_ENTITY] [nvarchar](64) NOT NULL,
+	[JOIN_TYPE] [int] NOT NULL,
+ CONSTRAINT [PK_UserDefinedQueryRelation] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[RELATION_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqRelationDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqRelationDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[RELATION_NO] [int] NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[PRIMARY_KEY] [nvarchar](64) NOT NULL,
+	[FOREIGN_KEY] [nvarchar](64) NOT NULL,
+ CONSTRAINT [PK_UserDefinedQueryRelationDetail] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[RELATION_NO] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UdqTable]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UdqTable](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[QUERY_ID] [nvarchar](16) NOT NULL,
+	[ENTITY_NAME] [nvarchar](64) NOT NULL,
+ CONSTRAINT [PK_UserDefinedQueryTable] PRIMARY KEY CLUSTERED 
+(
+	[QUERY_ID] ASC,
+	[ENTITY_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[USER_NAME] [nvarchar](50) NOT NULL,
+	[PASSWORD] [nvarchar](32) NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[DEFAULT_LANG] [nvarchar](1) NULL,
+	[CURRENT_STATION] [nvarchar](6) NULL,
+	[DEFAULT_PRINTER] [nvarchar](30) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[NO_POPRICE_EDIT] [nvarchar](1) NULL,
+	[EMAIL] [nvarchar](100) NULL,
+	[NO_OVER_RECEIVE] [nvarchar](1) NULL,
+	[ALL_COMPANY] [nvarchar](1) NULL,
+	[NO_PO_CCY_EDIT] [nvarchar](1) NULL,
+	[NO_GBITEM_DIST] [nvarchar](1) NULL,
+	[NO_COST] [nvarchar](1) NULL,
+	[ALL_CUSTOMER] [nvarchar](1) NULL,
+	[ALL_VENDOR] [nvarchar](1) NULL,
+	[BUYER] [nvarchar](6) NOT NULL,
+	[SALESMAN] [nvarchar](6) NOT NULL,
+	[ALLOW_PO_CLOSE] [nvarchar](1) NULL,
+	[ALL_REPORT_VIEW] [nvarchar](1) NULL,
+	[ALLOW_SQ_CLOSE] [nvarchar](1) NULL,
+	[NO_PRICE_SALES] [nvarchar](1) NULL,
+	[NO_COST_PURCH] [nvarchar](1) NULL,
+	[NO_SUBCON_REC_MAT_ERROR] [varchar](1) NULL,
+	[ALLOW_WC_FINAL] [varchar](1) NULL,
+	[ALLOW_GRN_LOT] [varchar](1) NULL,
+	[PREQ_AUTH_USER] [nvarchar](1) NULL,
+	[APPROVAL_PAY_TERM] [nvarchar](1) NULL,
+	[ALLOW_CHANGE_GRN_LOC] [nvarchar](1) NULL,
+	[ALLOW_CHANGE_PO_DATE] [nvarchar](1) NULL,
+	[ATTM_QUOTA_KB] [decimal](5, 0) NULL,
+	[ALLOW_CHANGE_SL_PRICE] [nvarchar](1) NULL,
+	[ALLOW_EDIT_LOT_DIALOG] [nvarchar](1) NULL,
+	[ALLOW_EDIT_SERIAL_DIALOG] [nvarchar](1) NULL,
+	[ALLOW_ACCESS_ALL_LOC] [nvarchar](1) NULL,
+	[ALLOW_WC_POST_ZMAT] [varchar](1) NULL,
+	[POSTING_CTRL_SL_BOTTOM_PRICE] [nvarchar](1) NULL,
+	[ALLOW_LOT_SIZE_COST] [bit] NULL,
+	[ALLOW_PICKED_DATE_ET_JB_SDATE] [nvarchar](1) NULL,
+	[OVER_RECEIVE_RATE] [decimal](6, 2) NULL,
+	[DEFAULT_COMPANY_CODE] [nvarchar](10) NULL,
+	[ICIM_TF_INV_LOT_EDIT] [bit] NULL,
+	[SLSO_NOCOPY_ITEM_DESC] [bit] NULL,
+	[ICIM_ALLOW_RCPT_ZERO_COST] [bit] NULL,
+	[PO_SHOW_ZERO_PRICE] [bit] NULL,
+ CONSTRAINT [ADUSER_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserCompanyDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserCompanyDetail](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[COMPANY_CODE] [nvarchar](10) NOT NULL,
+	[COMPANY_NAME] [nvarchar](50) NULL,
+ CONSTRAINT [ADUCOM_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_ID] ASC,
+	[COMPANY_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroup]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroup](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[DESCRIPTION] [nvarchar](30) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[LAST_MODULE_NO] [int] NULL,
+	[EMAIL] [nvarchar](100) NULL,
+	[VIEW_ONLY] [bit] NULL,
+ CONSTRAINT [ADUGRP_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupAuthorization]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupAuthorization](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[MODULE_CODE] [nvarchar](4) NOT NULL,
+	[DESCRIPTION] [nvarchar](120) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[ACCESS_LEVEL] [smallint] NULL,
+	[DESKTOP_BMP] [nvarchar](40) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[MODULE_NO] [int] NULL,
+	[ALLOW_READ] [nvarchar](1) NULL,
+	[ALLOW_CREATE] [nvarchar](1) NULL,
+	[ALLOW_UPDATE] [nvarchar](1) NULL,
+	[ALLOW_DELETE] [nvarchar](1) NULL,
+	[ALLOW_PRINT] [nvarchar](1) NULL,
+	[ALLOW_POST] [nvarchar](1) NULL,
+	[ALLOW_ALL_TRAN] [nvarchar](1) NULL,
+ CONSTRAINT [ADAUTH_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC,
+	[MODULE_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupAuthorizationDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupAuthorizationDetail](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[MODULE_CODE] [nvarchar](4) NOT NULL,
+	[FUNCTION_NO] [smallint] NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[ACCESS_LEVEL] [smallint] NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[ALLOW_READ] [nvarchar](1) NULL,
+	[ALLOW_CREATE] [nvarchar](1) NULL,
+	[ALLOW_UPDATE] [nvarchar](1) NULL,
+	[ALLOW_DELETE] [nvarchar](1) NULL,
+	[ALLOW_PRINT] [nvarchar](1) NULL,
+	[ALLOW_POST] [nvarchar](1) NULL,
+	[ALLOW_ALL_TRAN] [nvarchar](1) NULL,
+ CONSTRAINT [ADAUTD_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC,
+	[MODULE_CODE] ASC,
+	[FUNCTION_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupMenu]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupMenu](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[PROCESS_CODE] [nvarchar](8) NOT NULL,
+	[DESCRIPTION] [nvarchar](40) NULL,
+	[NODE] [nvarchar](1) NULL,
+	[MENU_CODE] [nvarchar](8) NOT NULL,
+	[MENU_LEVEL] [smallint] NOT NULL,
+	[IMAGE_FILE] [nvarchar](40) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+	[CLOSE_ICON] [smallint] NULL,
+	[OPEN_ICON] [smallint] NULL,
+ CONSTRAINT [ADMNUH_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC,
+	[PROCESS_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupMenuBitmap]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupMenuBitmap](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[BITMAP_NO] [smallint] NOT NULL,
+	[DESCRIPTION] [nvarchar](40) NULL,
+	[IMAGE_FILE] [nvarchar](40) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[CREATED_BY] [nvarchar](10) NULL,
+	[REVISED_DATE] [datetime] NULL,
+	[REVISED_BY] [nvarchar](10) NULL,
+ CONSTRAINT [ADMNUB_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[BITMAP_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupMenuDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupMenuDetail](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[PROCESS_CODE] [nvarchar](8) NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NOT NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[MENU_TYPE] [nvarchar](6) NOT NULL,
+	[MENU_CODE] [nvarchar](8) NOT NULL,
+	[UL_ROW] [smallint] NULL,
+	[UL_COL] [smallint] NULL,
+	[LR_ROW] [smallint] NULL,
+	[LR_COL] [smallint] NULL,
+	[RESPONSE_TYPE] [nvarchar](10) NULL,
+	[POLICY_CODE] [nvarchar](12) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+ CONSTRAINT [ADMNUD_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC,
+	[PROCESS_CODE] ASC,
+	[MENU_TYPE] ASC,
+	[MENU_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupMenuMap]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupMenuMap](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[IMAGE_FILE] [nvarchar](40) NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NULL,
+	[DESCRIPTION] [nvarchar](100) NULL,
+	[UL_ROW] [smallint] NULL,
+	[UL_COL] [smallint] NULL,
+	[LR_ROW] [smallint] NULL,
+	[LR_COL] [smallint] NULL,
+	[RESPONSE_TYPE] [nvarchar](10) NULL,
+	[POLICY_CODE] [nvarchar](12) NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+ CONSTRAINT [ADMNUM_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[IMAGE_FILE] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserGroupMenuType]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserGroupMenuType](
+	[RECNUM] [decimal](28, 0) IDENTITY(1,1) NOT NULL,
+	[USER_GROUP] [nvarchar](10) NOT NULL,
+	[PROCESS_CODE] [nvarchar](8) NOT NULL,
+	[MENU_TYPE] [nvarchar](6) NOT NULL,
+	[DESCRIPTION] [nvarchar](30) NULL,
+	[MENU_CODE] [nvarchar](8) NOT NULL,
+	[SUSPENDED] [nvarchar](1) NULL,
+	[CLOSE_ICON] [decimal](4, 0) NULL,
+	[OPEN_ICON] [decimal](4, 0) NULL,
+ CONSTRAINT [ADMNUT_INDEX01] PRIMARY KEY CLUSTERED 
+(
+	[USER_GROUP] ASC,
+	[PROCESS_CODE] ASC,
+	[MENU_TYPE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserLog]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserLog](
+	[LOG_NO] [int] IDENTITY(1,1) NOT NULL,
+	[USER_ID] [nvarchar](10) NOT NULL,
+	[COMPANY_CODE] [nvarchar](10) NOT NULL,
+	[LOGIN_TIME] [datetime] NOT NULL,
+	[LOGOUT_TIME] [datetime] NULL,
+	[DATA] [nvarchar](max) NULL,
+	[REMARK] [nvarchar](max) NULL,
+ CONSTRAINT [PK_UserLog] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserLogDetail]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserLogDetail](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOG_NO] [int] NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[FUNCTION_CODE] [nvarchar](8) NOT NULL,
+	[OPEN_TIME] [datetime] NOT NULL,
+	[CLOSE_TIME] [datetime] NULL,
+ CONSTRAINT [PK_UserLogDetail] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC,
+	[ENTRY_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserLogDetailAction]    Script Date: 2023/6/26 12:24:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserLogDetailAction](
+	[RECNUM] [decimal](8, 0) IDENTITY(1,1) NOT NULL,
+	[LOG_NO] [int] NOT NULL,
+	[ENTRY_NO] [int] NOT NULL,
+	[SEQ_NO] [int] NOT NULL,
+	[DATE] [datetime] NOT NULL,
+	[ACTION] [int] NOT NULL,
+	[REMARKS] [nvarchar](200) NULL,
+ CONSTRAINT [PK_UserLogDetailAction] PRIMARY KEY CLUSTERED 
+(
+	[LOG_NO] ASC,
+	[ENTRY_NO] ASC,
+	[SEQ_NO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Index [ADCOMP_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADCOMP_INDEX00] ON [dbo].[Company]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADCOMP_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADCOMP_INDEX02] ON [dbo].[Company]
+(
+	[COMPANY_NAME] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [IX_ELMAH_Error_App_Time_Seq]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE NONCLUSTERED INDEX [IX_ELMAH_Error_App_Time_Seq] ON [dbo].[Error]
+(
+	[APPLICATION] ASC,
+	[TIME] DESC,
+	[RECNUM] DESC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Error]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE NONCLUSTERED INDEX [IX_Error] ON [dbo].[Error]
+(
+	[ERROR_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [ADLANG_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADLANG_INDEX00] ON [dbo].[Language]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUI_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUI_INDEX00] ON [dbo].[PolicyCode]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADFUNC_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADFUNC_INDEX00] ON [dbo].[SystemFunction]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADFUNC_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADFUNC_INDEX02] ON [dbo].[SystemFunction]
+(
+	[DESCRIPTION] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADFUNC_INDEX03]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADFUNC_INDEX03] ON [dbo].[SystemFunction]
+(
+	[FUNCTION_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADFUNC_INDEX04]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADFUNC_INDEX04] ON [dbo].[SystemFunction]
+(
+	[SERIES_OPTION] ASC,
+	[FUNCTION_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADFUNC_INDEX05]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADFUNC_INDEX05] ON [dbo].[SystemFunction]
+(
+	[MODULE_CODE] ASC,
+	[FUNCTION_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMODU_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMODU_INDEX00] ON [dbo].[SystemModule]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADMODU_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMODU_INDEX02] ON [dbo].[SystemModule]
+(
+	[DESCRIPTION] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADUSER_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUSER_INDEX00] ON [dbo].[User]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADUSER_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUSER_INDEX02] ON [dbo].[User]
+(
+	[USER_NAME] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADUSER_INDEX03]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUSER_INDEX03] ON [dbo].[User]
+(
+	[USER_GROUP] ASC,
+	[USER_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADUSER_INDEX04]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUSER_INDEX04] ON [dbo].[User]
+(
+	[BUYER] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADUSER_INDEX05]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUSER_INDEX05] ON [dbo].[User]
+(
+	[SALESMAN] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 60) ON [PRIMARY]
+GO
+/****** Object:  Index [ADUCOM_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUCOM_INDEX00] ON [dbo].[UserCompanyDetail]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADUGRP_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUGRP_INDEX00] ON [dbo].[UserGroup]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADUGRP_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADUGRP_INDEX02] ON [dbo].[UserGroup]
+(
+	[DESCRIPTION] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADAUTH_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTH_INDEX00] ON [dbo].[UserGroupAuthorization]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADAUTH_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTH_INDEX02] ON [dbo].[UserGroupAuthorization]
+(
+	[USER_GROUP] ASC,
+	[DESCRIPTION] ASC,
+	[MODULE_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADAUTH_INDEX03]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTH_INDEX03] ON [dbo].[UserGroupAuthorization]
+(
+	[MODULE_CODE] ASC,
+	[USER_GROUP] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADAUTD_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTD_INDEX00] ON [dbo].[UserGroupAuthorizationDetail]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADAUTD_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTD_INDEX02] ON [dbo].[UserGroupAuthorizationDetail]
+(
+	[FUNCTION_CODE] ASC,
+	[USER_GROUP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADAUTD_INDEX03]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADAUTD_INDEX03] ON [dbo].[UserGroupAuthorizationDetail]
+(
+	[MODULE_CODE] ASC,
+	[FUNCTION_NO] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUH_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUH_INDEX00] ON [dbo].[UserGroupMenu]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADMNUH_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUH_INDEX02] ON [dbo].[UserGroupMenu]
+(
+	[USER_GROUP] ASC,
+	[MENU_CODE] ASC,
+	[MENU_LEVEL] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUB_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUB_INDEX00] ON [dbo].[UserGroupMenuBitmap]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUD_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUD_INDEX00] ON [dbo].[UserGroupMenuDetail]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADMNUD_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUD_INDEX02] ON [dbo].[UserGroupMenuDetail]
+(
+	[USER_GROUP] ASC,
+	[PROCESS_CODE] ASC,
+	[FUNCTION_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADMNUD_INDEX03]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUD_INDEX03] ON [dbo].[UserGroupMenuDetail]
+(
+	[USER_GROUP] ASC,
+	[FUNCTION_CODE] ASC,
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUM_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUM_INDEX00] ON [dbo].[UserGroupMenuMap]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+/****** Object:  Index [ADMNUT_INDEX00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUT_INDEX00] ON [dbo].[UserGroupMenuType]
+(
+	[RECNUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [ADMNUT_INDEX02]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [ADMNUT_INDEX02] ON [dbo].[UserGroupMenuType]
+(
+	[USER_GROUP] ASC,
+	[PROCESS_CODE] ASC,
+	[MENU_CODE] ASC,
+	[MENU_TYPE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 70) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UserLog_Index00]    Script Date: 2023/6/26 12:24:29 ******/
+CREATE NONCLUSTERED INDEX [UserLog_Index00] ON [dbo].[UserLog]
+(
+	[LOGIN_TIME] ASC,
+	[COMPANY_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF__ADCOMP__COMPANY___0E391C95]  DEFAULT ('') FOR [COMPANY_CODE]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF__ADCOMP__COMPANY___0F2D40CE]  DEFAULT ('') FOR [COMPANY_NAME]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS5_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS5_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS6_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS6_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS7_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS7_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS8_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS8_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS9_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ACCT_ANLYS10_OPT]  DEFAULT (N'N') FOR [ACCT_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS5_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS5_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS6_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS6_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS7_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS7_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS8_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS8_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS9_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_ITEM_ANLYS10_OPT]  DEFAULT (N'N') FOR [ITEM_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS5_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS5_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS6_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS6_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS7_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS7_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS8_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS8_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS9_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_CUST_ANLYS10_OPT]  DEFAULT (N'N') FOR [CUST_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS5_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS5_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS6_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS6_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS7_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS7_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS8_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS8_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS9_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VEND_ANLYS10_OPT]  DEFAULT (N'N') FOR [VEND_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS9_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS10_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS11_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS12_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS13_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS14_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS15_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS16_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS17_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS18_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS19_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_SALE_ANLYS20_OPT]  DEFAULT (N'N') FOR [SALE_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS9_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS10_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS11_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS12_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS13_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS14_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS15_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS16_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS17_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS18_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS19_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_PURC_ANLYS20_OPT]  DEFAULT (N'N') FOR [PURC_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS9_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS10_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS11_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS12_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS13_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS14_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS15_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS16_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS17_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS18_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS19_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_MVMT_ANLYS20_OPT]  DEFAULT (N'N') FOR [MVMT_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS9_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS10_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS11_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS12_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS13_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS14_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS15_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS16_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS17_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS18_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS19_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_JORD_ANLYS20_OPT]  DEFAULT (N'N') FOR [JORD_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS9_OPT]  DEFAULT (N'N') FOR [AR_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS10_OPT]  DEFAULT (N'N') FOR [AR_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS11_OPT]  DEFAULT (N'N') FOR [AR_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS12_OPT]  DEFAULT (N'N') FOR [AR_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS13_OPT]  DEFAULT (N'N') FOR [AR_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS14_OPT]  DEFAULT (N'N') FOR [AR_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS15_OPT]  DEFAULT (N'N') FOR [AR_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS16_OPT]  DEFAULT (N'N') FOR [AR_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS17_OPT]  DEFAULT (N'N') FOR [AR_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS18_OPT]  DEFAULT (N'N') FOR [AR_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS19_OPT]  DEFAULT (N'N') FOR [AR_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AR_ANLYS20_OPT]  DEFAULT (N'N') FOR [AR_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS9_OPT]  DEFAULT (N'N') FOR [AP_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS10_OPT]  DEFAULT (N'N') FOR [AP_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS11_OPT]  DEFAULT (N'N') FOR [AP_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS12_OPT]  DEFAULT (N'N') FOR [AP_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS13_OPT]  DEFAULT (N'N') FOR [AP_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS14_OPT]  DEFAULT (N'N') FOR [AP_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS15_OPT]  DEFAULT (N'N') FOR [AP_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS16_OPT]  DEFAULT (N'N') FOR [AP_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS17_OPT]  DEFAULT (N'N') FOR [AP_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS18_OPT]  DEFAULT (N'N') FOR [AP_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS19_OPT]  DEFAULT (N'N') FOR [AP_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_AP_ANLYS20_OPT]  DEFAULT (N'N') FOR [AP_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS9_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS9_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS10_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS10_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS11_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS11_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS12_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS12_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS13_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS13_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS14_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS14_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS15_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS15_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS16_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS16_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS17_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS17_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS18_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS18_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS19_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS19_OPT]
+GO
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_VOCH_ANLYS20_OPT]  DEFAULT (N'N') FOR [VOCH_ANLYS20_OPT]
+GO
+ALTER TABLE [dbo].[Error] ADD  CONSTRAINT [DF_ELMAH_Error_ErrorId]  DEFAULT (newid()) FOR [ERROR_ID]
+GO
+ALTER TABLE [dbo].[FormLayout] ADD  CONSTRAINT [DF_FormLayout_ForAllUser]  DEFAULT ((0)) FOR [LAYOUT_TYPE]
+GO
+ALTER TABLE [dbo].[FormLayout] ADD  CONSTRAINT [DF_FormLayout_Suspended]  DEFAULT ((0)) FOR [SUSPENDED]
+GO
+ALTER TABLE [dbo].[FormLayoutDetail] ADD  CONSTRAINT [DF_FormLayoutDetail_UserGroup]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[FormLayoutDetail] ADD  CONSTRAINT [DF_FormLayoutDetail_UserId]  DEFAULT ('') FOR [USER_ID]
+GO
+ALTER TABLE [dbo].[Language] ADD  CONSTRAINT [DF__ADLANG__LANGUAGE__1CBC4616]  DEFAULT ('') FOR [LANGUAGE_CODE]
+GO
+ALTER TABLE [dbo].[Language] ADD  CONSTRAINT [DF__ADLANG__KEY_TEXT__1DB06A4F]  DEFAULT ('') FOR [KEY_TEXT]
+GO
+ALTER TABLE [dbo].[LookupDialog] ADD  CONSTRAINT [DF_LookupDialog_Suspended]  DEFAULT ((0)) FOR [SUSPENDED]
+GO
+ALTER TABLE [dbo].[LookupDialogFilterDetail] ADD  CONSTRAINT [DF_LookupDialogFilterDetail_Operator]  DEFAULT ((0)) FOR [OPERATOR]
+GO
+ALTER TABLE [dbo].[PolicyCode] ADD  CONSTRAINT [DF__ADMNUI__POLICY_C__3864608B]  DEFAULT ('') FOR [POLICY_CODE]
+GO
+ALTER TABLE [dbo].[ReportControl] ADD  CONSTRAINT [DF_ReportControl_USER_ID]  DEFAULT ('') FOR [USER_ID]
+GO
+ALTER TABLE [dbo].[ReportDialog] ADD  CONSTRAINT [DF_ReportDialog_ReportType]  DEFAULT ((0)) FOR [REPORT_TYPE]
+GO
+ALTER TABLE [dbo].[ReportDialog] ADD  CONSTRAINT [DF_ReportDialog_DataSource]  DEFAULT ((0)) FOR [DATA_SOURCE]
+GO
+ALTER TABLE [dbo].[ReportDialogOption] ADD  CONSTRAINT [DF_ReportDialogOption_FieldType]  DEFAULT ((0)) FOR [FIELD_TYPE]
+GO
+ALTER TABLE [dbo].[ReportDialogOption] ADD  CONSTRAINT [DF_ReportDialogOption_Style]  DEFAULT ((0)) FOR [STYLE]
+GO
+ALTER TABLE [dbo].[ReportDialogOption] ADD  CONSTRAINT [DF_ReportDialogOption_DataType]  DEFAULT ((0)) FOR [DATA_TYPE]
+GO
+ALTER TABLE [dbo].[ReportDialogOption] ADD  CONSTRAINT [DF_ReportDialogOption_CapsLock]  DEFAULT ((0)) FOR [CAPSLOCK]
+GO
+ALTER TABLE [dbo].[ReportDialogOption] ADD  CONSTRAINT [DF_ReportDialogOption_Required]  DEFAULT ((0)) FOR [REQUIRED]
+GO
+ALTER TABLE [dbo].[ReportFile] ADD  CONSTRAINT [DF__ReportFil__SUSPE__76A18A26]  DEFAULT ('N') FOR [SUSPENDED]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF__ADFUNC__MODULE_C__160F4887]  DEFAULT ('') FOR [MODULE_CODE]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF__ADFUNC__FUNCTION__17036CC0]  DEFAULT ((0)) FOR [FUNCTION_NO]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF__ADFUNC__FUNCTION__17F790F9]  DEFAULT ('') FOR [FUNCTION_CODE]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF__ADFUNC__DESCRIPT__18EBB532]  DEFAULT ('') FOR [DESCRIPTION]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF__ADFUNC__SERIES_O__19DFD96B]  DEFAULT ('') FOR [SERIES_OPTION]
+GO
+ALTER TABLE [dbo].[SystemFunction] ADD  CONSTRAINT [DF_ADFUNC_ATTACHMENT]  DEFAULT (N'N') FOR [ATTACHMENT]
+GO
+ALTER TABLE [dbo].[SystemModule] ADD  CONSTRAINT [DF__ADMODU__MODULE_C__40F9A68C]  DEFAULT ('') FOR [MODULE_CODE]
+GO
+ALTER TABLE [dbo].[SystemModule] ADD  CONSTRAINT [DF__ADMODU__DESCRIPT__41EDCAC5]  DEFAULT ('') FOR [DESCRIPTION]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_LINKTECH]  DEFAULT (0) FOR [TAILOR_LINKTECH]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_KEENWAY]  DEFAULT (0) FOR [TAILOR_KEENWAY]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_APEX]  DEFAULT (0) FOR [TAILOR_APEX]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_NEWLEAF]  DEFAULT (0) FOR [TAILOR_NEWLEAF]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_SUGA]  DEFAULT (0) FOR [TAILOR_SUGA]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_CITY]  DEFAULT (0) FOR [TAILOR_CITY]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_PEACEMARK]  DEFAULT (0) FOR [TAILOR_PEACEMARK]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_KINYAT]  DEFAULT (0) FOR [TAILOR_KINYAT]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_WINSUN]  DEFAULT (0) FOR [TAILOR_WINSUN]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_LIPHING]  DEFAULT (0) FOR [TAILOR_LIPHING]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_GFT]  DEFAULT (0) FOR [TAILOR_GFT]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_SINOJOINT]  DEFAULT (0) FOR [TAILOR_SINOJOINT]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT (0) FOR [GLARIM_VAR_SLSHSE]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT (0) FOR [TAILOR_ARTFIELD]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_PRPECS_AUTO_MARKUP]  DEFAULT (0) FOR [TAILOR_PRPECS_AUTO_MARKUP]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_PRE_LOT]  DEFAULT (0) FOR [TAILOR_PRE_LOT]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_CRYSTAL]  DEFAULT (0) FOR [TAILOR_CRYSTAL]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [ISSUE_REP_REQ]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_COMP_BREAKDOWN]  DEFAULT ((0)) FOR [TAILOR_COMP_BREAKDOWN]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_COMP_BREAKDOWN_CHARGE_TYPE]  DEFAULT ('') FOR [COMP_BREAKDOWN_CHARGE_TYPE]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [GLARIM_GLORYTOP]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_PO_MAX_QTY]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_USE_INV_NO_IN_VOU_DETAIL_LREF]  DEFAULT ((0)) FOR [USE_INV_NO_IN_VOU_DETAIL_LREF]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_CTRL_DOC_LEN]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_ENABLE_AUDIT_TRAIL]  DEFAULT ((0)) FOR [ENABLE_AUDIT_TRAIL]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_GEN_AP_TRAN_BY_TDATE]  DEFAULT ((0)) FOR [GEN_AP_TRAN_BY_TDATE]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_BOLEY]  DEFAULT ((0)) FOR [TAILOR_BOLEY]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_TAILOR_BSC_AP_PO]  DEFAULT ((0)) FOR [TAILOR_BSC_AP_PO]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  CONSTRAINT [DF_ADPARM_SLSOOT_SHOW_ADDINFO]  DEFAULT ((0)) FOR [SLSOOT_SHOW_ADDINFO]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [PLAN_ORD_RLS_PO_APPRV]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [BOM_ALTERNATE_UOM]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_KAYUE]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_MRB]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_TRADPOST]
+GO
+ALTER TABLE [dbo].[SystemParameter] ADD  DEFAULT ((0)) FOR [TAILOR_LONGSHORE]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_AllowDuplicates]  DEFAULT ((0)) FOR [ALLOW_DUPLICATES]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_Suspended]  DEFAULT ((0)) FOR [SUSPENDED]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_DataSource]  DEFAULT ((0)) FOR [DATA_SOURCE]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_UseAsEnquiry]  DEFAULT ((0)) FOR [USE_AS_ENQUIRY]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_UseAsLookup]  DEFAULT ((0)) FOR [USE_AS_LOOKUP]
+GO
+ALTER TABLE [dbo].[Udq] ADD  CONSTRAINT [DF_Udq_UseAsAlert]  DEFAULT ((0)) FOR [USE_AS_ALERT]
+GO
+ALTER TABLE [dbo].[UdqColumn] ADD  CONSTRAINT [DF_UdqColumn_Index]  DEFAULT ((0)) FOR [INDEX]
+GO
+ALTER TABLE [dbo].[UdqColumn] ADD  CONSTRAINT [DF_UdqColumn_Function]  DEFAULT ((0)) FOR [FUNCTION]
+GO
+ALTER TABLE [dbo].[UdqColumn] ADD  CONSTRAINT [DF_UdqColumn_SortDirection]  DEFAULT ((0)) FOR [SORT_DIRECTION]
+GO
+ALTER TABLE [dbo].[UdqColumn] ADD  CONSTRAINT [DF_UdqColumn_DrillDownFunctionType]  DEFAULT ((0)) FOR [DRILL_DOWN_FUNCTION_TYPE]
+GO
+ALTER TABLE [dbo].[UdqRelation] ADD  CONSTRAINT [DF_UdqRelation_JoinType]  DEFAULT ((0)) FOR [JOIN_TYPE]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF__ADUSER__USERID__13F1F5EB]  DEFAULT ('') FOR [USER_ID]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF__ADUSER__USER_NAM__14E61A24]  DEFAULT ('') FOR [USER_NAME]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF__ADUSER__USER_GRO__15DA3E5D]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_ADUSER_DEFAULT_PRINTER]  DEFAULT (N'Laser Jet Printer') FOR [DEFAULT_PRINTER]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF__ADUSER__BUYER__16CE6296]  DEFAULT ('') FOR [BUYER]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF__ADUSER__SALESMAN__17C286CF]  DEFAULT ('') FOR [SALESMAN]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ('N') FOR [NO_SUBCON_REC_MAT_ERROR]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ('N') FOR [ALLOW_WC_FINAL]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ('N') FOR [ALLOW_GRN_LOT]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ('N') FOR [ALLOW_WC_POST_ZMAT]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ('N') FOR [POSTING_CTRL_SL_BOTTOM_PRICE]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT (0) FOR [ALLOW_LOT_SIZE_COST]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_ADUSER_ALLOW_PICKED_DATE_ET_JB_SDATE]  DEFAULT ('N') FOR [ALLOW_PICKED_DATE_ET_JB_SDATE]
+GO
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_ADUSER_OVER_RECEIVE_RATE]  DEFAULT (0) FOR [OVER_RECEIVE_RATE]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [ICIM_TF_INV_LOT_EDIT]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [SLSO_NOCOPY_ITEM_DESC]
+GO
+ALTER TABLE [dbo].[User] ADD  DEFAULT ((0)) FOR [PO_SHOW_ZERO_PRICE]
+GO
+ALTER TABLE [dbo].[UserCompanyDetail] ADD  CONSTRAINT [DF__ADUCOM__USERID__57DD0BE4]  DEFAULT ('') FOR [USER_ID]
+GO
+ALTER TABLE [dbo].[UserCompanyDetail] ADD  CONSTRAINT [DF__ADUCOM__COMPANY___58D1301D]  DEFAULT ('') FOR [COMPANY_CODE]
+GO
+ALTER TABLE [dbo].[UserGroup] ADD  CONSTRAINT [DF__ADUGRP__USER_GRO__5BAD9CC8]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroup] ADD  CONSTRAINT [DF__ADUGRP__DESCRIPT__5CA1C101]  DEFAULT ('') FOR [DESCRIPTION]
+GO
+ALTER TABLE [dbo].[UserGroup] ADD  DEFAULT ((0)) FOR [VIEW_ONLY]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorization] ADD  CONSTRAINT [DF__ADAUTH__USER_GRO__0D7A0286]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorization] ADD  CONSTRAINT [DF__ADAUTH__MODULE_C__0E6E26BF]  DEFAULT ('') FOR [MODULE_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorization] ADD  CONSTRAINT [DF__ADAUTH__DESCRIPT__0F624AF8]  DEFAULT ('') FOR [DESCRIPTION]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail] ADD  CONSTRAINT [DF__ADAUTD__USER_GRO__07C12930]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail] ADD  CONSTRAINT [DF__ADAUTD__MODULE_C__08B54D69]  DEFAULT ('') FOR [MODULE_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail] ADD  CONSTRAINT [DF__ADAUTD__FUNCTION__09A971A2]  DEFAULT (0) FOR [FUNCTION_NO]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail] ADD  CONSTRAINT [DF__ADAUTD__FUNCTION__0A9D95DB]  DEFAULT ('') FOR [FUNCTION_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenu] ADD  CONSTRAINT [DF__ADMNUH__USER_GRO__32AB8735]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroupMenu] ADD  CONSTRAINT [DF__ADMNUH__PROCESS___339FAB6E]  DEFAULT ('') FOR [PROCESS_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenu] ADD  CONSTRAINT [DF__ADMNUH__MENU_COD__3493CFA7]  DEFAULT ('') FOR [MENU_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenu] ADD  CONSTRAINT [DF__ADMNUH__MENU_LEV__3587F3E0]  DEFAULT (0) FOR [MENU_LEVEL]
+GO
+ALTER TABLE [dbo].[UserGroupMenuBitmap] ADD  CONSTRAINT [DF__ADMNUB__BITMAP_N__245D67DE]  DEFAULT (0) FOR [BITMAP_NO]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] ADD  CONSTRAINT [DF__ADMNUD__USER_GRO__2739D489]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] ADD  CONSTRAINT [DF__ADMNUD__PROCESS___282DF8C2]  DEFAULT ('') FOR [PROCESS_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] ADD  CONSTRAINT [DF__ADMNUD__FUNCTION__29221CFB]  DEFAULT ('') FOR [FUNCTION_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] ADD  CONSTRAINT [DF__ADMNUD__MENU_TYP__2A164134]  DEFAULT ('') FOR [MENU_TYPE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] ADD  CONSTRAINT [DF__ADMNUD__MENU_COD__2B0A656D]  DEFAULT ('') FOR [MENU_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuMap] ADD  CONSTRAINT [DF__ADMNUM__IMAGE_FI__67DE6983]  DEFAULT ('') FOR [IMAGE_FILE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuType] ADD  CONSTRAINT [DF__ADMNUT__USER_GRO__3B40CD36]  DEFAULT ('') FOR [USER_GROUP]
+GO
+ALTER TABLE [dbo].[UserGroupMenuType] ADD  CONSTRAINT [DF__ADMNUT__PROCESS___3C34F16F]  DEFAULT ('') FOR [PROCESS_CODE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuType] ADD  CONSTRAINT [DF__ADMNUT__MENU_TYP__3D2915A8]  DEFAULT ('') FOR [MENU_TYPE]
+GO
+ALTER TABLE [dbo].[UserGroupMenuType] ADD  CONSTRAINT [DF__ADMNUT__MENU_COD__3E1D39E1]  DEFAULT ('') FOR [MENU_CODE]
+GO
+ALTER TABLE [dbo].[AuditTrailColumnDetail]  WITH NOCHECK ADD  CONSTRAINT [FK_AuditTrailColumnDetail_AuditTrailTableDetail] FOREIGN KEY([LOG_NO], [TABLE_NO])
+REFERENCES [dbo].[AuditTrailTableDetail] ([LOG_NO], [TABLE_NO])
+GO
+ALTER TABLE [dbo].[AuditTrailColumnDetail] CHECK CONSTRAINT [FK_AuditTrailColumnDetail_AuditTrailTableDetail]
+GO
+ALTER TABLE [dbo].[AuditTrailTableDetail]  WITH NOCHECK ADD  CONSTRAINT [FK_AuditTrailTableDetail_AuditTrail] FOREIGN KEY([LOG_NO])
+REFERENCES [dbo].[AuditTrail] ([LOG_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AuditTrailTableDetail] CHECK CONSTRAINT [FK_AuditTrailTableDetail_AuditTrail]
+GO
+ALTER TABLE [dbo].[ChartSeries]  WITH CHECK ADD  CONSTRAINT [FK_ChartSeries_Chart] FOREIGN KEY([FUNCTION_CODE])
+REFERENCES [dbo].[Chart] ([FUNCTION_CODE])
+GO
+ALTER TABLE [dbo].[ChartSeries] CHECK CONSTRAINT [FK_ChartSeries_Chart]
+GO
+ALTER TABLE [dbo].[CompanyDetail]  WITH CHECK ADD  CONSTRAINT [FK_ADCOMD_ADCOMP] FOREIGN KEY([COMPANY_CODE])
+REFERENCES [dbo].[Company] ([COMPANY_CODE])
+GO
+ALTER TABLE [dbo].[CompanyDetail] CHECK CONSTRAINT [FK_ADCOMD_ADCOMP]
+GO
+ALTER TABLE [dbo].[FormDetail]  WITH CHECK ADD  CONSTRAINT [FK_FormDetail_Form] FOREIGN KEY([FORM_NAME])
+REFERENCES [dbo].[Form] ([NAME])
+GO
+ALTER TABLE [dbo].[FormDetail] CHECK CONSTRAINT [FK_FormDetail_Form]
+GO
+ALTER TABLE [dbo].[FormLayoutDetail]  WITH NOCHECK ADD  CONSTRAINT [FK_FormLayoutDetail_FormLayout] FOREIGN KEY([LAYOUT_NAME])
+REFERENCES [dbo].[FormLayout] ([LAYOUT_NAME])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[FormLayoutDetail] CHECK CONSTRAINT [FK_FormLayoutDetail_FormLayout]
+GO
+ALTER TABLE [dbo].[JobLog]  WITH CHECK ADD  CONSTRAINT [FK_JobLog_Job] FOREIGN KEY([JOB_NO])
+REFERENCES [dbo].[Job] ([JOB_NO])
+GO
+ALTER TABLE [dbo].[JobLog] CHECK CONSTRAINT [FK_JobLog_Job]
+GO
+ALTER TABLE [dbo].[LookupDialogFilter]  WITH CHECK ADD  CONSTRAINT [FK_LookupDialogFilter_LookupDialog] FOREIGN KEY([LOOKUP_NAME])
+REFERENCES [dbo].[LookupDialog] ([LOOKUP_NAME])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[LookupDialogFilter] CHECK CONSTRAINT [FK_LookupDialogFilter_LookupDialog]
+GO
+ALTER TABLE [dbo].[LookupDialogFilterColumnDetail]  WITH CHECK ADD  CONSTRAINT [FK_LookupDialogFilterColumnDetail_LookupDialogFilter] FOREIGN KEY([LOOKUP_NAME], [FILTER_NAME])
+REFERENCES [dbo].[LookupDialogFilter] ([LOOKUP_NAME], [FILTER_NAME])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[LookupDialogFilterColumnDetail] CHECK CONSTRAINT [FK_LookupDialogFilterColumnDetail_LookupDialogFilter]
+GO
+ALTER TABLE [dbo].[LookupDialogFilterDetail]  WITH CHECK ADD  CONSTRAINT [FK_LookupDialogFilterDetail_LookupDialogFilter] FOREIGN KEY([LOOKUP_NAME], [FILTER_NAME])
+REFERENCES [dbo].[LookupDialogFilter] ([LOOKUP_NAME], [FILTER_NAME])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[LookupDialogFilterDetail] CHECK CONSTRAINT [FK_LookupDialogFilterDetail_LookupDialogFilter]
+GO
+ALTER TABLE [dbo].[ReportDialogAlternateReport]  WITH CHECK ADD  CONSTRAINT [FK_ReportDialogAlternateReport_ReportDialog] FOREIGN KEY([REPORT_ID])
+REFERENCES [dbo].[ReportDialog] ([REPORT_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ReportDialogAlternateReport] CHECK CONSTRAINT [FK_ReportDialogAlternateReport_ReportDialog]
+GO
+ALTER TABLE [dbo].[ReportDialogOption]  WITH CHECK ADD  CONSTRAINT [FK_ReportDialogOption_ReportDialog] FOREIGN KEY([REPORT_ID])
+REFERENCES [dbo].[ReportDialog] ([REPORT_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ReportDialogOption] CHECK CONSTRAINT [FK_ReportDialogOption_ReportDialog]
+GO
+ALTER TABLE [dbo].[ReportDialogOptionItem]  WITH CHECK ADD  CONSTRAINT [FK_ReportDialogOptionItem_ReportDialogOption1] FOREIGN KEY([REPORT_ID], [OPTION_NO])
+REFERENCES [dbo].[ReportDialogOption] ([REPORT_ID], [OPTION_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ReportDialogOptionItem] CHECK CONSTRAINT [FK_ReportDialogOptionItem_ReportDialogOption1]
+GO
+ALTER TABLE [dbo].[ReportProfile]  WITH CHECK ADD  CONSTRAINT [FK_ReportProfile_ReportDialog] FOREIGN KEY([REPORT_ID])
+REFERENCES [dbo].[ReportDialog] ([REPORT_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ReportProfile] CHECK CONSTRAINT [FK_ReportProfile_ReportDialog]
+GO
+ALTER TABLE [dbo].[ReportProfileDetail]  WITH CHECK ADD  CONSTRAINT [FK_ReportProfileDetail_ReportProfile] FOREIGN KEY([REPORT_ID], [USER_ID], [PROFILE_NAME])
+REFERENCES [dbo].[ReportProfile] ([REPORT_ID], [USER_ID], [PROFILE_NAME])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ReportProfileDetail] CHECK CONSTRAINT [FK_ReportProfileDetail_ReportProfile]
+GO
+ALTER TABLE [dbo].[ReportSubscription]  WITH CHECK ADD  CONSTRAINT [FK_ReportSubscription_ReportDialog] FOREIGN KEY([REPORT_ID])
+REFERENCES [dbo].[ReportDialog] ([REPORT_ID])
+GO
+ALTER TABLE [dbo].[ReportSubscription] CHECK CONSTRAINT [FK_ReportSubscription_ReportDialog]
+GO
+ALTER TABLE [dbo].[SystemFunction]  WITH CHECK ADD  CONSTRAINT [FK_ADFUNC_ADMODU] FOREIGN KEY([MODULE_CODE])
+REFERENCES [dbo].[SystemModule] ([MODULE_CODE])
+GO
+ALTER TABLE [dbo].[SystemFunction] CHECK CONSTRAINT [FK_ADFUNC_ADMODU]
+GO
+ALTER TABLE [dbo].[SystemFunctionHelp]  WITH CHECK ADD  CONSTRAINT [FK_ADFUNH_ADFUNC] FOREIGN KEY([FUNCTION_CODE])
+REFERENCES [dbo].[SystemFunction] ([FUNCTION_CODE])
+GO
+ALTER TABLE [dbo].[SystemFunctionHelp] CHECK CONSTRAINT [FK_ADFUNH_ADFUNC]
+GO
+ALTER TABLE [dbo].[UdqColumn]  WITH CHECK ADD  CONSTRAINT [FK_UdqColumn_Udq] FOREIGN KEY([QUERY_ID])
+REFERENCES [dbo].[Udq] ([QUERY_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqColumn] CHECK CONSTRAINT [FK_UdqColumn_Udq]
+GO
+ALTER TABLE [dbo].[UdqColumnDrillDown]  WITH CHECK ADD  CONSTRAINT [FK_UdqColumnDrillDown_UdqColumn] FOREIGN KEY([QUERY_ID], [ENTRY_NO])
+REFERENCES [dbo].[UdqColumn] ([QUERY_ID], [ENTRY_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqColumnDrillDown] CHECK CONSTRAINT [FK_UdqColumnDrillDown_UdqColumn]
+GO
+ALTER TABLE [dbo].[UdqParameter]  WITH CHECK ADD  CONSTRAINT [FK_UdqParameter_Udq] FOREIGN KEY([QUERY_ID])
+REFERENCES [dbo].[Udq] ([QUERY_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqParameter] CHECK CONSTRAINT [FK_UdqParameter_Udq]
+GO
+ALTER TABLE [dbo].[UdqRelation]  WITH CHECK ADD  CONSTRAINT [FK_UdqRelation_Udq] FOREIGN KEY([QUERY_ID])
+REFERENCES [dbo].[Udq] ([QUERY_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqRelation] CHECK CONSTRAINT [FK_UdqRelation_Udq]
+GO
+ALTER TABLE [dbo].[UdqRelationDetail]  WITH CHECK ADD  CONSTRAINT [FK_UdqRelationDetail_UdqRelation] FOREIGN KEY([QUERY_ID], [RELATION_NO])
+REFERENCES [dbo].[UdqRelation] ([QUERY_ID], [RELATION_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqRelationDetail] CHECK CONSTRAINT [FK_UdqRelationDetail_UdqRelation]
+GO
+ALTER TABLE [dbo].[UdqTable]  WITH CHECK ADD  CONSTRAINT [FK_UdqTable_Udq] FOREIGN KEY([QUERY_ID])
+REFERENCES [dbo].[Udq] ([QUERY_ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UdqTable] CHECK CONSTRAINT [FK_UdqTable_Udq]
+GO
+ALTER TABLE [dbo].[User]  WITH CHECK ADD  CONSTRAINT [FK_ADUSER_ADUGRP] FOREIGN KEY([USER_GROUP])
+REFERENCES [dbo].[UserGroup] ([USER_GROUP])
+GO
+ALTER TABLE [dbo].[User] CHECK CONSTRAINT [FK_ADUSER_ADUGRP]
+GO
+ALTER TABLE [dbo].[UserCompanyDetail]  WITH CHECK ADD  CONSTRAINT [FK_ADUCOM_ADUSER] FOREIGN KEY([USER_ID])
+REFERENCES [dbo].[User] ([USER_ID])
+GO
+ALTER TABLE [dbo].[UserCompanyDetail] CHECK CONSTRAINT [FK_ADUCOM_ADUSER]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorization]  WITH CHECK ADD  CONSTRAINT [FK_ADAUTH_ADUGRP] FOREIGN KEY([USER_GROUP])
+REFERENCES [dbo].[UserGroup] ([USER_GROUP])
+GO
+ALTER TABLE [dbo].[UserGroupAuthorization] CHECK CONSTRAINT [FK_ADAUTH_ADUGRP]
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail]  WITH CHECK ADD  CONSTRAINT [FK_ADAUTD_ADAUTH] FOREIGN KEY([USER_GROUP], [MODULE_CODE])
+REFERENCES [dbo].[UserGroupAuthorization] ([USER_GROUP], [MODULE_CODE])
+GO
+ALTER TABLE [dbo].[UserGroupAuthorizationDetail] CHECK CONSTRAINT [FK_ADAUTD_ADAUTH]
+GO
+ALTER TABLE [dbo].[UserGroupMenu]  WITH CHECK ADD  CONSTRAINT [FK_ADMNUH_ADUGRP] FOREIGN KEY([USER_GROUP])
+REFERENCES [dbo].[UserGroup] ([USER_GROUP])
+GO
+ALTER TABLE [dbo].[UserGroupMenu] CHECK CONSTRAINT [FK_ADMNUH_ADUGRP]
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail]  WITH CHECK ADD  CONSTRAINT [FK_ADMNUD_ADMNUT] FOREIGN KEY([USER_GROUP], [PROCESS_CODE], [MENU_TYPE])
+REFERENCES [dbo].[UserGroupMenuType] ([USER_GROUP], [PROCESS_CODE], [MENU_TYPE])
+GO
+ALTER TABLE [dbo].[UserGroupMenuDetail] CHECK CONSTRAINT [FK_ADMNUD_ADMNUT]
+GO
+ALTER TABLE [dbo].[UserGroupMenuType]  WITH CHECK ADD  CONSTRAINT [FK_ADMNUT_ADMNUH] FOREIGN KEY([USER_GROUP], [PROCESS_CODE])
+REFERENCES [dbo].[UserGroupMenu] ([USER_GROUP], [PROCESS_CODE])
+GO
+ALTER TABLE [dbo].[UserGroupMenuType] CHECK CONSTRAINT [FK_ADMNUT_ADMNUH]
+GO
+ALTER TABLE [dbo].[UserLogDetail]  WITH CHECK ADD  CONSTRAINT [FK_UserLogDetail_UserLog] FOREIGN KEY([LOG_NO])
+REFERENCES [dbo].[UserLog] ([LOG_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UserLogDetail] CHECK CONSTRAINT [FK_UserLogDetail_UserLog]
+GO
+ALTER TABLE [dbo].[UserLogDetailAction]  WITH CHECK ADD  CONSTRAINT [FK_UserLogDetailAction_UserLogDetail] FOREIGN KEY([LOG_NO], [ENTRY_NO])
+REFERENCES [dbo].[UserLogDetail] ([LOG_NO], [ENTRY_NO])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UserLogDetailAction] CHECK CONSTRAINT [FK_UserLogDetailAction_UserLogDetail]
+GO
+EXEC [Framework].sys.sp_addextendedproperty @name=N'SQLSourceControl Scripts Location', @value=N'<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<ISOCCompareLocation version="1" type="TfsLocation">
+  <ServerUrl>http://127.0.0.1:8080/tfs/defaultcollection</ServerUrl>
+  <SourceControlFolder>$/Enterprise Solution/Database/Revision</SourceControlFolder>
+</ISOCCompareLocation>' 
+GO
+EXEC [Framework].sys.sp_addextendedproperty @name=N'SQLSourceControl Database Revision', @value=145 
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail', @level2type=N'COLUMN',@level2name=N'LOG_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail', @level2type=N'COLUMN',@level2name=N'DATE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail', @level2type=N'COLUMN',@level2name=N'USER_ID'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail', @level2type=N'COLUMN',@level2name=N'FUNCTION_CODE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail', @level2type=N'COLUMN',@level2name=N'REMARKS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrail'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'LOG_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'TABLE_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'COLUMN_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'COLUMN_NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'OLD_VALUE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail', @level2type=N'COLUMN',@level2name=N'NEW_VALUE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailColumnDetail'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail', @level2type=N'COLUMN',@level2name=N'LOG_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail', @level2type=N'COLUMN',@level2name=N'TABLE_NO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail', @level2type=N'COLUMN',@level2name=N'ACTION'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail', @level2type=N'COLUMN',@level2name=N'ENTITY_NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail', @level2type=N'COLUMN',@level2name=N'KEY_VALUE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'AuditTrailTableDetail'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司编码' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Company', @level2type=N'COLUMN',@level2name=N'COMPANY_CODE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Company', @level2type=N'COLUMN',@level2name=N'COMPANY_NAME'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Job', @level2type=N'COLUMN',@level2name=N'SUSPENDED'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Job', @level2type=N'COLUMN',@level2name=N'CREATED_DATE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Job', @level2type=N'COLUMN',@level2name=N'CREATED_BY'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Job', @level2type=N'COLUMN',@level2name=N'REVISED_DATE'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Job', @level2type=N'COLUMN',@level2name=N'REVISED_BY'
+GO
+USE [master]
+GO
+ALTER DATABASE [Framework] SET  READ_WRITE 
+GO
