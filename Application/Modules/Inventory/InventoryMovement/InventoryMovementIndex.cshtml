@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Inventory.InventoryMovement.EntityPlural");
+    
+}
+
+@*<input type="hidden" id="model" value="@Model" />*@
+
+<div id="GridDiv"></div>
+
+
+@*You could take your entire server-side model and turn it into a Javascript object by doing the following:
+
+var model = @Html.Raw(Json.Encode(Model));
+In your case if you just want the FloorPlanSettings object, simply pass the Encode method that property:
+var floorplanSettings = @Html.Raw(Json.Encode(Model.FloorPlanSettings));*@
+
+<script type="text/javascript">
+    jQuery(function () {
+        var grid = new Matrix.Inventory.InventoryMovementGrid($('#GridDiv'), {});
+        //grid.flowType = @Html.Raw(Json.Encode(Model));
+        grid.setFlowType(@Html.Raw(Json.Encode(Model)));
+        grid.init();
+    
+        Q.initFullHeightGridPage($('#GridDiv'));
+
+        if (grid.flowType === "I")
+            $(".title-text").each(function(item) {
+                $(this).text("Inventory Issue");
+            });
+
+        if (grid.flowType === "R")
+            $(".title-text").each(function(item) {
+                $(this).text("Inventory Receipt");
+            });
+
+        if (grid.flowType === "T")
+            $(".title-text").each(function(item) {
+                $(this).text("Inventory Transfer");
+            });     
+    });
+</script>
+
+<style type="text/css">
+    
+    .DetailList .caption {
+        display: none
+    }
+
+    .DetailList .grid-toolbar 
+    {
+        display: none
+    }
+
+    .quick-filters-bar {
+        display: none
+    }
+
+    .DetailList .caption {
+        display: none;
+    }
+
+    .s-DialogToolbar {
+        display: none;
+    }
+
+</style>

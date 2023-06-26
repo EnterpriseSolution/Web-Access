@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.MasterData.FiscalYear.EntityPlural");
+}
+
+
+<div id="GridDiv"></div>
+
+<style type="text/css">
+    #divFiscalYear  {
+        border-width: 0;
+    }
+</style>
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Matrix.MasterData.FiscalYearGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+        
+        //$(".s-QuickSearchBar").each(function (index) {
+        //    $(this).hide();
+        //});
+
+        ////$('.select').select2({
+        ////    placeholder: 'Select an option'
+        ////});
+
+        //$(".select")
+        //    .on("change",
+        //        function(e) {
+        //            // e 的话就是一个对象 然后需要什么就 “e.参数” 形式 进行获取 
+        //            console.log(e);
+        //        });
+
+        //var data = [
+        //    { id: 0, text: '2014' },
+        //    { id: 1, text: '2015' },
+        //    { id: 2, text: '2016' },
+        //    { id: 3, text: '2017' },
+        //    { id: 4, text: '2018' }];
+        //$(".select")
+        //    .select2({
+        //        data: data,
+        //        placeholder: 'Fiscal Year',
+        //        allowClear: true
+        //    });
+
+        //$(".send-button").hide();
+        //$(".buttons-inner").prepend( $("#divFiscalYear"));
+     
+    });
+</script>

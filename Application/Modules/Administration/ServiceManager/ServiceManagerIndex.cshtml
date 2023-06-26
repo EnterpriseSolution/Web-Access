@@ -1,0 +1,170 @@
+﻿@using Matrix.Enterprise.Pages
+@model List<Matrix.Enterprise.Pages.ServiceManagerController.ServiceViewModel>
+@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Enterprise.JobCategory.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Service Manager</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body no-padding">
+        <table class="table table-condensed">
+            <tr>
+                <th style="width: 40px">#</th>
+                <th>Name</th>
+                <th style="width: 70%">Description</th>
+                <th style="width: 60px">Status</th>
+                <th style="width: 60px"></th>
+            </tr>
+            @{
+                foreach (ServiceManagerController.ServiceViewModel service in Model)
+                {
+                    <tr>
+                        <td>@service.SN</td>
+                        <td>@service.Name</td>
+                        <td>@service.Description</td>
+                        <td>@service.Status</td>
+                        <td><input type="button" value="@service.Action" onclick="TakenAction('@service.Name','@service.Action')"/></td>
+                    </tr>
+                }
+            }
+           
+        </table>
+    </div><!-- /.box-body -->
+</div>
+
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.Confirm = "Do you wish to submit this form?";
+    options.OnBegin = "OnBegin";
+    options.OnComplete = "OnComplete";
+    options.OnFailure = "OnFailure";
+    options.OnSuccess = "OnSuccess";
+    options.LoadingElementId = "divProgress";
+    options.LoadingElementDuration = 1000;
+    options.UpdateTargetId = "divResponse";
+    options.InsertionMode = InsertionMode.InsertAfter;
+}
+
+<div id="divProgress">
+    <img src='@Url.Content("~/Content/images/ProgressCircle.gif")' />
+</div>
+<div id="divResponse"></div>
+<div id="divMsg"></div>
+
+<script type="text/javascript">
+    function TakenAction(serviceName, action) {
+        console.log(serviceName);
+        console.log(action);
+
+        //var data = {
+        //    ServiceName: serviceName,
+        //    Action: action
+        //};
+        var url = "/BasicInformation/ServiceManager/TakenAction";
+        //$.post(url,data,
+        //    function(response) {
+        //        console.log("get", response);
+        //    });
+
+        // $.post("Yourcontroller/YourAction",
+        //{
+        //    FirstName : $("#txtFirstName").val(),
+        //    LastName : $("#txtLastName")
+        //} ,function(data){
+        //    //do whatever with the response
+
+        //});
+
+        $.ajax(  
+        {  
+            type: "POST", //HTTP POST Method  
+            url: url,  
+            data: { 
+                Name: serviceName,
+                Action: action
+            } ,
+            success: function (response) {
+                console.log(response);
+                //if (response != null) {
+                //data = JSON.parse(response);
+                //console.log(data);
+                ////update the progressbar
+                //progressbar.progressbar("value", data.Percentage);
+                ////When the jobalert status is completed clear the interval
+                //if (data.Status == 0) {
+                //    setTimeout(getProgress, 800); //TImout function to call the respective function at that time
+                //}
+                //serviceCompleted(data); function to call after completing service
+                //}
+                //},
+            },
+            error: function (xhr) {
+                alert('Error: There was some error while posting question. Please try again later.');
+            }
+
+        
+        });  
+    };
+
+    jQuery(function () {
+        //new Matrix.Enterprise.JobCategoryGrid($('#GridDiv'), {}).init();
+
+        //Q.initFullHeightGridPage($('#GridDiv'));
+
+        $("#divProgress").css("display", "none");
+
+        
+
+    });
+
+    $(document).ajaxStart(function () {
+      
+        $("#divProgress").css("display", "inline");
+    });
+
+    $(document).ajaxStop(function () {
+       
+        $("#divProgress").css("display", "none");
+    });
+
+
+    function OnBegin() {
+        $("#divMsg").append("<h3>Beginning Ajax request.</h3>");
+    }
+    function OnComplete() {
+        $("#divMsg").append("<h3>Completing Ajax request.</h3>");
+    }
+    function OnSuccess() {
+        $("#divMsg").append("<h3>Ajax request successful.</h3>");
+    }
+    function OnFailure() {
+        $("#divMsg").append("<h3>Ajax request failed.</h3>");
+    }
+
+</script>
+    
+<script type="text/javascript">
+        function onBegin()
+        {
+            $("#divLoading").html('<image src="../Content/ajax-loader.gif" alt="Loading, please wait" />');
+        }
+        function onComplete()
+        {
+            $("#divLoading").html("");
+        }
+        function onSuccess(context)
+        {
+            var d = new Date();
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
+            $("#divLoading").html("Live rates at " + day + "." +
+		month + "." + year + " " + d.getHours() + ":" +
+		d.getMinutes() + ":" + d.getSeconds());
+        }
+</script>

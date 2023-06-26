@@ -1,0 +1,23 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitBOM": true,
+    "sourceMap": true,
+    "outFile": "Scripts/site/Application.Web.js",
+    "target": "es5",
+    "typeRoots": [
+      "./node_modules/@types/"
+    ]
+  },
+  "include": [
+    "./Imports/",
+    "./Modules/",
+    "./Scripts/typings/"
+  ],
+  "exclude": [
+    "Scripts/site/Matrix.Web.d.ts"
+  ]
+}

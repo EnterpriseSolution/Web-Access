@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<script id="Template_LookupDialog" type="text/template">
+    <div id="lookup">
+        <div class="box">
+            <div class="box-body">
+                <table class="table table-striped table-responsive" id="lookupTable">
+                    <tr>
+                        <th v-for="column in Columns">{{column.Caption}}</th>
+                    </tr>
+
+                    <tr v-for="row in Rows" class="clickable-row" v-on:click="OnRowClick($event,row)">
+                        <td v-for="key in Object.keys(row)">{{ row[key] }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="box-footer clearfix">
+                <input type="hidden" v-model="CurrentPageIndex" />
+                <ul class="pagination pagination-sm no-margin pull-left">
+                    <li><a v-on:click="OnPreviousClick($event)">&laquo;</a></li>
+                    <li v-for="pageIndex in PagerDisplay">
+                        <a v-if="pageIndex==CurrentPageIndex" class="text-italic" v-on:click="OnNonPagerClick($event)">
+                            <strong>{{pageIndex}}</strong>
+                        </a>
+                        <a v-else v-on:click="OnPagerClick(pageIndex)">{{pageIndex}}</a>
+                    </li>
+                    <li><a v-on:click="OnNextPageClick($event)">&raquo;</a></li>
+                    <li><a v-on:click="OnNonPagerClick($event)" style="margin-left:6pt;">{{CurrentPageIndex}}/{{PageCount}}</a></li>
+                </ul>
+                <div class="box-footer">
+                    <button type="button" class="btn btn-info pull-right" style="margin-left:6pt;width:60pt" v-on:click="OnCloseClick($event)">Cancel</button>
+                    <button type="button" class="btn btn-info pull-right" style="margin-left:6pt;width:60pt" v-on:click="OnOKClick($event)">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+

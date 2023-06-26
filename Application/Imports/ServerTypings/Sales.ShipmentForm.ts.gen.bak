@@ -1,0 +1,342 @@
+﻿
+namespace Matrix.Sales {
+    export class ShipmentForm extends Serenity.PrefixedContext {
+        static formKey = 'Sales.Shipment';
+    }
+
+    export interface ShipmentForm {
+        RefNo: Serenity.StringEditor;
+        ShipmentDate: Serenity.DateEditor;
+        Posted: Serenity.StringEditor;
+        Returned: Serenity.StringEditor;
+        CustomerNo: Serenity.StringEditor;
+        CustomerName: Serenity.StringEditor;
+        ShipTo: Serenity.StringEditor;
+        Address: Serenity.StringEditor;
+        Address2: Serenity.StringEditor;
+        Address3: Serenity.StringEditor;
+        Address4: Serenity.StringEditor;
+        CutoffDate: Serenity.DateEditor;
+        ShipVia: Serenity.StringEditor;
+        ShipmentTerms: Serenity.StringEditor;
+        VesselName: Serenity.StringEditor;
+        Etd: Serenity.DateEditor;
+        Eta: Serenity.DateEditor;
+        PayTerms: Serenity.StringEditor;
+        DiscDays: Serenity.DecimalEditor;
+        DiscPercent: Serenity.DecimalEditor;
+        NetDays: Serenity.DecimalEditor;
+        DiscountDate: Serenity.DateEditor;
+        DueDate: Serenity.DateEditor;
+        ExpectedDate: Serenity.DateEditor;
+        Ccy: Serenity.StringEditor;
+        ExchRate: Serenity.DecimalEditor;
+        ShipFrom: Serenity.StringEditor;
+        OwnerBranch: Serenity.StringEditor;
+        SourceBranch: Serenity.StringEditor;
+        ComputeTax: Serenity.StringEditor;
+        TotPriceAmt: Serenity.DecimalEditor;
+        TotPtaxAmt: Serenity.DecimalEditor;
+        TotExtPrice: Serenity.DecimalEditor;
+        TotLdiscAmt: Serenity.DecimalEditor;
+        TotAtaxAmt: Serenity.DecimalEditor;
+        TotItemAmt: Serenity.DecimalEditor;
+        TotTdiscAmt: Serenity.DecimalEditor;
+        NetTradeAmt: Serenity.DecimalEditor;
+        TotChgsAmt: Serenity.DecimalEditor;
+        NetOrdrAmt: Serenity.DecimalEditor;
+        TotGtaxAmt: Serenity.DecimalEditor;
+        NetPayAmt: Serenity.DecimalEditor;
+        DpsCover: Serenity.DecimalEditor;
+        DpsApplied: Serenity.DecimalEditor;
+        NetBalAmt: Serenity.DecimalEditor;
+        CpdTdiscAmt: Serenity.DecimalEditor;
+        CpdGtaxAmt: Serenity.DecimalEditor;
+        CpdDpsAmt: Serenity.DecimalEditor;
+        LocPriceAmt: Serenity.DecimalEditor;
+        LocPtaxAmt: Serenity.DecimalEditor;
+        LocExtPrice: Serenity.DecimalEditor;
+        LocLdiscAmt: Serenity.DecimalEditor;
+        LocAtaxAmt: Serenity.DecimalEditor;
+        LocItemAmt: Serenity.DecimalEditor;
+        LocTdiscAmt: Serenity.DecimalEditor;
+        LocChgsAmt: Serenity.DecimalEditor;
+        LocGtaxAmt: Serenity.DecimalEditor;
+        LocPayAmt: Serenity.DecimalEditor;
+        LocDpsApplied: Serenity.DecimalEditor;
+        CreatedDate: Serenity.DateEditor;
+        CreatedBy: Serenity.StringEditor;
+        RevisedDate: Serenity.DateEditor;
+        RevisedBy: Serenity.StringEditor;
+        PostedDate: Serenity.DateEditor;
+        PostedBy: Serenity.StringEditor;
+        PrevisedDate: Serenity.DateEditor;
+        PrevisedBy: Serenity.StringEditor;
+        LastEntryNo: Serenity.DecimalEditor;
+        LastChgsNo: Serenity.DecimalEditor;
+        LastTextNo: Serenity.DecimalEditor;
+        LastCtnNo: Serenity.DecimalEditor;
+        LockType: Serenity.StringEditor;
+        LockRefNo: Serenity.StringEditor;
+        LastLogNo: Serenity.DecimalEditor;
+        NewItemCount: Serenity.DecimalEditor;
+        NewChgsCount: Serenity.DecimalEditor;
+        AcctCustomer: Serenity.StringEditor;
+        AcctTdisc: Serenity.StringEditor;
+        AcctGtax: Serenity.StringEditor;
+        DpsApplyRef: Serenity.StringEditor;
+        VendTaxCode: Serenity.StringEditor;
+        CustTaxCode: Serenity.StringEditor;
+        RetPriceAmt: Serenity.DecimalEditor;
+        RetPtaxAmt: Serenity.DecimalEditor;
+        RetExtPrice: Serenity.DecimalEditor;
+        RetLdiscAmt: Serenity.DecimalEditor;
+        RetAtaxAmt: Serenity.DecimalEditor;
+        RetItemAmt: Serenity.DecimalEditor;
+        RetTdiscAmt: Serenity.DecimalEditor;
+        RetGtaxAmt: Serenity.DecimalEditor;
+        RetChgsAmt: Serenity.DecimalEditor;
+        RetPayAmt: Serenity.DecimalEditor;
+        LretPriceAmt: Serenity.DecimalEditor;
+        LretPtaxAmt: Serenity.DecimalEditor;
+        LretExtPrice: Serenity.DecimalEditor;
+        LretLdiscAmt: Serenity.DecimalEditor;
+        LretAtaxAmt: Serenity.DecimalEditor;
+        LretItemAmt: Serenity.DecimalEditor;
+        LretTdiscAmt: Serenity.DecimalEditor;
+        LretGtaxAmt: Serenity.DecimalEditor;
+        LretChgsAmt: Serenity.DecimalEditor;
+        LretPayAmt: Serenity.DecimalEditor;
+        WeightUom: Serenity.StringEditor;
+        GrWt: Serenity.DecimalEditor;
+        NtWt: Serenity.DecimalEditor;
+        DimensionUom: Serenity.StringEditor;
+        Volume: Serenity.DecimalEditor;
+        GlLink: Serenity.StringEditor;
+        GlLinkType: Serenity.StringEditor;
+        GlLinkNo: Serenity.StringEditor;
+        PackingOk: Serenity.StringEditor;
+        Comments1: Serenity.StringEditor;
+        Comments2: Serenity.StringEditor;
+        Comments3: Serenity.StringEditor;
+        Comments4: Serenity.StringEditor;
+        SettleAt: Serenity.StringEditor;
+        CheckCrlimit: Serenity.StringEditor;
+        CheckCrbal: Serenity.DecimalEditor;
+        Attention: Serenity.StringEditor;
+        TelNo: Serenity.StringEditor;
+        FaxNo: Serenity.StringEditor;
+        PortLoading: Serenity.StringEditor;
+        PortDischarge: Serenity.StringEditor;
+        Forwarder: Serenity.StringEditor;
+        LcNo: Serenity.StringEditor;
+        OriginCountry: Serenity.StringEditor;
+        Comments5: Serenity.StringEditor;
+        Comments6: Serenity.StringEditor;
+        Comments7: Serenity.StringEditor;
+        Comments8: Serenity.StringEditor;
+        IssueBank: Serenity.StringEditor;
+        IssueDate: Serenity.DateEditor;
+        SltaxType: Serenity.StringEditor;
+        GsltaxPcent: Serenity.DecimalEditor;
+        TotGsltaxAmt: Serenity.DecimalEditor;
+        TotLsltaxAmt: Serenity.DecimalEditor;
+        LocGsltaxAmt: Serenity.DecimalEditor;
+        LocLsltaxAmt: Serenity.DecimalEditor;
+        SoSltaxType: Serenity.StringEditor;
+        SoGsltaxPcent: Serenity.DecimalEditor;
+        OrderCount: Serenity.DecimalEditor;
+        AcctSltax: Serenity.StringEditor;
+        LastTextNo1: Serenity.DecimalEditor;
+        Anlys1: Serenity.StringEditor;
+        Anlys2: Serenity.StringEditor;
+        Anlys7: Serenity.StringEditor;
+        Anlys8: Serenity.StringEditor;
+        DnOnly: Serenity.StringEditor;
+        Invoiced: Serenity.StringEditor;
+        InvoiceNo: Serenity.StringEditor;
+        Flag: Serenity.StringEditor;
+        HoldBy: Serenity.StringEditor;
+        Anlys9: Serenity.StringEditor;
+        Anlys10: Serenity.StringEditor;
+        Anlys11: Serenity.StringEditor;
+        Anlys12: Serenity.StringEditor;
+        Anlys13: Serenity.StringEditor;
+        Anlys14: Serenity.StringEditor;
+        ManualShipmentDetail: Serenity.BooleanEditor;
+        RefCompanyCode: Serenity.StringEditor;
+        RefGrnNo: Serenity.StringEditor;
+        LcName: Serenity.StringEditor;
+    }
+
+    [,
+        ['RefNo', () => Serenity.StringEditor],
+        ['ShipmentDate', () => Serenity.DateEditor],
+        ['Posted', () => Serenity.StringEditor],
+        ['Returned', () => Serenity.StringEditor],
+        ['CustomerNo', () => Serenity.StringEditor],
+        ['CustomerName', () => Serenity.StringEditor],
+        ['ShipTo', () => Serenity.StringEditor],
+        ['Address', () => Serenity.StringEditor],
+        ['Address2', () => Serenity.StringEditor],
+        ['Address3', () => Serenity.StringEditor],
+        ['Address4', () => Serenity.StringEditor],
+        ['CutoffDate', () => Serenity.DateEditor],
+        ['ShipVia', () => Serenity.StringEditor],
+        ['ShipmentTerms', () => Serenity.StringEditor],
+        ['VesselName', () => Serenity.StringEditor],
+        ['Etd', () => Serenity.DateEditor],
+        ['Eta', () => Serenity.DateEditor],
+        ['PayTerms', () => Serenity.StringEditor],
+        ['DiscDays', () => Serenity.DecimalEditor],
+        ['DiscPercent', () => Serenity.DecimalEditor],
+        ['NetDays', () => Serenity.DecimalEditor],
+        ['DiscountDate', () => Serenity.DateEditor],
+        ['DueDate', () => Serenity.DateEditor],
+        ['ExpectedDate', () => Serenity.DateEditor],
+        ['Ccy', () => Serenity.StringEditor],
+        ['ExchRate', () => Serenity.DecimalEditor],
+        ['ShipFrom', () => Serenity.StringEditor],
+        ['OwnerBranch', () => Serenity.StringEditor],
+        ['SourceBranch', () => Serenity.StringEditor],
+        ['ComputeTax', () => Serenity.StringEditor],
+        ['TotPriceAmt', () => Serenity.DecimalEditor],
+        ['TotPtaxAmt', () => Serenity.DecimalEditor],
+        ['TotExtPrice', () => Serenity.DecimalEditor],
+        ['TotLdiscAmt', () => Serenity.DecimalEditor],
+        ['TotAtaxAmt', () => Serenity.DecimalEditor],
+        ['TotItemAmt', () => Serenity.DecimalEditor],
+        ['TotTdiscAmt', () => Serenity.DecimalEditor],
+        ['NetTradeAmt', () => Serenity.DecimalEditor],
+        ['TotChgsAmt', () => Serenity.DecimalEditor],
+        ['NetOrdrAmt', () => Serenity.DecimalEditor],
+        ['TotGtaxAmt', () => Serenity.DecimalEditor],
+        ['NetPayAmt', () => Serenity.DecimalEditor],
+        ['DpsCover', () => Serenity.DecimalEditor],
+        ['DpsApplied', () => Serenity.DecimalEditor],
+        ['NetBalAmt', () => Serenity.DecimalEditor],
+        ['CpdTdiscAmt', () => Serenity.DecimalEditor],
+        ['CpdGtaxAmt', () => Serenity.DecimalEditor],
+        ['CpdDpsAmt', () => Serenity.DecimalEditor],
+        ['LocPriceAmt', () => Serenity.DecimalEditor],
+        ['LocPtaxAmt', () => Serenity.DecimalEditor],
+        ['LocExtPrice', () => Serenity.DecimalEditor],
+        ['LocLdiscAmt', () => Serenity.DecimalEditor],
+        ['LocAtaxAmt', () => Serenity.DecimalEditor],
+        ['LocItemAmt', () => Serenity.DecimalEditor],
+        ['LocTdiscAmt', () => Serenity.DecimalEditor],
+        ['LocChgsAmt', () => Serenity.DecimalEditor],
+        ['LocGtaxAmt', () => Serenity.DecimalEditor],
+        ['LocPayAmt', () => Serenity.DecimalEditor],
+        ['LocDpsApplied', () => Serenity.DecimalEditor],
+        ['CreatedDate', () => Serenity.DateEditor],
+        ['CreatedBy', () => Serenity.StringEditor],
+        ['RevisedDate', () => Serenity.DateEditor],
+        ['RevisedBy', () => Serenity.StringEditor],
+        ['PostedDate', () => Serenity.DateEditor],
+        ['PostedBy', () => Serenity.StringEditor],
+        ['PrevisedDate', () => Serenity.DateEditor],
+        ['PrevisedBy', () => Serenity.StringEditor],
+        ['LastEntryNo', () => Serenity.DecimalEditor],
+        ['LastChgsNo', () => Serenity.DecimalEditor],
+        ['LastTextNo', () => Serenity.DecimalEditor],
+        ['LastCtnNo', () => Serenity.DecimalEditor],
+        ['LockType', () => Serenity.StringEditor],
+        ['LockRefNo', () => Serenity.StringEditor],
+        ['LastLogNo', () => Serenity.DecimalEditor],
+        ['NewItemCount', () => Serenity.DecimalEditor],
+        ['NewChgsCount', () => Serenity.DecimalEditor],
+        ['AcctCustomer', () => Serenity.StringEditor],
+        ['AcctTdisc', () => Serenity.StringEditor],
+        ['AcctGtax', () => Serenity.StringEditor],
+        ['DpsApplyRef', () => Serenity.StringEditor],
+        ['VendTaxCode', () => Serenity.StringEditor],
+        ['CustTaxCode', () => Serenity.StringEditor],
+        ['RetPriceAmt', () => Serenity.DecimalEditor],
+        ['RetPtaxAmt', () => Serenity.DecimalEditor],
+        ['RetExtPrice', () => Serenity.DecimalEditor],
+        ['RetLdiscAmt', () => Serenity.DecimalEditor],
+        ['RetAtaxAmt', () => Serenity.DecimalEditor],
+        ['RetItemAmt', () => Serenity.DecimalEditor],
+        ['RetTdiscAmt', () => Serenity.DecimalEditor],
+        ['RetGtaxAmt', () => Serenity.DecimalEditor],
+        ['RetChgsAmt', () => Serenity.DecimalEditor],
+        ['RetPayAmt', () => Serenity.DecimalEditor],
+        ['LretPriceAmt', () => Serenity.DecimalEditor],
+        ['LretPtaxAmt', () => Serenity.DecimalEditor],
+        ['LretExtPrice', () => Serenity.DecimalEditor],
+        ['LretLdiscAmt', () => Serenity.DecimalEditor],
+        ['LretAtaxAmt', () => Serenity.DecimalEditor],
+        ['LretItemAmt', () => Serenity.DecimalEditor],
+        ['LretTdiscAmt', () => Serenity.DecimalEditor],
+        ['LretGtaxAmt', () => Serenity.DecimalEditor],
+        ['LretChgsAmt', () => Serenity.DecimalEditor],
+        ['LretPayAmt', () => Serenity.DecimalEditor],
+        ['WeightUom', () => Serenity.StringEditor],
+        ['GrWt', () => Serenity.DecimalEditor],
+        ['NtWt', () => Serenity.DecimalEditor],
+        ['DimensionUom', () => Serenity.StringEditor],
+        ['Volume', () => Serenity.DecimalEditor],
+        ['GlLink', () => Serenity.StringEditor],
+        ['GlLinkType', () => Serenity.StringEditor],
+        ['GlLinkNo', () => Serenity.StringEditor],
+        ['PackingOk', () => Serenity.StringEditor],
+        ['Comments1', () => Serenity.StringEditor],
+        ['Comments2', () => Serenity.StringEditor],
+        ['Comments3', () => Serenity.StringEditor],
+        ['Comments4', () => Serenity.StringEditor],
+        ['SettleAt', () => Serenity.StringEditor],
+        ['CheckCrlimit', () => Serenity.StringEditor],
+        ['CheckCrbal', () => Serenity.DecimalEditor],
+        ['Attention', () => Serenity.StringEditor],
+        ['TelNo', () => Serenity.StringEditor],
+        ['FaxNo', () => Serenity.StringEditor],
+        ['PortLoading', () => Serenity.StringEditor],
+        ['PortDischarge', () => Serenity.StringEditor],
+        ['Forwarder', () => Serenity.StringEditor],
+        ['LcNo', () => Serenity.StringEditor],
+        ['OriginCountry', () => Serenity.StringEditor],
+        ['Comments5', () => Serenity.StringEditor],
+        ['Comments6', () => Serenity.StringEditor],
+        ['Comments7', () => Serenity.StringEditor],
+        ['Comments8', () => Serenity.StringEditor],
+        ['IssueBank', () => Serenity.StringEditor],
+        ['IssueDate', () => Serenity.DateEditor],
+        ['SltaxType', () => Serenity.StringEditor],
+        ['GsltaxPcent', () => Serenity.DecimalEditor],
+        ['TotGsltaxAmt', () => Serenity.DecimalEditor],
+        ['TotLsltaxAmt', () => Serenity.DecimalEditor],
+        ['LocGsltaxAmt', () => Serenity.DecimalEditor],
+        ['LocLsltaxAmt', () => Serenity.DecimalEditor],
+        ['SoSltaxType', () => Serenity.StringEditor],
+        ['SoGsltaxPcent', () => Serenity.DecimalEditor],
+        ['OrderCount', () => Serenity.DecimalEditor],
+        ['AcctSltax', () => Serenity.StringEditor],
+        ['LastTextNo1', () => Serenity.DecimalEditor],
+        ['Anlys1', () => Serenity.StringEditor],
+        ['Anlys2', () => Serenity.StringEditor],
+        ['Anlys7', () => Serenity.StringEditor],
+        ['Anlys8', () => Serenity.StringEditor],
+        ['DnOnly', () => Serenity.StringEditor],
+        ['Invoiced', () => Serenity.StringEditor],
+        ['InvoiceNo', () => Serenity.StringEditor],
+        ['Flag', () => Serenity.StringEditor],
+        ['HoldBy', () => Serenity.StringEditor],
+        ['Anlys9', () => Serenity.StringEditor],
+        ['Anlys10', () => Serenity.StringEditor],
+        ['Anlys11', () => Serenity.StringEditor],
+        ['Anlys12', () => Serenity.StringEditor],
+        ['Anlys13', () => Serenity.StringEditor],
+        ['Anlys14', () => Serenity.StringEditor],
+        ['ManualShipmentDetail', () => Serenity.BooleanEditor],
+        ['RefCompanyCode', () => Serenity.StringEditor],
+        ['RefGrnNo', () => Serenity.StringEditor],
+        ['LcName', () => Serenity.StringEditor]
+    ].forEach(x => Object.defineProperty(ShipmentForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

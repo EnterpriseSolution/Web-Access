@@ -1,0 +1,506 @@
+﻿
+namespace Matrix.Sales {
+    export interface ShipmentRow {
+        Recnum?: number;
+        RefNo?: string;
+        ShipmentDate?: string;
+        Posted?: string;
+        Returned?: string;
+        CustomerNo?: string;
+        CustomerName?: string;
+        ShipTo?: string;
+        Address?: string;
+        Address2?: string;
+        Address3?: string;
+        Address4?: string;
+        CutoffDate?: string;
+        ShipVia?: string;
+        ShipmentTerms?: string;
+        VesselName?: string;
+        Etd?: string;
+        Eta?: string;
+        PayTerms?: string;
+        DiscDays?: number;
+        DiscPercent?: number;
+        NetDays?: number;
+        DiscountDate?: string;
+        DueDate?: string;
+        ExpectedDate?: string;
+        Ccy?: string;
+        ExchRate?: number;
+        ShipFrom?: string;
+        OwnerBranch?: string;
+        SourceBranch?: string;
+        ComputeTax?: string;
+        TotPriceAmt?: number;
+        TotPtaxAmt?: number;
+        TotExtPrice?: number;
+        TotLdiscAmt?: number;
+        TotAtaxAmt?: number;
+        TotItemAmt?: number;
+        TotTdiscAmt?: number;
+        NetTradeAmt?: number;
+        TotChgsAmt?: number;
+        NetOrdrAmt?: number;
+        TotGtaxAmt?: number;
+        NetPayAmt?: number;
+        DpsCover?: number;
+        DpsApplied?: number;
+        NetBalAmt?: number;
+        CpdTdiscAmt?: number;
+        CpdGtaxAmt?: number;
+        CpdDpsAmt?: number;
+        LocPriceAmt?: number;
+        LocPtaxAmt?: number;
+        LocExtPrice?: number;
+        LocLdiscAmt?: number;
+        LocAtaxAmt?: number;
+        LocItemAmt?: number;
+        LocTdiscAmt?: number;
+        LocChgsAmt?: number;
+        LocGtaxAmt?: number;
+        LocPayAmt?: number;
+        LocDpsApplied?: number;
+        CreatedDate?: string;
+        CreatedBy?: string;
+        RevisedDate?: string;
+        RevisedBy?: string;
+        PostedDate?: string;
+        PostedBy?: string;
+        PrevisedDate?: string;
+        PrevisedBy?: string;
+        LastEntryNo?: number;
+        LastChgsNo?: number;
+        LastTextNo?: number;
+        LastCtnNo?: number;
+        LockType?: string;
+        LockRefNo?: string;
+        LastLogNo?: number;
+        NewItemCount?: number;
+        NewChgsCount?: number;
+        AcctCustomer?: string;
+        AcctTdisc?: string;
+        AcctGtax?: string;
+        DpsApplyRef?: string;
+        VendTaxCode?: string;
+        CustTaxCode?: string;
+        RetPriceAmt?: number;
+        RetPtaxAmt?: number;
+        RetExtPrice?: number;
+        RetLdiscAmt?: number;
+        RetAtaxAmt?: number;
+        RetItemAmt?: number;
+        RetTdiscAmt?: number;
+        RetGtaxAmt?: number;
+        RetChgsAmt?: number;
+        RetPayAmt?: number;
+        LretPriceAmt?: number;
+        LretPtaxAmt?: number;
+        LretExtPrice?: number;
+        LretLdiscAmt?: number;
+        LretAtaxAmt?: number;
+        LretItemAmt?: number;
+        LretTdiscAmt?: number;
+        LretGtaxAmt?: number;
+        LretChgsAmt?: number;
+        LretPayAmt?: number;
+        WeightUom?: string;
+        GrWt?: number;
+        NtWt?: number;
+        DimensionUom?: string;
+        Volume?: number;
+        GlLink?: string;
+        GlLinkType?: string;
+        GlLinkNo?: string;
+        PackingOk?: string;
+        Comments1?: string;
+        Comments2?: string;
+        Comments3?: string;
+        Comments4?: string;
+        SettleAt?: string;
+        CheckCrlimit?: string;
+        CheckCrbal?: number;
+        Attention?: string;
+        TelNo?: string;
+        FaxNo?: string;
+        PortLoading?: string;
+        PortDischarge?: string;
+        Forwarder?: string;
+        LcNo?: string;
+        OriginCountry?: string;
+        Comments5?: string;
+        Comments6?: string;
+        Comments7?: string;
+        Comments8?: string;
+        IssueBank?: string;
+        IssueDate?: string;
+        SltaxType?: string;
+        GsltaxPcent?: number;
+        TotGsltaxAmt?: number;
+        TotLsltaxAmt?: number;
+        LocGsltaxAmt?: number;
+        LocLsltaxAmt?: number;
+        SoSltaxType?: string;
+        SoGsltaxPcent?: number;
+        OrderCount?: number;
+        AcctSltax?: string;
+        LastTextNo1?: number;
+        Anlys1?: string;
+        Anlys2?: string;
+        Anlys7?: string;
+        Anlys8?: string;
+        DnOnly?: string;
+        Invoiced?: string;
+        InvoiceNo?: string;
+        Flag?: string;
+        HoldBy?: string;
+        Anlys9?: string;
+        Anlys10?: string;
+        Anlys11?: string;
+        Anlys12?: string;
+        Anlys13?: string;
+        Anlys14?: string;
+        ManualShipmentDetail?: boolean;
+        RefCompanyCode?: string;
+        RefGrnNo?: string;
+        LcName?: string;
+    }
+
+    export namespace ShipmentRow {
+        export const idProperty = 'Recnum';
+        export const nameProperty = 'RefNo';
+        export const localTextPrefix = 'Sales.Shipment';
+
+        export namespace Fields {
+            export declare const Recnum;
+            export declare const RefNo;
+            export declare const ShipmentDate;
+            export declare const Posted;
+            export declare const Returned;
+            export declare const CustomerNo;
+            export declare const CustomerName;
+            export declare const ShipTo;
+            export declare const Address;
+            export declare const Address2;
+            export declare const Address3;
+            export declare const Address4;
+            export declare const CutoffDate;
+            export declare const ShipVia;
+            export declare const ShipmentTerms;
+            export declare const VesselName;
+            export declare const Etd;
+            export declare const Eta;
+            export declare const PayTerms;
+            export declare const DiscDays;
+            export declare const DiscPercent;
+            export declare const NetDays;
+            export declare const DiscountDate;
+            export declare const DueDate;
+            export declare const ExpectedDate;
+            export declare const Ccy;
+            export declare const ExchRate;
+            export declare const ShipFrom;
+            export declare const OwnerBranch;
+            export declare const SourceBranch;
+            export declare const ComputeTax;
+            export declare const TotPriceAmt;
+            export declare const TotPtaxAmt;
+            export declare const TotExtPrice;
+            export declare const TotLdiscAmt;
+            export declare const TotAtaxAmt;
+            export declare const TotItemAmt;
+            export declare const TotTdiscAmt;
+            export declare const NetTradeAmt;
+            export declare const TotChgsAmt;
+            export declare const NetOrdrAmt;
+            export declare const TotGtaxAmt;
+            export declare const NetPayAmt;
+            export declare const DpsCover;
+            export declare const DpsApplied;
+            export declare const NetBalAmt;
+            export declare const CpdTdiscAmt;
+            export declare const CpdGtaxAmt;
+            export declare const CpdDpsAmt;
+            export declare const LocPriceAmt;
+            export declare const LocPtaxAmt;
+            export declare const LocExtPrice;
+            export declare const LocLdiscAmt;
+            export declare const LocAtaxAmt;
+            export declare const LocItemAmt;
+            export declare const LocTdiscAmt;
+            export declare const LocChgsAmt;
+            export declare const LocGtaxAmt;
+            export declare const LocPayAmt;
+            export declare const LocDpsApplied;
+            export declare const CreatedDate;
+            export declare const CreatedBy;
+            export declare const RevisedDate;
+            export declare const RevisedBy;
+            export declare const PostedDate;
+            export declare const PostedBy;
+            export declare const PrevisedDate;
+            export declare const PrevisedBy;
+            export declare const LastEntryNo;
+            export declare const LastChgsNo;
+            export declare const LastTextNo;
+            export declare const LastCtnNo;
+            export declare const LockType;
+            export declare const LockRefNo;
+            export declare const LastLogNo;
+            export declare const NewItemCount;
+            export declare const NewChgsCount;
+            export declare const AcctCustomer;
+            export declare const AcctTdisc;
+            export declare const AcctGtax;
+            export declare const DpsApplyRef;
+            export declare const VendTaxCode;
+            export declare const CustTaxCode;
+            export declare const RetPriceAmt;
+            export declare const RetPtaxAmt;
+            export declare const RetExtPrice;
+            export declare const RetLdiscAmt;
+            export declare const RetAtaxAmt;
+            export declare const RetItemAmt;
+            export declare const RetTdiscAmt;
+            export declare const RetGtaxAmt;
+            export declare const RetChgsAmt;
+            export declare const RetPayAmt;
+            export declare const LretPriceAmt;
+            export declare const LretPtaxAmt;
+            export declare const LretExtPrice;
+            export declare const LretLdiscAmt;
+            export declare const LretAtaxAmt;
+            export declare const LretItemAmt;
+            export declare const LretTdiscAmt;
+            export declare const LretGtaxAmt;
+            export declare const LretChgsAmt;
+            export declare const LretPayAmt;
+            export declare const WeightUom;
+            export declare const GrWt;
+            export declare const NtWt;
+            export declare const DimensionUom;
+            export declare const Volume;
+            export declare const GlLink;
+            export declare const GlLinkType;
+            export declare const GlLinkNo;
+            export declare const PackingOk;
+            export declare const Comments1;
+            export declare const Comments2;
+            export declare const Comments3;
+            export declare const Comments4;
+            export declare const SettleAt;
+            export declare const CheckCrlimit;
+            export declare const CheckCrbal;
+            export declare const Attention;
+            export declare const TelNo;
+            export declare const FaxNo;
+            export declare const PortLoading;
+            export declare const PortDischarge;
+            export declare const Forwarder;
+            export declare const LcNo;
+            export declare const OriginCountry;
+            export declare const Comments5;
+            export declare const Comments6;
+            export declare const Comments7;
+            export declare const Comments8;
+            export declare const IssueBank;
+            export declare const IssueDate;
+            export declare const SltaxType;
+            export declare const GsltaxPcent;
+            export declare const TotGsltaxAmt;
+            export declare const TotLsltaxAmt;
+            export declare const LocGsltaxAmt;
+            export declare const LocLsltaxAmt;
+            export declare const SoSltaxType;
+            export declare const SoGsltaxPcent;
+            export declare const OrderCount;
+            export declare const AcctSltax;
+            export declare const LastTextNo1;
+            export declare const Anlys1;
+            export declare const Anlys2;
+            export declare const Anlys7;
+            export declare const Anlys8;
+            export declare const DnOnly;
+            export declare const Invoiced;
+            export declare const InvoiceNo;
+            export declare const Flag;
+            export declare const HoldBy;
+            export declare const Anlys9;
+            export declare const Anlys10;
+            export declare const Anlys11;
+            export declare const Anlys12;
+            export declare const Anlys13;
+            export declare const Anlys14;
+            export declare const ManualShipmentDetail;
+            export declare const RefCompanyCode;
+            export declare const RefGrnNo;
+            export declare const LcName;
+        }
+
+        [
+            'Recnum',
+            'RefNo',
+            'ShipmentDate',
+            'Posted',
+            'Returned',
+            'CustomerNo',
+            'CustomerName',
+            'ShipTo',
+            'Address',
+            'Address2',
+            'Address3',
+            'Address4',
+            'CutoffDate',
+            'ShipVia',
+            'ShipmentTerms',
+            'VesselName',
+            'Etd',
+            'Eta',
+            'PayTerms',
+            'DiscDays',
+            'DiscPercent',
+            'NetDays',
+            'DiscountDate',
+            'DueDate',
+            'ExpectedDate',
+            'Ccy',
+            'ExchRate',
+            'ShipFrom',
+            'OwnerBranch',
+            'SourceBranch',
+            'ComputeTax',
+            'TotPriceAmt',
+            'TotPtaxAmt',
+            'TotExtPrice',
+            'TotLdiscAmt',
+            'TotAtaxAmt',
+            'TotItemAmt',
+            'TotTdiscAmt',
+            'NetTradeAmt',
+            'TotChgsAmt',
+            'NetOrdrAmt',
+            'TotGtaxAmt',
+            'NetPayAmt',
+            'DpsCover',
+            'DpsApplied',
+            'NetBalAmt',
+            'CpdTdiscAmt',
+            'CpdGtaxAmt',
+            'CpdDpsAmt',
+            'LocPriceAmt',
+            'LocPtaxAmt',
+            'LocExtPrice',
+            'LocLdiscAmt',
+            'LocAtaxAmt',
+            'LocItemAmt',
+            'LocTdiscAmt',
+            'LocChgsAmt',
+            'LocGtaxAmt',
+            'LocPayAmt',
+            'LocDpsApplied',
+            'CreatedDate',
+            'CreatedBy',
+            'RevisedDate',
+            'RevisedBy',
+            'PostedDate',
+            'PostedBy',
+            'PrevisedDate',
+            'PrevisedBy',
+            'LastEntryNo',
+            'LastChgsNo',
+            'LastTextNo',
+            'LastCtnNo',
+            'LockType',
+            'LockRefNo',
+            'LastLogNo',
+            'NewItemCount',
+            'NewChgsCount',
+            'AcctCustomer',
+            'AcctTdisc',
+            'AcctGtax',
+            'DpsApplyRef',
+            'VendTaxCode',
+            'CustTaxCode',
+            'RetPriceAmt',
+            'RetPtaxAmt',
+            'RetExtPrice',
+            'RetLdiscAmt',
+            'RetAtaxAmt',
+            'RetItemAmt',
+            'RetTdiscAmt',
+            'RetGtaxAmt',
+            'RetChgsAmt',
+            'RetPayAmt',
+            'LretPriceAmt',
+            'LretPtaxAmt',
+            'LretExtPrice',
+            'LretLdiscAmt',
+            'LretAtaxAmt',
+            'LretItemAmt',
+            'LretTdiscAmt',
+            'LretGtaxAmt',
+            'LretChgsAmt',
+            'LretPayAmt',
+            'WeightUom',
+            'GrWt',
+            'NtWt',
+            'DimensionUom',
+            'Volume',
+            'GlLink',
+            'GlLinkType',
+            'GlLinkNo',
+            'PackingOk',
+            'Comments1',
+            'Comments2',
+            'Comments3',
+            'Comments4',
+            'SettleAt',
+            'CheckCrlimit',
+            'CheckCrbal',
+            'Attention',
+            'TelNo',
+            'FaxNo',
+            'PortLoading',
+            'PortDischarge',
+            'Forwarder',
+            'LcNo',
+            'OriginCountry',
+            'Comments5',
+            'Comments6',
+            'Comments7',
+            'Comments8',
+            'IssueBank',
+            'IssueDate',
+            'SltaxType',
+            'GsltaxPcent',
+            'TotGsltaxAmt',
+            'TotLsltaxAmt',
+            'LocGsltaxAmt',
+            'LocLsltaxAmt',
+            'SoSltaxType',
+            'SoGsltaxPcent',
+            'OrderCount',
+            'AcctSltax',
+            'LastTextNo1',
+            'Anlys1',
+            'Anlys2',
+            'Anlys7',
+            'Anlys8',
+            'DnOnly',
+            'Invoiced',
+            'InvoiceNo',
+            'Flag',
+            'HoldBy',
+            'Anlys9',
+            'Anlys10',
+            'Anlys11',
+            'Anlys12',
+            'Anlys13',
+            'Anlys14',
+            'ManualShipmentDetail',
+            'RefCompanyCode',
+            'RefGrnNo',
+            'LcName'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

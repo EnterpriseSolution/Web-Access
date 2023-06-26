@@ -1,0 +1,144 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-lg-12">Top</div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-lg-4">Bottem Left</div>
+        <div class="col-lg-4">Bottom Center</div>
+        <div class="col-lg-4">Bottom Right</div>
+    </div>
+</div>
+
+
+<style type="text/css">
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+        .row .sp {
+            min-height: 170px;
+            margin-bottom: 10px;
+            border-bottom: 3px #eee solid;
+        }
+
+    .editor {
+        border-right: 3px #eee solid;
+    }
+
+    .pane-label {
+        position: absolute;
+        z-index: 99;
+        padding: 0;
+        font-size: 80%;
+        opacity: .4;
+        right: 15px;
+        bottom: 15px;
+        margin: 0;
+    }
+    
+    .row .sp {
+        width: 48.62% !important;
+    }
+
+    
+    .row .sp {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+
+
+
+    .row .sp {
+        width: 49.62% !important;
+    }
+
+
+
+    .row .sp {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+
+    .cont {
+        width: 100%;
+    }
+
+
+    .inner {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+
+    .ui-resizable {
+        position: relative;
+    }
+
+    .ui-resizable-handle {
+        position: absolute;
+        font-size: 0.1px;
+        z-index: 99999;
+        display: block;
+    }
+
+    .ui-resizable-w {
+        cursor: w-resize;
+        width: 7px;
+        left: -5px;
+        top: 0;
+        height: 100%;
+    }
+</style>
+<script type="text/javascript">
+    $(window).bind("resize", function (event) {
+        if (this == event.target) {
+            $('.sp').removeAttr('style');
+        }
+    });
+
+
+    $('.editor').resizable({
+        handles: 'e, s',
+        minWidth: 100,
+        maxWidth: 900,
+        resize: function (event, ui) {
+            var x = ui.element.outerWidth();
+            var y = ui.element.outerHeight();
+            var ele = ui.element;
+            var factor = $(this).parent().width() - x;
+            var f2 = $(this).parent().width() * .02999;
+            console.log(f2);
+            $.each(ele.siblings(), function (idx, item) {
+
+                ele.siblings().eq(idx).css('height', y + 'px');
+                //ele.siblings().eq(idx).css('width',(factor-41)+'px');
+                ele.siblings().eq(idx).width((factor - f2) + 'px');
+
+            });
+        }
+    });
+
+    $('.sp:not(.editor)').resizable({
+        handles: 's',
+        resize: function (event, ui) {
+
+            var y = ui.element.outerHeight();
+            var ele = ui.element;
+
+            $.each(ele.siblings(), function (idx, item) {
+                ele.siblings().eq(idx).css('height', y + 'px');
+            });
+        }
+    });
+
+
+
+</script>

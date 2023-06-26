@@ -1,0 +1,44 @@
+﻿@using System.Collections.Generic
+@model Dictionary<string, List<string>>
+@{
+    ViewData["Title"] = "Dashboard";
+    ViewData["PageId"] = "Dashboard";
+}
+
+@section Head {
+    @Html.StyleBundle("Pages/Dashboard")
+    @Html.ScriptBundle("Pages/Dashboard")
+}
+
+@section ContentHeader {
+    <h1>@LocalText.Get("Navigation.Dashboard")</h1>
+}
+
+<div class="row">
+
+    @{
+        foreach (KeyValuePair<string, List<string>> pair in Model)
+        {
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h4>@pair.Key.Replace("Controller", string.Empty)</h4>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+
+                    <ul class="list-group">
+                        @foreach (var action in pair.Value)
+                        {
+                            <li class="list-group-item">
+                                <a href="~/@pair.Key/@action" class="small-box-footer">@action</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
+</div>

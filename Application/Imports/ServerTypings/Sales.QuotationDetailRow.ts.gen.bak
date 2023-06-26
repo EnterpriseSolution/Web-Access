@@ -1,0 +1,398 @@
+﻿
+namespace Matrix.Sales {
+    export interface QuotationDetailRow {
+        Recnum?: number;
+        RefNo?: string;
+        LineNo?: number;
+        ItemNo?: string;
+        Description?: string;
+        Uom?: string;
+        LotSize?: number;
+        Qty?: number;
+        Price?: number;
+        Ptax?: number;
+        NetPrice?: number;
+        ExtPrice?: number;
+        LdiscPcent?: number;
+        LdiscAmt?: number;
+        AtaxAmt?: number;
+        NetItemAmt?: number;
+        PriceAmt?: number;
+        PtaxAmt?: number;
+        PriceCpd?: number;
+        PtaxCpd?: number;
+        CreatedDate?: string;
+        CreatedBy?: string;
+        RevisedDate?: string;
+        RevisedBy?: string;
+        Configurable?: string;
+        CustItemNo?: string;
+        SpecNo?: string;
+        BomNo?: string;
+        StdAssort?: string;
+        ExtDescription?: string;
+        SltaxPcent?: number;
+        SltaxAmt?: number;
+        Anlys3?: string;
+        Anlys4?: string;
+        Anlys5?: string;
+        Anlys6?: string;
+        MarkupPcent?: number;
+        Markup?: number;
+        MoldBomNo?: string;
+        MoldFormulaCode?: string;
+        MoldExpectedQty?: number;
+        Anlys15?: string;
+        Anlys16?: string;
+        Anlys17?: string;
+        Anlys18?: string;
+        Anlys19?: string;
+        Anlys20?: string;
+        RefNoRecnum?: number;
+        RefNoIssueDate?: string;
+        RefNoValidUntil?: string;
+        RefNoClosed?: string;
+        RefNoCustomerNo?: string;
+        RefNoCustomerName?: string;
+        RefNoAddress?: string;
+        RefNoAddress2?: string;
+        RefNoAddress3?: string;
+        RefNoAddress4?: string;
+        RefNoAttention?: string;
+        RefNoShipVia?: string;
+        RefNoShipmentTerms?: string;
+        RefNoBaseLoc?: string;
+        RefNoSalesman?: string;
+        RefNoPayTerms?: string;
+        RefNoPriceCode?: string;
+        RefNoAnlys1?: string;
+        RefNoAnlys2?: string;
+        RefNoCcy?: string;
+        RefNoExchRate?: number;
+        RefNoComputeTax?: string;
+        RefNoLastLineNo?: number;
+        RefNoLastMailNo?: number;
+        RefNoLastTextNo?: number;
+        RefNoTotPriceAmt?: number;
+        RefNoTotPtaxAmt?: number;
+        RefNoTotExtPrice?: number;
+        RefNoTotLdiscAmt?: number;
+        RefNoTotAtaxAmt?: number;
+        RefNoTotItemAmt?: number;
+        RefNoTdiscPcent?: number;
+        RefNoTotTdiscAmt?: number;
+        RefNoNetTradeAmt?: number;
+        RefNoTotChgsAmt?: number;
+        RefNoNetOrdrAmt?: number;
+        RefNoTotGtaxAmt?: number;
+        RefNoNetPayAmt?: number;
+        RefNoDpsPcent?: number;
+        RefNoTotDpsAmt?: number;
+        RefNoCreatedDate?: string;
+        RefNoCreatedBy?: string;
+        RefNoRevisedDate?: string;
+        RefNoRevisedBy?: string;
+        RefNoTotTdiscCpd?: number;
+        RefNoTotGtaxCpd?: number;
+        RefNoTotDpsCpd?: number;
+        RefNoClosedDate?: string;
+        RefNoClosedBy?: string;
+        RefNoComments1?: string;
+        RefNoComments2?: string;
+        RefNoComments3?: string;
+        RefNoComments4?: string;
+        RefNoWebPublished?: string;
+        RefNoConfirmed?: string;
+        RefNoRfqNo?: string;
+        RefNoWebUserName?: string;
+        RefNoShipTo?: string;
+        RefNoTelNo?: string;
+        RefNoFaxNo?: string;
+        RefNoPortLoading?: string;
+        RefNoPortDischarge?: string;
+        RefNoOriginCountry?: string;
+        RefNoSltaxType?: string;
+        RefNoGsltaxPcent?: number;
+        RefNoTotGsltaxAmt?: number;
+        RefNoTotLsltaxAmt?: number;
+        RefNoAnlys7?: string;
+        RefNoAnlys8?: string;
+        RefNoMarkupDecimal?: number;
+        RefNoPkgUnit?: string;
+        RefNoWeightUnit?: string;
+        RefNoAnlys9?: string;
+        RefNoAnlys10?: string;
+        RefNoAnlys11?: string;
+        RefNoAnlys12?: string;
+        RefNoAnlys13?: string;
+        RefNoAnlys14?: string;
+        RefNoItemCode?: string;
+        RefNoTransport?: string;
+    }
+
+    export namespace QuotationDetailRow {
+        export const idProperty = 'Recnum';
+        export const nameProperty = 'RefNo';
+        export const localTextPrefix = 'Sales.QuotationDetail';
+
+        export namespace Fields {
+            export declare const Recnum;
+            export declare const RefNo;
+            export declare const LineNo;
+            export declare const ItemNo;
+            export declare const Description;
+            export declare const Uom;
+            export declare const LotSize;
+            export declare const Qty;
+            export declare const Price;
+            export declare const Ptax;
+            export declare const NetPrice;
+            export declare const ExtPrice;
+            export declare const LdiscPcent;
+            export declare const LdiscAmt;
+            export declare const AtaxAmt;
+            export declare const NetItemAmt;
+            export declare const PriceAmt;
+            export declare const PtaxAmt;
+            export declare const PriceCpd;
+            export declare const PtaxCpd;
+            export declare const CreatedDate;
+            export declare const CreatedBy;
+            export declare const RevisedDate;
+            export declare const RevisedBy;
+            export declare const Configurable;
+            export declare const CustItemNo;
+            export declare const SpecNo;
+            export declare const BomNo;
+            export declare const StdAssort;
+            export declare const ExtDescription;
+            export declare const SltaxPcent;
+            export declare const SltaxAmt;
+            export declare const Anlys3;
+            export declare const Anlys4;
+            export declare const Anlys5;
+            export declare const Anlys6;
+            export declare const MarkupPcent;
+            export declare const Markup;
+            export declare const MoldBomNo;
+            export declare const MoldFormulaCode;
+            export declare const MoldExpectedQty;
+            export declare const Anlys15;
+            export declare const Anlys16;
+            export declare const Anlys17;
+            export declare const Anlys18;
+            export declare const Anlys19;
+            export declare const Anlys20;
+            export declare const RefNoRecnum;
+            export declare const RefNoIssueDate;
+            export declare const RefNoValidUntil;
+            export declare const RefNoClosed;
+            export declare const RefNoCustomerNo;
+            export declare const RefNoCustomerName;
+            export declare const RefNoAddress;
+            export declare const RefNoAddress2;
+            export declare const RefNoAddress3;
+            export declare const RefNoAddress4;
+            export declare const RefNoAttention;
+            export declare const RefNoShipVia;
+            export declare const RefNoShipmentTerms;
+            export declare const RefNoBaseLoc;
+            export declare const RefNoSalesman;
+            export declare const RefNoPayTerms;
+            export declare const RefNoPriceCode;
+            export declare const RefNoAnlys1;
+            export declare const RefNoAnlys2;
+            export declare const RefNoCcy;
+            export declare const RefNoExchRate;
+            export declare const RefNoComputeTax;
+            export declare const RefNoLastLineNo;
+            export declare const RefNoLastMailNo;
+            export declare const RefNoLastTextNo;
+            export declare const RefNoTotPriceAmt;
+            export declare const RefNoTotPtaxAmt;
+            export declare const RefNoTotExtPrice;
+            export declare const RefNoTotLdiscAmt;
+            export declare const RefNoTotAtaxAmt;
+            export declare const RefNoTotItemAmt;
+            export declare const RefNoTdiscPcent;
+            export declare const RefNoTotTdiscAmt;
+            export declare const RefNoNetTradeAmt;
+            export declare const RefNoTotChgsAmt;
+            export declare const RefNoNetOrdrAmt;
+            export declare const RefNoTotGtaxAmt;
+            export declare const RefNoNetPayAmt;
+            export declare const RefNoDpsPcent;
+            export declare const RefNoTotDpsAmt;
+            export declare const RefNoCreatedDate;
+            export declare const RefNoCreatedBy;
+            export declare const RefNoRevisedDate;
+            export declare const RefNoRevisedBy;
+            export declare const RefNoTotTdiscCpd;
+            export declare const RefNoTotGtaxCpd;
+            export declare const RefNoTotDpsCpd;
+            export declare const RefNoClosedDate;
+            export declare const RefNoClosedBy;
+            export declare const RefNoComments1;
+            export declare const RefNoComments2;
+            export declare const RefNoComments3;
+            export declare const RefNoComments4;
+            export declare const RefNoWebPublished;
+            export declare const RefNoConfirmed;
+            export declare const RefNoRfqNo;
+            export declare const RefNoWebUserName;
+            export declare const RefNoShipTo;
+            export declare const RefNoTelNo;
+            export declare const RefNoFaxNo;
+            export declare const RefNoPortLoading;
+            export declare const RefNoPortDischarge;
+            export declare const RefNoOriginCountry;
+            export declare const RefNoSltaxType;
+            export declare const RefNoGsltaxPcent;
+            export declare const RefNoTotGsltaxAmt;
+            export declare const RefNoTotLsltaxAmt;
+            export declare const RefNoAnlys7;
+            export declare const RefNoAnlys8;
+            export declare const RefNoMarkupDecimal;
+            export declare const RefNoPkgUnit;
+            export declare const RefNoWeightUnit;
+            export declare const RefNoAnlys9;
+            export declare const RefNoAnlys10;
+            export declare const RefNoAnlys11;
+            export declare const RefNoAnlys12;
+            export declare const RefNoAnlys13;
+            export declare const RefNoAnlys14;
+            export declare const RefNoItemCode;
+            export declare const RefNoTransport;
+        }
+
+        [
+            'Recnum',
+            'RefNo',
+            'LineNo',
+            'ItemNo',
+            'Description',
+            'Uom',
+            'LotSize',
+            'Qty',
+            'Price',
+            'Ptax',
+            'NetPrice',
+            'ExtPrice',
+            'LdiscPcent',
+            'LdiscAmt',
+            'AtaxAmt',
+            'NetItemAmt',
+            'PriceAmt',
+            'PtaxAmt',
+            'PriceCpd',
+            'PtaxCpd',
+            'CreatedDate',
+            'CreatedBy',
+            'RevisedDate',
+            'RevisedBy',
+            'Configurable',
+            'CustItemNo',
+            'SpecNo',
+            'BomNo',
+            'StdAssort',
+            'ExtDescription',
+            'SltaxPcent',
+            'SltaxAmt',
+            'Anlys3',
+            'Anlys4',
+            'Anlys5',
+            'Anlys6',
+            'MarkupPcent',
+            'Markup',
+            'MoldBomNo',
+            'MoldFormulaCode',
+            'MoldExpectedQty',
+            'Anlys15',
+            'Anlys16',
+            'Anlys17',
+            'Anlys18',
+            'Anlys19',
+            'Anlys20',
+            'RefNoRecnum',
+            'RefNoIssueDate',
+            'RefNoValidUntil',
+            'RefNoClosed',
+            'RefNoCustomerNo',
+            'RefNoCustomerName',
+            'RefNoAddress',
+            'RefNoAddress2',
+            'RefNoAddress3',
+            'RefNoAddress4',
+            'RefNoAttention',
+            'RefNoShipVia',
+            'RefNoShipmentTerms',
+            'RefNoBaseLoc',
+            'RefNoSalesman',
+            'RefNoPayTerms',
+            'RefNoPriceCode',
+            'RefNoAnlys1',
+            'RefNoAnlys2',
+            'RefNoCcy',
+            'RefNoExchRate',
+            'RefNoComputeTax',
+            'RefNoLastLineNo',
+            'RefNoLastMailNo',
+            'RefNoLastTextNo',
+            'RefNoTotPriceAmt',
+            'RefNoTotPtaxAmt',
+            'RefNoTotExtPrice',
+            'RefNoTotLdiscAmt',
+            'RefNoTotAtaxAmt',
+            'RefNoTotItemAmt',
+            'RefNoTdiscPcent',
+            'RefNoTotTdiscAmt',
+            'RefNoNetTradeAmt',
+            'RefNoTotChgsAmt',
+            'RefNoNetOrdrAmt',
+            'RefNoTotGtaxAmt',
+            'RefNoNetPayAmt',
+            'RefNoDpsPcent',
+            'RefNoTotDpsAmt',
+            'RefNoCreatedDate',
+            'RefNoCreatedBy',
+            'RefNoRevisedDate',
+            'RefNoRevisedBy',
+            'RefNoTotTdiscCpd',
+            'RefNoTotGtaxCpd',
+            'RefNoTotDpsCpd',
+            'RefNoClosedDate',
+            'RefNoClosedBy',
+            'RefNoComments1',
+            'RefNoComments2',
+            'RefNoComments3',
+            'RefNoComments4',
+            'RefNoWebPublished',
+            'RefNoConfirmed',
+            'RefNoRfqNo',
+            'RefNoWebUserName',
+            'RefNoShipTo',
+            'RefNoTelNo',
+            'RefNoFaxNo',
+            'RefNoPortLoading',
+            'RefNoPortDischarge',
+            'RefNoOriginCountry',
+            'RefNoSltaxType',
+            'RefNoGsltaxPcent',
+            'RefNoTotGsltaxAmt',
+            'RefNoTotLsltaxAmt',
+            'RefNoAnlys7',
+            'RefNoAnlys8',
+            'RefNoMarkupDecimal',
+            'RefNoPkgUnit',
+            'RefNoWeightUnit',
+            'RefNoAnlys9',
+            'RefNoAnlys10',
+            'RefNoAnlys11',
+            'RefNoAnlys12',
+            'RefNoAnlys13',
+            'RefNoAnlys14',
+            'RefNoItemCode',
+            'RefNoTransport'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

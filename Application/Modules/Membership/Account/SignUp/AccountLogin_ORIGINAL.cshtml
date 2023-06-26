@@ -1,0 +1,127 @@
+﻿@using System.Reflection
+@{
+    ViewData["Title"] = "Login";
+    ViewData["PageId"] = "Login";
+    Layout = MVC.Views.Shared._LayoutSlim;
+}
+
+@section Head {
+    @Html.Script("~/Scripts/vegas/vegas.js")
+    <script type="text/javascript">@Html.Raw(DynamicScriptManager.GetScriptText("Form.Membership.Login"))</script>
+    <script type="text/javascript">@Html.Raw(Html.GetLocalTextContent("Login"))</script>
+
+    <style type="text/css">
+        .s-LoginPanel {
+             border: 2px solid #e7e7e7;
+             padding: 40px;
+             border-radius: 8px;
+             width: 570px;
+             margin: 60px auto auto auto;
+         }
+         .s-LoginPanel .caption {
+             width: 150px;
+         }
+         .s-LoginPanel .editor {
+             width: 300px;
+         }
+         .s-LoginPanel input.editor[type=checkbox] {
+             width: auto;
+         }
+         .s-LoginPanel .s-Form .editor.dateQ {
+             width: 276px;
+         }
+         .s-LoginPanel .s-Form .editor.emailuser {
+             width: 170px;
+         }
+         .s-LoginPanel .s-Form .editor.dateQ.s-DateTimeEditor {
+             width: 181px;
+         }
+         .s-LoginPanel .s-Form .editor.s-DateTimeEditor.time {
+             width: 64px;
+             margin-left: 4px;
+         }
+         .s-LoginPanel .s-Form .editor.has-inplace-button {
+             width: 274px;
+         }
+         .s-LoginPanel .s-Form .emaildomain {
+             width: 115px;
+         }
+         .s-LoginPanel h3 {
+             font-size: 16px;
+             margin: 16px 0 24px;
+             color: #999;
+         }
+         .s-LoginPanel .buttons {
+             padding: 8px 0 0 158px;
+         }
+         .s-LoginPanel .buttons a {
+             float: right;
+             margin: 0 24px;
+         }
+         .s-LoginPanel .s-Form .field {
+             padding: 8px;
+         }
+         .s-LoginPanel .s-Form input {
+             padding: 6px 10px;
+         }
+         .s-LoginPanel .s-Form .caption {
+             padding: 6px 10px;
+         }
+         .s-ChangePasswordPanel {
+             width: 550px;
+         }
+    </style>
+}
+
+@{
+    Version version = typeof(SiteInitialization).Assembly.GetName().Version;
+    string tips = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+}
+<script id="Template_LoginPanel" type="text/template">
+    <div class="flex-layout">
+        <div class="logo"></div>
+        <h3>@Texts.Forms.Membership.Login.FormTitle &nbsp;@tips</h3>
+        <form id="~_Form" action="">
+            <div class="s-Form">
+                <div class="fieldset ui-widget ui-widget-content ui-corner-all">
+                    <div id="~_PropertyGrid"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="buttons">
+                    <button id="~_LoginButton" type="submit" class="btn btn-primary">
+                        @Texts.Forms.Membership.Login.SignInButton
+                    </button>
+                </div>
+                <div class="actions" style="display: none">
+                    <a href="@Url.Content("~/Account/ForgotPassword")"><i class="fa fa-angle-right"></i>&nbsp;@Texts.Forms.Membership.Login.ForgotPassword</a>
+                    <a href="@Url.Content("~/Account/SignUp")"><i class="fa fa-angle-right"></i>&nbsp;@Texts.Forms.Membership.Login.SignUpButton</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</script>
+
+
+@if (ViewData["Activated"] != null)
+{
+    <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-info"></i></h4>
+        @Texts.Forms.Membership.SignUp.ActivationCompleteMessage
+    </div>
+}
+
+<div class="page-content">
+    <div id="LoginPanel" class="s-PropertyPanel s-LoginPanel s-Membership-LoginPanel">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    jQuery(function () {
+        new Matrix.Membership.LoginPanel($('#LoginPanel')).init();
+
+    });
+</script>

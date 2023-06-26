@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Sales.SalesOrder.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Matrix.Sales.SalesOrderGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>
+
+<style type="text/css">
+    .DetailList .caption {
+        display: none;
+    }
+
+    .s-DialogToolbar {
+        display: none;
+    }
+
+    .DetailList .grid-toolbar {
+        display: none;
+    }
+
+    .quick-filters-bar {
+        display: none;
+    }
+
+</style>

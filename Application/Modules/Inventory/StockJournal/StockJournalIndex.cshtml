@@ -1,0 +1,163 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Inventory.StockJournal.EntityPlural");
+}
+
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default" id="panel1">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
+                    Inventory Journal
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Criterial</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+                                <div class="col-sm-10" id="location">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Item No</label>
+                                <div class="col-sm-10" id="itemno">
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Receipt
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" id="btnOK" class="btn btn-default btn-info">OK</button>
+                            <button type="submit" class="btn btn-info pull-left">Clear</button>
+                        </div><!-- /.box-footer -->
+                    </form>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    var locationLookup;
+    var itemNoLookup;
+    var grid;
+    jQuery(function () {
+        grid = new Matrix.Inventory.StockJournalGrid($('#GridDiv'), {});
+        grid.init();
+        Q.initFullHeightGridPage($('#GridDiv'));
+
+        $('.panel').on('shown.bs.collapse', function () {
+            Q.initFullHeightGridPage($('#GridDiv'));
+        });
+
+        $('.panel').on('hidden.bs.collapse', function () {
+            Q.initFullHeightGridPage($('#GridDiv'));
+        });
+
+        //var opt= {
+        //    lookupKey: 'MasterData.LocationRow'
+        //};
+
+        //locationLookup = Serenity.Widget.create({
+        //    type: Serenity.LookupEditor,
+        //    element: el => el.appendTo($('#location')).attr('placeholder', 'Location'),
+        //    options: opt
+        //});
+
+        locationLookup = BuildLookup('#location', 'MasterData.LocationRow', 'Location');
+        itemNoLookup = BuildLookup('#itemno', 'MasterData.ItemRow', 'Item No');
+
+        $('#btnOK').click(function (e) {
+            e.preventDefault();
+            //var location = this.locationLookup.value;
+            //var itemNo = this.itemNoLookup.value;
+            var param = {
+                Location: locationLookup.value,
+                ItemNo: itemNoLookup.value
+            };
+
+            grid.refreshGrid(param);
+
+            //var request =
+            //    {
+            //        Username: userid,
+            //        Password: password,
+            //        CompanyCode: "STD"
+            //    };
+
+            //Q.serviceCall({
+            //    url: Q.resolveUrl('~/Services/Inventory/StockJournal/List'),
+            //    request: request,
+            //    onSuccess: function (response) {
+            //        var q = Q.parseQueryString();
+            //        var returnUrl = q['returnUrl'] || q['ReturnUrl'];
+            //        if (returnUrl) {
+            //            var hash = window.location.hash;
+            //            if (hash != null && hash != '#')
+            //                returnUrl += hash;
+            //            window.location.href = returnUrl;
+            //        }
+            //        else {
+            //            window.location.href = Q.resolveUrl('~/');
+            //        }
+            //    }
+            //});
+        });
+
+        //locationLookup.changeSelect2(e => {
+        //    Refresh();
+        //});
+    });
+
+    function BuildLookup(div, lookupKey, placeholder) {
+        var opt = {
+            lookupKey: lookupKey
+        };
+
+        var lookup = Serenity.Widget.create({
+            type: Serenity.LookupEditor,
+            element: el => el.appendTo($(div)).attr('placeholder', placeholder).width(220),
+            options: opt
+        });
+        
+
+        return lookup;
+    }
+
+    function Refresh() {
+
+    }
+</script>
+<style type="text/css">
+    .panel-heading a:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e114";
+        float: right;
+        color: grey;
+    }
+
+    .panel-heading a.collapsed:after {
+        content: "\e080";
+    }
+</style>

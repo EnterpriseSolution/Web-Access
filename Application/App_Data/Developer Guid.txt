@@ -1,0 +1,676 @@
+https://technet.microsoft.com/en-us/library/cc288751(office.14).aspx
+
+
+
+$('#company').children(":first").select2("data").text
+
+
+            var lookup = Q.getLookup("Administration.Company");
+            var company=lookup.get_idField();
+            if (!company) {
+                Q.notifyError("Company is required");
+                return;
+            }
+
+			
+			
+ protected createToolbarExtensions(): void {
+            super.createToolbarExtensions();
+
+            let opt: Serenity.LookupEditorOptions = {
+                lookupKey: 'MasterData.FiscalYearRow'
+            };
+
+            this.sourceLanguage = Serenity.Widget.create({
+                type: Serenity.LookupEditor,
+                element: el => el.appendTo(this.toolbar.element).attr('placeholder', 'Fiscal Year'),
+                options: opt
+            });
+
+            this.sourceLanguage.changeSelect2(e => {
+                    this.refresh();
+            });
+        }
+
+        protected onViewSubmit(): boolean {
+            var request = this.view.params;
+            if (Q.isEmptyOrNull(this.sourceLanguage.value))
+                return false;
+
+            request.FiscalYear = this.sourceLanguage.value;
+            return super.onViewSubmit();
+        }
+		
+		
+		
+--本期库存总值
+SELECT  SUM(ISNULL(VALUE_BEG,0) )+  SUM(ISNULL(COST_IN,0)) - SUM(ISNULL(COST_OUT,0))  FROM  ICLEDG
+ WHERE PERIOD='2015/12'
+ 
+ 
+  --借方本期期初+发生 
+
+  SELECT   SUM(ISNULL(BAL_BEG,0))
+  FROM dbo.GLLEDG 
+  WHERE  BAL_BEG_SIGN='Debit'     --AND  --PERIOD='2016/04'  
+ UNION
+   SELECT   SUM(ISNULL(TOTAL_DEBIT,0))
+  FROM dbo.GLLEDG 
+  WHERE  BAL_BEG_SIGN='Debit'   --AND  PERIOD='2016/04'  
+  UNION 
+
+   SELECT   SUM(ISNULL(BAL_BEG,0))
+  FROM dbo.GLLEDG 
+  WHERE  BAL_BEG_SIGN='Credit'   --AND  --PERIOD='2016/04'  
+ UNION
+   SELECT   SUM(ISNULL(TOTAL_CREDIT,0))
+  FROM dbo.GLLEDG 
+  WHERE  BAL_BEG_SIGN='Credit'   --AND  PERIOD='2016/04'  
+ 
+ 
+ 
+ 
+
+添加自定义格式
+ [BasedOnRow(typeof(Northwind.Entities.CustomerGrossSalesRow))]
+        public class Item
+        {
+            public string CustomerId { get; set; }
+            public string ContactName { get; set; }
+            public int? ProductId { get; set; }
+            public string ProductName { get; set; }
+            [CellDecorator(typeof(AmountDecorator))]
+            public decimal GrossAmount { get; set; }
+        }
+
+        public class AmountDecorator : BaseCellDecorator
+        {
+            public override void Decorate()
+            {
+                var item = this.Item as Item;
+                if (item.GrossAmount > 1000)
+                    Foreground = Color.Red;
+                else if (item.GrossAmount > 500)
+                    Foreground = Color.Orange;
+            }
+        }
+格式中一半宽度
+
+  [HalfWidth]
+  public String Fax { get; set; }
+
+格式，加千分号
+
+        [Width(150), AlignRight, SortOrder(2, descending: true), DisplayFormat("#,##0.00")]
+        public Decimal GrossAmount { get; set; }
+
+		
+		
+存储过程
+public class CustomerGrossSalesRepository
+    {
+        private static MyRow.RowFields fld { get { return MyRow.Fields; } }
+
+        public ListResponse<MyRow> List(IDbConnection connection, 
+            CustomerGrossSalesListRequest request)
+        {
+            var data = connection.Query<MyRow>("CustomerGrossSales",
+                param: new
+                {
+                    startDate = request.StartDate,
+                    endDate = request.EndDate
+                },
+                commandType: System.Data.CommandType.StoredProcedure);
+
+            var response = new ListResponse<MyRow>();
+            response.Entities = (List<MyRow>)data;
+            return response;
+        }
+    }
+	
+	只增中NameField，不能增加IdFiled
+	
+	  StringField INameRow.NameField
+        {
+            get { return Fields.CategoryName; }
+        }
+		
+	
+	增加过滤参数
+	   protected getQuickFilters() {
+            var filters = super.getQuickFilters();
+
+            // we create a date-range quick filter, which is a composite
+            // filter with two date time editors
+            var orderDate = this.dateRangeQuickFilter('OrderDate', 'Order Date');
+
+            // need to override its handler, as default date-range filter will set Criteria parameter of list request.
+            // we need to set StartDate and EndDate custom parameters of our CustomerGrossSalesListRequest
+            orderDate.handler = args => {
+                
+                // args.widget here is the start date editor. value of a date editor is a ISO date string
+                var start = args.widget.value;
+
+                // to find end date editor, need to search it by its css class among siblings
+                var end = args.widget.element.nextAll('.s-DateEditor')
+                    .getWidget(Serenity.DateEditor).value;
+
+                (args.request as CustomerGrossSalesListRequest).StartDate = start;
+                (args.request as CustomerGrossSalesListRequest).EndDate = end;
+
+                // active option controls when a filter editor looks active, e.g. its label is blueish
+                args.active = !Q.isEmptyOrNull(start) || !Q.isEmptyOrNull(end);
+            };
+
+            filters.push(orderDate);
+
+            return filters;
+        }
+		
+		
+	另外再定义Row,Column
+	
+	表达式
+	  [DisplayName("FullName"), QuickSearch]
+        [Expression("CONCAT(T0.[FirstName], CONCAT(' ', T0.[LastName]))")]
+        [Expression("(T0.FirstName || ' ' || T0.LastName)", Dialect = "Sqlite")]
+        public String FullName
+        {
+            get { return Fields.FullName[this]; }
+            set { Fields.FullName[this] = value; }
+        }
+
+        [DisplayName("Gender"), Expression("(CASE WHEN T0.[TitleOfCourtesy] LIKE '%s%' THEN 2 WHEN T0.[TitleOfCourtesy] LIKE '%Mr%' THEN 1 END)")]
+        public Gender? Gender
+        {
+            get { return (Gender?)Fields.Gender[this]; }
+            set { Fields.Gender[this] = (Int32?)value; }
+        } 
+
+		
+		Column格式化
+		
+		 [Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter(CssClass = "hidden-xs")]
+        public String EmployeeFullName { get; set; }
+
+        public DateTime? RequiredDate { get; set; }
+
+        [FilterOnly, QuickFilter]
+        public OrderShippingState ShippingState { get; set; }
+
+        public DateTime? ShippedDate { get; set; }
+
+        [Width(140), ShipperFormatter, QuickFilter(CssClass = "hidden-xs"), QuickFilterOption("multiple", true)]
+        public String ShipViaCompanyName { get; set; }
+
+        [Width(100), QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Scripts.OrderShipCountryLookup))]
+        public String ShipCountry { get; set; }
+
+        [Width(100), LookupEditor(typeof(Scripts.OrderShipCityLookup))]
+        [QuickFilter(CssClass = "hidden-xs"), QuickFilterOption("CascadeFrom", "ShipCountry")]
+        public String ShipCity { get; set; }
+
+        [FreightFormatter]
+        public Decimal? Freight { get; set; }
+	
+
+	
+	 public partial class FreightFormatterAttribute : CustomFormatterAttribute
+    {
+        public const string Key = "WuHan.Northwind.FreightFormatter";
+
+        public FreightFormatterAttribute()
+            : base(Key)
+        {
+        }
+    }
+	
+	
+	namespace WuHan.Northwind {
+
+    @Serenity.Decorators.registerFormatter()
+    export class FreightFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext) {
+            return "<span class='freight-symbol'>" + Q.htmlEncode(ctx.value) + '</span>'
+        }
+    }
+}
+
+namespace WuHan.Northwind {
+
+    @Serenity.Decorators.registerFormatter()
+    export class ShipperFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext) {
+            return "<span class='shipper-symbol shipper-" +
+                Q.replaceAll((ctx.value || '').toString(), ' ', '') +
+                "'>" + Q.htmlEncode(ctx.value) + '</span>';
+        }
+    }
+}
+
+Column排序
+
+ [EditLink, AlignRight, SortOrder(1, descending: true), Width(70)]
+        public String OrderID { get; set; }
+		
+		
+		指定编辑器
+		
+		[FormScript("Northwind.Shipper")]
+    [BasedOnRow(typeof(Entities.ShipperRow))]
+    public class ShipperForm
+    {
+        public String CompanyName { get; set; }
+        [Northwind.PhoneEditor]
+        public String Phone { get; set; }
+    }
+	
+	
+	  public partial class PhoneEditorAttribute : CustomEditorAttribute
+    {
+        public const string Key = "WuHan.Northwind.PhoneEditor";
+
+        public PhoneEditorAttribute()
+            : base(Key)
+        {
+        }
+
+        public Boolean Multiple
+        {
+            get { return GetOption<Boolean>("multiple"); }
+            set { SetOption("multiple", value); }
+        }
+    }
+	
+	
+	Lookup 
+	
+	 [LookupScript("Northwind.SupplierCountry")]
+    public class SupplierCountryLookup : RowLookupScript<Entities.SupplierRow>
+    {
+        public SupplierCountryLookup()
+        {
+            IdField = TextField = "Country";
+        }
+        
+        protected override void PrepareQuery(SqlQuery query)
+        {
+            var fld = Entities.SupplierRow.Fields;
+            query.Distinct(true)
+                .Select(fld.Country)
+                .Where(
+                    new Criteria(fld.Country) != "" &
+                    new Criteria(fld.Country).IsNotNull());
+        }
+
+        protected override void ApplyOrder(SqlQuery query)
+        {
+        }
+    }
+	
+	[LookupScript("Northwind.Supplier")]
+    public sealed class SupplierRow : Row, IIdRow, INameRow
+    {
+	
+	
+	   [LookupEditor(typeof(Scripts.SupplierCountryLookup)), QuickFilter]
+        public String Country { get; set; }
+		
+	
+    [LookupEditor(typeof(Entities.RegionRow))]
+        public Int32 RegionID { get; set; }
+		
+		
+	Save 前加验证
+
+    private class MySaveHandler : SaveRequestHandler<MyRow>
+        {
+            protected override void ValidateRequest()
+            {
+                base.ValidateRequest();
+
+                if (IsUpdate && Old.ParentUnitId != Row.ParentUnitId && Row.ParentUnitId != null)
+                {
+                    if (Row.ParentUnitId == Row.UnitId)
+                        throw new ValidationError("Can't move an item under itself!");
+
+                    if (GetParents(Row.ParentUnitId.Value).Any(x => x == Row.UnitId.Value))
+                        throw new ValidationError("Can't move an item under one of its children!");
+                }
+            }
+
+
+		
+    自定义编辑器 
+
+  [DisplayName("Parent Unit"), ForeignKey("BusinessUnits", "UnitId"), LeftJoin("jParentUnit"), TextualField("ParentUnitName")]
+        [LookupInclude, BusinessUnitEditor]
+        public Int32? ParentUnitId
+        {
+            get { return Fields.ParentUnitId[this]; }
+            set { Fields.ParentUnitId[this] = value; }
+        }
+
+		
+		public partial class BusinessUnitEditorAttribute : LookupEditorBaseAttribute
+    {
+        public const string Key = "WuHan.Organization.BusinessUnitEditor";
+
+        public BusinessUnitEditorAttribute()
+            : base(Key)
+        {
+        }
+    }
+	
+	
+	namespace WuHan.Organization {
+
+    @Serenity.Decorators.registerEditor()
+    export class BusinessUnitEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, BusinessUnitRow> {
+
+        constructor(hidden: JQuery) {
+            super(hidden);
+        }
+
+        protected getLookupKey() {
+            return BusinessUnitRow.lookupKey;
+        }
+
+        protected getItemText(item: BusinessUnitRow, lookup: Q.Lookup<BusinessUnitRow>) {
+            var visited = {};
+            var text = item.Name;
+            while (item.ParentUnitId != null && !visited[item.ParentUnitId]) {
+                item = lookup.itemById[item.ParentUnitId];
+                if (!item)
+                    break;
+                visited[item.UnitId] = true;
+                text = item.Name + " >> " + text;
+            }
+
+            return text;
+        }
+    }
+}
+
+Grid Column时，去到主档资料
+
+  [EditLink(ItemType = "Northwind.Region", IdField = "RegionID"), Width(150)]
+        [LookupEditor(typeof(Entities.RegionRow)), QuickFilter]
+        public String RegionDescription { get; set; }
+	
+	Row中增加坐连接表查询
+	
+	  [DisplayName("Region"), NotNull, ForeignKey(typeof(RegionRow)), LeftJoin("jRegion")]
+        public Int32? RegionID
+        {
+            get { return Fields.RegionID[this]; }
+            set { Fields.RegionID[this] = value; }
+        }
+
+        [Origin("jRegion"), DisplayName("Region"), QuickSearch, LookupInclude]
+        public String RegionDescription
+        {
+            get { return Fields.RegionDescription[this]; }
+            set { Fields.RegionDescription[this] = value; }
+        }
+
+		
+		
+		 [ColumnsScript("Northwind.SalesByCategory")]
+    [BasedOnRow(typeof(Entities.SalesByCategoryRow))]
+    public class SalesByCategoryColumns
+    {
+        [Width(150), SortOrder(1)]
+        public String CategoryName { get; set; }
+        [Width(250)]
+        public String ProductName { get; set; }
+        [Width(150), AlignRight, SortOrder(2, descending: true), DisplayFormat("#,##0.00")]
+        public Decimal ProductSales { get; set; }
+    }
+	
+	
+	
+	
+	   [DisplayName("Supplier"), ForeignKey(typeof(SupplierRow)), LeftJoin("sup")]
+        [LookupEditor(typeof(SupplierRow), InplaceAdd = true)]
+        public Int32? SupplierID
+        {
+            get { return Fields.SupplierID[this]; }
+            set { Fields.SupplierID[this] = value; }
+        }
+
+        [DisplayName("Category"), ForeignKey(typeof(CategoryRow)), LeftJoin("cat"), LookupInclude]
+        [LookupEditor(typeof(CategoryRow), InplaceAdd = true)]
+        public Int32? CategoryID
+        {
+            get { return Fields.CategoryID[this]; }
+            set { Fields.CategoryID[this] = value; }
+        }
+
+		
+		  [EditLink(ItemType = "Northwind.Supplier"), QuickFilter]
+        public String SupplierCompanyName { get; set; }
+        [EditLink(ItemType = "Northwind.Category"), Width(150), QuickFilter, QuickFilterOption("multiple", true)]
+        public String CategoryName { get; set; }
+		
+		
+		
+		 [DisplayName("Discount"), NotNull, DefaultValue(0), AlignRight, DisplayFormat("#,##0.00")]
+        public Single? Discount
+        {
+            get { return Fields.Discount[this]; }
+            set { Fields.Discount[this] = value; }
+        }
+
+        [DisplayName("Line Total"), Expression("(t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])")]
+        [AlignRight, DisplayFormat("#,##0.00"), MinSelectLevel(SelectLevel.List)]
+        public Decimal? LineTotal
+        {
+            get { return Fields.LineTotal[this]; }
+            set { Fields.LineTotal[this] = value; }
+        }
+		
+		
+		
+		 [DisplayName("Order Id"), PrimaryKey, ForeignKey(typeof(OrderRow)), LeftJoin("o"), Updatable(false)]
+        public Int32? OrderID
+        {
+            get { return Fields.OrderID[this]; }
+            set { Fields.OrderID[this] = value; }
+        }
+
+        [DisplayName("Product"), PrimaryKey, ForeignKey(typeof(ProductRow)), LeftJoin("p")]
+        [LookupEditor(typeof(ProductRow))]
+        public Int32? ProductID
+        {
+            get { return Fields.ProductID[this]; }
+            set { Fields.ProductID[this] = value; }
+        }
+
+        [DisplayName("Unit Price"), Scale(4), NotNull, AlignRight, DisplayFormat("#,##0.00")]
+        public Decimal? UnitPrice
+        {
+            get { return Fields.UnitPrice[this]; }
+            set { Fields.UnitPrice[this] = value; }
+        }
+		
+		
+		
+		子查询
+		
+		        private class MyListHandler : ListRequestHandler<MyRow, OrderListRequest>
+        {
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+
+                if (Request.ProductID != null)
+                {
+                    var od = Entities.OrderDetailRow.Fields.As("od");
+
+                    query.Where(Criteria.Exists(
+                        query.SubQuery()
+                            .Select("1")
+                            .From(od)
+                            .Where(
+                                od.OrderID == fld.OrderID &
+                                od.ProductID == Request.ProductID.Value)
+                            .ToString()));
+                }
+            }
+        }
+		
+		
+		
+		分析查询参数
+		
+		    jQuery(function () {
+        var orderGrid = new WuHan.Northwind.OrderGrid($('#GridDiv'), {        });
+
+        var q = Q.parseQueryString();
+        if (q.shippingState != null && q.shippingState.length) {
+            orderGrid.set_shippingState(parseInt(q.shippingState, 10));
+        }
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+	
+	
+	添加自定义列
+	        protected getColumns() {
+            var columns = super.getColumns();
+
+            columns.splice(1, 0, {
+                field: 'Print Invoice',
+                name: '',
+                format: ctx => '<a class="inline-action print-invoice" title="invoice">' +
+                    '<i class="fa fa-file-pdf-o text-red"></i></a>',
+                width: 24,
+                minWidth: 24,
+                maxWidth: 24
+            });
+
+            return columns;
+        }
+
+        protected onClick(e: JQueryEventObject, row: number, cell: number) {
+            super.onClick(e, row, cell);
+
+            if (e.isDefaultPrevented())
+                return;
+
+            var item = this.itemAt(row);
+            var target = $(e.target);
+
+            // if user clicks "i" element, e.g. icon
+            if (target.parent().hasClass('inline-action'))
+                target = target.parent();
+
+            if (target.hasClass('inline-action')) {
+                e.preventDefault();
+
+                if (target.hasClass('print-invoice')) {
+                    WuHan.Common.ReportHelper.execute({
+                        reportKey: 'Northwind.OrderDetail',
+                        params: {
+                            OrderID: item.OrderID
+                        }
+                    });
+                }
+            }
+        }
+		
+		
+		Form 增加按钮，并设置状态
+		
+		    getToolbarButtons() {
+            var buttons = super.getToolbarButtons();
+
+            buttons.push(WuHan.Common.ReportHelper.createToolButton({
+                title: 'Invoice',
+                cssClass: 'export-pdf-button',
+                reportKey: 'Northwind.OrderDetail',
+                getParams: () => ({
+                    OrderID: this.get_entityId()
+                })
+            }));
+
+            return buttons;
+        }
+
+        protected updateInterface() {
+            super.updateInterface();
+
+            this.toolbar.findButton('export-pdf-button').toggle(this.isEditMode());
+        }
+		
+		
+		使用 repository
+		
+		   var listRequest = new ListRequest
+            {
+                ColumnSelection = ColumnSelection.List,
+                EqualityFilter = new Dictionary<string, object>
+                {
+                    { fld.EntityType.PropertyName, handler.Row.Table },
+                    { fld.EntityId.PropertyName, idField[handler.Row] ?? -1 }
+                }
+            };
+
+            var notes = new NoteRepository().List(handler.Connection, listRequest).Entities;
+
+			
+			
+			Save 保存
+			
+			 note = note.Clone();
+            note.NoteId = noteId;
+            note.EntityType = entityType;
+            note.EntityId = entityId;
+            note.InsertDate = null;
+            note.ClearAssignment(NoteRow.Fields.InsertDate);
+
+            var saveRequest = new SaveRequest<NoteRow> { Entity = note };
+
+            if (noteId == null)
+                new NoteRepository().Create(uow, saveRequest);
+            else
+                new NoteRepository().Update(uow, saveRequest);
+				
+			
+ new NoteRepository().Delete(uow, new DeleteRequest { EntityId = noteId });
+
+ 
+  using (var connection = SqlConnections.NewFor<EmployeeRow>())
+                    {
+                        var fld = EmployeeRow.Fields;
+                        return connection.List<EmployeeRow>(q => q
+                            .Select(fld.EmployeeID)
+                            .Select(fld.FullName))
+                            .ToDictionary(x => x.EmployeeID.Value);
+                    }
+					
+					
+					[LookupScript("Northwind.Customer")]
+    public class CustomerLookup : RowLookupScript<CustomerRow>
+    {
+        public CustomerLookup()
+        {
+            IdField = CustomerRow.Fields.CustomerID.PropertyName;
+            TextField = CustomerRow.Fields.CompanyName.PropertyName;
+        }
+    }
+	
+	
+	 [Width(130), LookupEditor(typeof(Scripts.CustomerCountryLookup)), QuickFilter(CssClass = "hidden-xs")]
+        public String Country { get; set; }
+		
+        [Width(120), LookupEditor(typeof(Scripts.CustomerCityLookup))]
+        [QuickFilter(CssClass = "hidden-xs"), QuickFilterOption("cascadeFrom", "Country")]
+        public String City { get; set; }
+		
+		
+<sup style="font-size: 20px">%</sup>
+
+
+		

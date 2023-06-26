@@ -1,0 +1,92 @@
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front s-Dialog s-DepartmentDialog s-Enterprise-DepartmentDialog ui-draggable ui-resizable flex-layout" aria-describedby="Matrix_Enterprise_DepartmentDialog7" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width: 650px; top: 212.5px; left: 384.5px; z-index: 1101;">
+  <div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+    <span id="ui-id-1" class="ui-dialog-title">New Department</span>
+    <button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+  <div class="s-TemplatedDialog ui-dialog-content ui-widget-content" id="Matrix_Enterprise_DepartmentDialog7" style="width: auto; min-height: 111px; max-height: none; height: auto;">
+    <div class="s-DialogContent">
+      <div id="Matrix_Enterprise_DepartmentDialog7_Toolbar" class="s-DialogToolbar s-Toolbar clearfix">
+        <div class="tool-buttons">
+          <div class="buttons-outer">
+            <div class="buttons-inner">
+              <div class="tool-button save-and-close-button">
+                <div class="button-outer">
+                  <span class="button-inner">Save</span>
+                </div>
+              </div>
+              <div class="tool-button apply-changes-button" title="Apply Changes">
+                <div class="button-outer">
+                  <span class="button-inner">Apply</span>
+                </div>
+              </div>
+              <div class="tool-button delete-button" style="display: none;">
+                <div class="button-outer">
+                  <span class="button-inner">Delete</span>
+                </div>
+              </div>
+              <div class="tool-button undo-delete-button" style="display: none;">
+                <div class="button-outer">
+                  <span class="button-inner">Undelete</span>
+                </div>
+              </div>
+              <div class="tool-button localization-button" style="display: none;">
+                <div class="button-outer">
+                  <span class="button-inner">Localization</span>
+                </div>
+              </div>
+              <div class="tool-button clone-button" style="display: none;">
+                <div class="button-outer">
+                  <span class="button-inner">Clone</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="s-Form">
+        <form id="Matrix_Enterprise_DepartmentDialog7_Form" action="" novalidate="novalidate">
+          <div class="fieldset ui-widget ui-widget-content ui-corner-all">
+            <div id="Matrix_Enterprise_DepartmentDialog7_PropertyGrid" class="s-PropertyGrid">
+              <div class="categories">
+                <div class="category">
+                  <div class="field Dept">
+                    <label class="caption" for="Matrix_Enterprise_DepartmentDialog7_Dept" title="Dept">Dept</label>
+                    <input type="text" class="editor flexify s-StringEditor" id="Matrix_Enterprise_DepartmentDialog7_Dept" name="Dept" maxlength="4">
+                      <div class="vx"></div>
+                      <div class="clear"></div>
+                  </div>
+                  <div class="field Description">
+                    <label class="caption" for="Matrix_Enterprise_DepartmentDialog7_Description" title="Description">
+                      <sup title="this field is required">*</sup>Description
+                    </label>
+                    <input type="text" class="editor flexify s-StringEditor required" id="Matrix_Enterprise_DepartmentDialog7_Description" name="Description" maxlength="30">
+                      <div class="vx"></div>
+                      <div class="clear"></div>
+                  </div>
+                  <div class="field Suspended">
+                    <label class="caption" title="Suspended">Suspended</label>
+                    <input type="checkbox" class="editor s-BooleanEditor" id="Matrix_Enterprise_DepartmentDialog7_Suspended" name="Suspended" maxlength="1">
+                      <div class="vx"></div>
+                      <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+</div>
+

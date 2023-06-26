@@ -1,0 +1,23 @@
+﻿@model Matrix.Basic.Entities.CompanyParameterRow
+@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.BasicInformation.CompanyParameter.EntityPlural");
+}
+
+<div id="DialogDiv"></div>
+
+<script type="text/javascript">
+    var myDialogAsPanel;
+    jQuery(function () {
+        myDialogAsPanel = new Matrix.Basic.CompanyParameterDialog();
+        myDialogAsPanel.load(@Html.Raw(Model.ToJson()) || {}, function() {
+            myDialogAsPanel.element.removeClass('hidden').appendTo('#DialogDiv');
+            myDialogAsPanel.arrange();
+        });
+    });
+
+    //jQuery(function () {
+    //    new Matrix.BasicInformation.CompanyParameterGrid($('#GridDiv'), {}).init();
+
+    //    Q.initFullHeightGridPage($('#GridDiv'));
+    //});
+</script>

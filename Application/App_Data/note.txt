@@ -1,0 +1,489 @@
+	
+https://pan.baidu.com/s/1pLhGKKb#list/path=%2FERP%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%2F%E7%94%A8%E5%8F%8BERP-U8.72%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6&parentPath=%2F
+
+
+
+另一种实现方法:
+https://github.com/6pac/SlickGrid/wiki/Examples
+
+
+https://github.com/6pac/SlickGrid
+
+https://github.com/6pac/SlickGrid/wiki/Examples
+
+https://stackoverflow.com/questions/17019440/how-to-do-multi-column-header-multi-layer-header-in-slickgrid
+https://github.com/6pac/SlickGrid/wiki/Examples
+https://stackoverflow.com/questions/17019440/how-to-do-multi-column-header-multi-layer-header-in-slickgrid
+
+
+
+https://stackoverflow.com/questions/17019440/how-to-do-multi-column-header-multi-layer-header-in-slickgrid
+
+
+
+https://www.c-sharpcorner.com/article/paging-sorting-and-filtering-with-partial-view-in-Asp-Net-m/
+
+https://github.com/TroyGoode/PagedList
+
+https://github.com/dncuug/X.PagedList
+
+https://www.c-sharpcorner.com/article/paging-sorting-and-filtering-with-partial-view-in-Asp-Net-m/
+
+
+http://webapplayers.com/inspinia_admin-v2.7.1/index.html#
+
+
+SlickGrid exposes the following events:
+
+onScroll ({ scrollLeft: number, scrollTop: number })
+onSort ({ multiColumnSort: boolean, sortCol: Object, sortCols: Object[], sortAsc: boolean })
+onHeaderContextMenu ({ column: Object })
+onHeaderClick ({ column: Object })
+onMouseEnter ({})
+onMouseLeave ({})
+onClick ({ row: number, cell: number })
+onDblClick ({ row: number, cell: number })
+onContextMenu ({})
+onKeyDown ({ row: number, cell: number })
+onAddNewRow ({ item: any, column: Object })
+onValidationError ({ editor: Object, cellNode: Object, validationResult: Object, row: number, cell: number, column: Object })
+onViewportChanged ({})
+onColumnsReordered ({})
+onColumnsResized ({})
+onCellChange ({ row: number, cell: number, item: any })
+onBeforeEditCell ({ row: number, cell: number, item: any, column: Object })
+onBeforeCellEditorDestroy ({ editor: Object })
+onHeaderCellRendered ({ node: Object, column: Object })
+onBeforeHeaderCellDestroy ({ node: Object, column: Object })
+onBeforeDestroy ({})
+onActiveCellChanged ({ row: number, cell: number }|null)
+onActiveCellPositionChanged ({})
+onDragInit
+onDragStart
+onDrag
+onDragEnd
+onSelectedRowsChanged ({ rows: number[] })
+onCellCssStylesChanged ({ key: string, hash: Object })
+You can subscribe to the above events using a syntax similar to:
+
+gridInstance.onXYZEvent.subscribe(function(e, args){
+    //event handling code.
+});
+The handler is called with these arguments:
+e: Slick.EventData, which mimics the jQuery EventData.
+args: event specific data
+
+Event handlers can also be removed with
+
+gridInstance.onXYZEvent.unsubscribe(fn);
+
+
+
+http://www.prepbootstrap.com/bootstrap-template/email-client
+https://startbootstrap.com/template-categories/all/
+
+https://github.com/shieldui
+
+http://demos.shieldui.com/
+
+
+http://localhost:7451/MasterData/Planner/Index
+
+
+http://www.cssmoban.com/cssthemes/houtaimoban/
+
+
+http://demo.cssmoban.com/cssthemes4/cpts_769_bgi/index.html#
+http://demo.cssmoban.com/cssthemes4/cpts_761_bdq/index.html
+http://demo.cssmoban.com/cssthemes4/cpts_738_beu/index.html
+
+http://www.prepbootstrap.com/bootstrap-template?page=2
+
+
+https://www.quackit.com/bootstrap/bootstrap_4/tutorial/bootstrap_input_groups.cfm
+
+https://www.tutorialspoint.com/bootstrap/bootstrap_map_demo.htm
+
+
+https://bootsnipp.com/snippets/featured/collapsible-panel
+
+https://jsfiddle.net/Wc4xt/1052/
+
+https://bootsnipp.com/snippets/featured/collapsible-panel
+
+https://bootsnipp.com/
+
+https://bootsnipp.com/
+
+
+https://bootsnipp.com/snippets/featured/responsive-mail-inbox-and-compose
+
+
+https://bootsnipp.com/snippets/featured/bug-submission-with-screenshot
+
+https://bootsnipp.com/snippets/featured/clean-modal-login-form
+
+
+https://bootsnipp.com/snippets/featured/login-and-register-tabbed-form
+
+https://bootsnipp.com/snippets/featured/quotwaiting-forquot-modal-dialog
+
+
+https://bootsnipp.com/snippets/featured/mega-menu-slide-down-on-hover-with-carousel
+
+
+https://bootsnipp.com/snippets/featured/mega-menu-slide-down-on-hover-with-carousel
+
+
+<li class="dropdown mega-dropdown">
+    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <span class="caret"></span></a>				
+				<ul class="dropdown-menu mega-dropdown-menu">
+				
+
+   public static OpenLookupDialog(lookupname: string, filter: string,targetid:string,pageIndex:number) {
+            var data = {
+                LookupName: lookupname,
+                LookupFilter: filter,
+                TargetId: targetid,
+                CurrentPageIndex: pageIndex
+            };
+
+            var dlg = new Matrix.Administration.LookupDialog(data);
+            dlg.dialogOpen(false);
+
+            //TranslationService.Lookup(data,
+            //    response => {
+            //        let initialize = "";
+            //        console.log("GetData response:",response);
+            //        //console.log(response.Columns);
+            //        //console.log(response.RowData);
+            //        //$('#lookupTable').DataTable();
+
+            //        //let parm = {
+            //        //    reportId: item.ReportId,
+            //        //    desc: item.Description
+            //        //};
+                   
+            //    });  
+			
+			
+
+
+@*@*style="background-color: darkorchid"
+style="background-color: red"*@
+
+<div id="flex">
+   <div class="controlgroup">
+    <div id="buyer" style="width: 100%; height: 500px;"></div>
+    </div>
+    <div id="buyerVendor" style="width: 100%; height: 500px;"></div>
+</div>
+
+@*<table width="100%">
+    <tr>
+        <td valign="top" width="50%">
+            <div id="myGrid" style="width:600px;height:500px;"></div>
+        </td>
+        <td valign="top">
+            <h2>Demonstrates:</h2>
+            <ul>
+                <li>basic grid with minimal configuration</li>
+            </ul>
+            <h2>View Source:</h2>
+            <ul>
+                <li><A href="https://github.com/mleibman/SlickGrid/blob/gh-pages/examples/example1-simple.html" target="_sourcewindow"> View the source for this example on Github</A></li>
+            </ul>
+        </td>
+    </tr>
+</table>*@
+
+<script type="text/javascript">
+    var grid;
+    var child;
+    var columns = [
+        { id: "title", name: "Title", field: "title" },
+        { id: "duration", name: "Duration", field: "duration" },
+        { id: "%", name: "% Complete", field: "percentComplete" },
+        { id: "start", name: "Start", field: "start" },
+        { id: "finish", name: "Finish", field: "finish" },
+        { id: "effort-driven", name: "Effort Driven", field: "effortDriven" ,width:"120px"}
+    ];
+
+    var columns2 = [
+        { id: "title", name: "Title", field: "title" },
+        { id: "duration", name: "Duration", field: "duration" },
+        { id: "%", name: "% Complete", field: "percentComplete" },
+        { id: "start", name: "Start", field: "start" },
+        { id: "finish", name: "Finish", field: "finish" },
+        { id: "effort-driven", name: "Effort Driven", field: "effortDriven", width: "120px" }
+    ];
+
+
+    var options = {
+        enableCellNavigation: true,
+        enableColumnReorder: false
+    };
+
+    $(function () {
+        Q.initFullHeightGridPage($('#flex'));
+
+      
+        var data = [];
+        var child = [];
+        for (var i = 0; i < 500; i++) {
+            data[i] = {
+                title: "Task " + i,
+                duration: "5 days",
+                percentComplete: Math.round(Math.random() * 100),
+                start: "01/01/2009",
+                finish: "01/05/2009",
+                effortDriven: (i % 5 === 0)
+            };
+            child[i] = {
+                title: "Task " + i,
+                duration: "5 days",
+                percentComplete: Math.round(Math.random() * 100),
+                start: "01/01/2009",
+                finish: "01/05/2009",
+                effortDriven: (i % 5 === 0)
+            };
+        }
+
+        grid = new Slick.Grid("#buyer", data, columns, options);
+        child = new Slick.Grid("#buyerVendor", child, columns2, options);
+        console.log("data", data);
+
+        //new Matrix.MasterData.BuyerGrid($('#buyer'), {}).init();
+        //new Matrix.MasterData.BuyerDetailGrid($('#buyerVendor'), {}).init();
+
+        var split = Split(['#buyer', '#buyerVendor'],
+            {
+                sizes: [60, 40],
+                gutterSize: 20,
+                direction: 'vertical',
+                cursor: 'row-resize'
+                //onDragEnd: function () {
+                //    var size = split.getSizes();
+                //    var total = $('#flex').height();
+
+                //    //console.log("size", JSON.stringify(split.getSizes()), total);
+                //    //console.log("size calculate", total * size[0], total * size[1]);
+
+                //    //$('#buyer .grid-container').height(total * size[0]*0.01);
+                //    //$('#buyerVendor .grid-container').height(total * size[1]*0.01);
+
+                //    //localStorage.setItem('split-sizes', JSON.stringify(split.getSizes()));
+                //}
+            });
+
+        
+    });
+</script>
+
+<script>
+    var grid;
+    var columns = [
+        {id: "title", name: "Title", field: "title"},
+        {id: "duration", name: "Duration", field: "duration"},
+        {id: "%", name: "% Complete", field: "percentComplete"},
+        {id: "start", name: "Start", field: "start"},
+        {id: "finish", name: "Finish", field: "finish"},
+        {id: "effort-driven", name: "Effort Driven", field: "effortDriven"}
+    ];
+
+    var options = {
+        enableCellNavigation: true,
+        enableColumnReorder: false
+    };
+
+    $(function() {
+        var data = [];
+        for (var i = 0; i < 500; i++) {
+            data[i] = {
+                title: "Task " + i,
+                duration: "5 days",
+                percentComplete: Math.round(Math.random() * 100),
+                start: "01/01/2009",
+                finish: "01/05/2009",
+                effortDriven: (i % 5 == 0)
+            };
+        }
+
+        //grid = new Slick.Grid("#myGrid", data, columns, options);
+    });
+</script>
+
+<script>
+    $( function() {
+        $(".controlgroup").controlgroup();
+        $( ".controlgroup-vertical" ).controlgroup({
+            "direction": "vertical"
+        });
+    } );
+</script>
+
+<style>
+    .ui-controlgroup-vertical {
+        width: 150px;
+    }
+    .ui-controlgroup.ui-controlgroup-vertical > button.ui-button,
+    .ui-controlgroup.ui-controlgroup-vertical > .ui-controlgroup-label {
+        text-align: center;
+    }
+    #car-type-button {
+        width: 120px;
+    }
+    .ui-controlgroup-horizontal .ui-spinner-input {
+        width: 20px;
+    }
+</style>
+
+<style>
+
+
+    .split p {
+        padding: 20px;
+    }
+
+    .split {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .gutter {
+        background-color: #eee;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+
+    .gutter.gutter-horizontal {
+        background-image: url('/Content/images/vertical.png');
+        cursor: ew-resize;
+    }
+
+    .gutter.gutter-vertical {
+        background-image: url('/Content/images/horizontal.png');
+        cursor: ns-resize;
+    }
+
+    .split.split-horizontal, .gutter.gutter-horizontal {
+        height: 100%;
+        float: left;
+    }
+</style>*@
+
+
+
+https://mleibman.github.io/SlickGrid/examples/
+
+
+Demonstrates:
+AutoTooltips plugin
+Instructions:
+Resize the columns until see ellipsis in column or header. Hover over cell to see tooltip.
+
+Usage:
+plugin = new Slick.AutoTooltips(pluginOptions);
+grid.registerPlugin(plugin);
+grid.render();
+View Source:
+View the source for this example on Github
+
+
+
+If you need to replace all the data from one grid with the data in the other grid, then this will work:
+
+grid2.setData(grid1.getData());
+grid2.invalidate();
+If you need to append the data from one grid to the data in the other grid, retaining the data that was already in the grid, this should work:
+
+var grid1Data = grid1.getData();
+var grid2Data = grid2.getData();
+
+for(var i = 0; i < grid1Data.length; i++) {
+    grid2Data.push(grid1Data[i]);
+}
+grid2.setData(grid2Data);
+grid2.invalidate();  
+
+
+let autoSize = new Slick.AutoColumnSize(true);
+grid.registerPlugin(autoSize);
+			
+
+
+
+CREATE TABLE [dbo].[AuditLog](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[Action] [varchar](50) NOT NULL,
+	[ChangedOn] [datetime] NOT NULL CONSTRAINT [DF_AuditLog_ChangedOn]  DEFAULT (getdate()),
+	[TableName] [varchar](50) NOT NULL,
+	[RowId] [int] NOT NULL,
+	[Module] [varchar](500) NULL,
+	[Page] [varchar](500) NULL,
+	[Changes] [varchar](max) NULL,
+ CONSTRAINT [PK_AuditLog] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+			
+CREATE TABLE [dbo].[AuditLog](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId]  NVARCHAR(50) NOT NULL,
+	[UserName] [nvarchar](50) NOT NULL,
+	[Action] [nvarchar](50) NOT NULL,
+	[ChangedOn] [datetime] NOT NULL CONSTRAINT [DF_AuditLog_ChangedOn]  DEFAULT (getdate()),
+	[TableName] [nvarchar](50) NOT NULL,
+	[RowId] [int] NOT NULL,
+	[Module] [nvarchar](500) NULL,
+	[Page] [nvarchar](500) NULL,
+	[Changes] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AuditLog] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+	
+grid.getSelectedRows();
+
+http://mleibman.github.io/SlickGrid/examples/example-checkbox-row-select.html
+
+http://slick-excel-export.ranjithprabhu.in/
+	
+
+http://npm.taobao.org/package/slickgrid-colfix-plugin
+http://keik.github.io/slickgrid-colfix-plugin/examples/
+https://github.com/keik/slickgrid-colfix-plugin
+https://www.versioneye.com/javascript/keik:slickgrid-colgroup-plugin/1.1.1
+https://groups.google.com/forum/#!forum/slickgrid
+	
+		
+https://mleibman.github.io/SlickGrid/examples/example-grouping.html
+
+https://www.jetbrains.com/resharper/features/coding_assistance.html
+
+
+https://mleibman.github.io/SlickGrid/examples/
+
+https://github.com/kcrossman/DapperCodeGenerator
+
+
+打开新窗口
+ $('#CustomDialog').click(() => {
+       window.open('http://www.cnblogs.com'); 
+}
+
+ 

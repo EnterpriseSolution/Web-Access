@@ -1,0 +1,170 @@
+﻿@using System.Reflection
+@{
+    ViewData["Title"] = "Login";
+    ViewData["PageId"] = "Login";
+    Layout = MVC.Views.Shared._LayoutSlim;
+}
+
+@section Head {
+    @Html.Script("~/Scripts/vegas/vegas.js")
+    <script type="text/javascript">@Html.Raw(DynamicScriptManager.GetScriptText("Form.Membership.Login"))</script>
+    <script type="text/javascript">@Html.Raw(Html.GetLocalTextContent("Login"))</script>
+
+}
+
+@{
+    Version version = typeof(SiteInitialization).Assembly.GetName().Version;
+    string tips = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+}
+
+<style type="text/css">
+    .login {
+        font-family: 'Josefin Sans', sans-serif;
+        padding: 40px 0px;
+    }
+
+    /*body {
+  background: #6ED0F6;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}*/
+</style>
+
+<div class="container login">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Enterprise Solution</h3>
+                </div>
+                <div class="panel-body">
+                    <form accept-charset="UTF-8" role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="UserId" id="userid" name="userid" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" id="password" name="password" type="password" value="">
+                            </div>
+                            <div class="form-group"   id="company">
+                                
+                            </div>
+                            <div class="checkbox" style="display:none">
+                                <label>
+                                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+                                </label>
+                            </div>
+                            <input class="btn btn-lg btn-primary btn-block" type="submit" id="LoginButton" value="Login">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    //function BindSelect(ctrlName, url) {
+    //    var control = $('#' + ctrlName);
+    //    //设置Select2的处理
+    //    control.select2({
+    //        allowClear: true,
+    //        escapeMarkup: function (m) {
+    //            return m;
+    //        }
+    //    });
+
+    //    //绑定Ajax的内容
+    //    $.getJSON(url, function (data) {
+    //        control.empty();//清空下拉框
+    //        $.each(data, function (i, item) {
+    //            control.append("<option value='" + item.CompanyCode + "'>&nbsp;" + item.CompanyName + "</option>");
+    //        });
+    //    });
+    //}
+
+    var companyList;
+
+    jQuery(function () {
+        //new Matrix.Membership.LoginPanel($('#LoginPanel')).init();
+
+        //$('.select').select2({ });
+        //BindSelect('company', "/Account/GetDictJson");
+        var cacheCompany = Cookies.get('company');
+
+        var opt = {
+            lookupKey: 'Administration.Company'
+        };
+        this.companyList = Serenity.Widget.create({
+            type: Serenity.LookupEditor,
+            element: el => el.appendTo($('#company')).attr('placeholder', 'Company').width(338),
+            options: opt
+        });
+        //if (cacheCompany != null)
+        //    companyList.val(cacheCompany);
+
+        //companyList.width(338);
+
+        var modalDialog = $(this).find(".login");
+        // Applying the top margin on modal dialog to align it vertically center
+        modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2) - 120);
+
+        $('#LoginButton').click(function (e) {
+            e.preventDefault();
+            var userid = $("#userid").val().trim();
+            if (!userid) {
+                Q.alert("User Id is required");
+                return;
+            }
+
+            var password = $("#password").val().trim();
+            if (!password) {
+                Q.alert("Password is required");
+                return;
+            }
+
+            //var company = companyList.value.trim();
+            //if (!company) {
+            //    Q.notifyError("Company is required");
+            //    return;
+            //}
+            var company=$('#company').children(":first").select2("data");
+            if (!company) {
+                Q.alert("Company is required");
+                return;
+            }
+
+        
+            Cookies.set('company', company.id);
+
+            var request =
+            {
+                Username: userid,
+                Password: password,
+                CompanyCode: company.id
+            };
+
+            Q.serviceCall({
+                url: Q.resolveUrl('~/Account/Login'),
+                request: request,
+                onSuccess: function (response) {
+                    var q = Q.parseQueryString();
+                    var returnUrl = q['returnUrl'] || q['ReturnUrl'];
+                    if (returnUrl) {
+                        var hash = window.location.hash;
+                        if (hash != null && hash != '#')
+                            returnUrl += hash;
+                        window.location.href = returnUrl;
+                    }
+                    else {
+                        window.location.href = Q.resolveUrl('~/');
+                    }
+                }
+            });
+        });
+    });
+</script>

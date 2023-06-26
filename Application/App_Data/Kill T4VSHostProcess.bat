@@ -1,0 +1,1 @@
+Taskkill /IM  T4VSHostProcess.exe 

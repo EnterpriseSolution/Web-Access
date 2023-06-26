@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Enterprise.ItemGroup.EntityPlural");
+}
+
+<div class="box box-info" id="grid">
+    <div class="box-header with-border">
+        <h3 class="box-title title-text">Item Segment Definition</h3>
+    </div><!-- /.box-header -->
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-1 control-label">Item Group</label>
+                <div class="col-sm-2">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+
+                <label for="inputEmail3" class="col-sm-1 control-label">Description</label>
+                <div class="col-sm-4">
+                    <input type="email" readonly="readonly" class="form-control" id="inputEmail223" placeholder="Email">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div id="GridDiv"></div>
+            </div>
+
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+        </div><!-- /.box-footer -->
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Matrix.Enterprise.ItemGroupGrid($('#GridDiv'), {}).init();
+
+        $(".grid-title").hide();
+        $(".grid-toolbar").hide();
+
+        Q.initFullHeightGridPage($('#grid'));
+    });
+</script>

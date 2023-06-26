@@ -1,0 +1,260 @@
+﻿
+namespace Matrix.Sales {
+    export interface QuotationRow {
+        Recnum?: number;
+        RefNo?: string;
+        IssueDate?: string;
+        ValidUntil?: string;
+        Closed?: string;
+        CustomerNo?: string;
+        CustomerName?: string;
+        Address?: string;
+        Address2?: string;
+        Address3?: string;
+        Address4?: string;
+        Attention?: string;
+        ShipVia?: string;
+        ShipmentTerms?: string;
+        BaseLoc?: string;
+        Salesman?: string;
+        PayTerms?: string;
+        PriceCode?: string;
+        Anlys1?: string;
+        Anlys2?: string;
+        Ccy?: string;
+        ExchRate?: number;
+        ComputeTax?: string;
+        LastLineNo?: number;
+        LastMailNo?: number;
+        LastTextNo?: number;
+        TotPriceAmt?: number;
+        TotPtaxAmt?: number;
+        TotExtPrice?: number;
+        TotLdiscAmt?: number;
+        TotAtaxAmt?: number;
+        TotItemAmt?: number;
+        TdiscPcent?: number;
+        TotTdiscAmt?: number;
+        NetTradeAmt?: number;
+        TotChgsAmt?: number;
+        NetOrdrAmt?: number;
+        TotGtaxAmt?: number;
+        NetPayAmt?: number;
+        DpsPcent?: number;
+        TotDpsAmt?: number;
+        CreatedDate?: string;
+        CreatedBy?: string;
+        RevisedDate?: string;
+        RevisedBy?: string;
+        TotTdiscCpd?: number;
+        TotGtaxCpd?: number;
+        TotDpsCpd?: number;
+        ClosedDate?: string;
+        ClosedBy?: string;
+        Comments1?: string;
+        Comments2?: string;
+        Comments3?: string;
+        Comments4?: string;
+        WebPublished?: string;
+        Confirmed?: string;
+        RfqNo?: string;
+        WebUserName?: string;
+        ShipTo?: string;
+        TelNo?: string;
+        FaxNo?: string;
+        PortLoading?: string;
+        PortDischarge?: string;
+        OriginCountry?: string;
+        SltaxType?: string;
+        GsltaxPcent?: number;
+        TotGsltaxAmt?: number;
+        TotLsltaxAmt?: number;
+        Anlys7?: string;
+        Anlys8?: string;
+        MarkupDecimal?: number;
+        PkgUnit?: string;
+        WeightUnit?: string;
+        Anlys9?: string;
+        Anlys10?: string;
+        Anlys11?: string;
+        Anlys12?: string;
+        Anlys13?: string;
+        Anlys14?: string;
+        ItemCode?: string;
+        Transport?: string;
+    }
+
+    export namespace QuotationRow {
+        export const idProperty = 'Recnum';
+        export const nameProperty = 'RefNo';
+        export const localTextPrefix = 'Sales.Quotation';
+
+        export namespace Fields {
+            export declare const Recnum;
+            export declare const RefNo;
+            export declare const IssueDate;
+            export declare const ValidUntil;
+            export declare const Closed;
+            export declare const CustomerNo;
+            export declare const CustomerName;
+            export declare const Address;
+            export declare const Address2;
+            export declare const Address3;
+            export declare const Address4;
+            export declare const Attention;
+            export declare const ShipVia;
+            export declare const ShipmentTerms;
+            export declare const BaseLoc;
+            export declare const Salesman;
+            export declare const PayTerms;
+            export declare const PriceCode;
+            export declare const Anlys1;
+            export declare const Anlys2;
+            export declare const Ccy;
+            export declare const ExchRate;
+            export declare const ComputeTax;
+            export declare const LastLineNo;
+            export declare const LastMailNo;
+            export declare const LastTextNo;
+            export declare const TotPriceAmt;
+            export declare const TotPtaxAmt;
+            export declare const TotExtPrice;
+            export declare const TotLdiscAmt;
+            export declare const TotAtaxAmt;
+            export declare const TotItemAmt;
+            export declare const TdiscPcent;
+            export declare const TotTdiscAmt;
+            export declare const NetTradeAmt;
+            export declare const TotChgsAmt;
+            export declare const NetOrdrAmt;
+            export declare const TotGtaxAmt;
+            export declare const NetPayAmt;
+            export declare const DpsPcent;
+            export declare const TotDpsAmt;
+            export declare const CreatedDate;
+            export declare const CreatedBy;
+            export declare const RevisedDate;
+            export declare const RevisedBy;
+            export declare const TotTdiscCpd;
+            export declare const TotGtaxCpd;
+            export declare const TotDpsCpd;
+            export declare const ClosedDate;
+            export declare const ClosedBy;
+            export declare const Comments1;
+            export declare const Comments2;
+            export declare const Comments3;
+            export declare const Comments4;
+            export declare const WebPublished;
+            export declare const Confirmed;
+            export declare const RfqNo;
+            export declare const WebUserName;
+            export declare const ShipTo;
+            export declare const TelNo;
+            export declare const FaxNo;
+            export declare const PortLoading;
+            export declare const PortDischarge;
+            export declare const OriginCountry;
+            export declare const SltaxType;
+            export declare const GsltaxPcent;
+            export declare const TotGsltaxAmt;
+            export declare const TotLsltaxAmt;
+            export declare const Anlys7;
+            export declare const Anlys8;
+            export declare const MarkupDecimal;
+            export declare const PkgUnit;
+            export declare const WeightUnit;
+            export declare const Anlys9;
+            export declare const Anlys10;
+            export declare const Anlys11;
+            export declare const Anlys12;
+            export declare const Anlys13;
+            export declare const Anlys14;
+            export declare const ItemCode;
+            export declare const Transport;
+        }
+
+        [
+            'Recnum',
+            'RefNo',
+            'IssueDate',
+            'ValidUntil',
+            'Closed',
+            'CustomerNo',
+            'CustomerName',
+            'Address',
+            'Address2',
+            'Address3',
+            'Address4',
+            'Attention',
+            'ShipVia',
+            'ShipmentTerms',
+            'BaseLoc',
+            'Salesman',
+            'PayTerms',
+            'PriceCode',
+            'Anlys1',
+            'Anlys2',
+            'Ccy',
+            'ExchRate',
+            'ComputeTax',
+            'LastLineNo',
+            'LastMailNo',
+            'LastTextNo',
+            'TotPriceAmt',
+            'TotPtaxAmt',
+            'TotExtPrice',
+            'TotLdiscAmt',
+            'TotAtaxAmt',
+            'TotItemAmt',
+            'TdiscPcent',
+            'TotTdiscAmt',
+            'NetTradeAmt',
+            'TotChgsAmt',
+            'NetOrdrAmt',
+            'TotGtaxAmt',
+            'NetPayAmt',
+            'DpsPcent',
+            'TotDpsAmt',
+            'CreatedDate',
+            'CreatedBy',
+            'RevisedDate',
+            'RevisedBy',
+            'TotTdiscCpd',
+            'TotGtaxCpd',
+            'TotDpsCpd',
+            'ClosedDate',
+            'ClosedBy',
+            'Comments1',
+            'Comments2',
+            'Comments3',
+            'Comments4',
+            'WebPublished',
+            'Confirmed',
+            'RfqNo',
+            'WebUserName',
+            'ShipTo',
+            'TelNo',
+            'FaxNo',
+            'PortLoading',
+            'PortDischarge',
+            'OriginCountry',
+            'SltaxType',
+            'GsltaxPcent',
+            'TotGsltaxAmt',
+            'TotLsltaxAmt',
+            'Anlys7',
+            'Anlys8',
+            'MarkupDecimal',
+            'PkgUnit',
+            'WeightUnit',
+            'Anlys9',
+            'Anlys10',
+            'Anlys11',
+            'Anlys12',
+            'Anlys13',
+            'Anlys14',
+            'ItemCode',
+            'Transport'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

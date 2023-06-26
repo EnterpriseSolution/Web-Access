@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Sales.SalesReturn.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Matrix.Sales.SalesReturnGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>
+
+
+<style type="text/css">
+    .DetailList .caption {
+        display: none;
+    }
+
+    .DetailList .grid-toolbar {
+        display: none;
+    }
+
+    .quick-filters-bar {
+        display: none;
+    }
+
+    /*.slick-pane .slick-pane-top .slick-pane-left {
+        height: 600px
+    }
+
+    .slick-viewport {
+       height: 600px
+    }
+
+
+
+
+    .s-PropertyGrid .categories { height: 660px; }
+
+      .grid-canvas  { height: 660px; }*/
+</style>

@@ -1,0 +1,713 @@
+﻿
+namespace Matrix.Sales {
+    export interface SalesOrderDetailRow {
+        Recnum?: number;
+        OrderNo?: string;
+        LineNo?: number;
+        Posted?: string;
+        Closed?: string;
+        ItemNo?: string;
+        Description?: string;
+        Uom?: string;
+        LotSize?: number;
+        Qty?: number;
+        Price?: number;
+        Ptax?: number;
+        NetPrice?: number;
+        ExtPrice?: number;
+        LdiscPcent?: number;
+        LdiscAmt?: number;
+        AtaxAmt?: number;
+        NetItemAmt?: number;
+        PriceAmt?: number;
+        PtaxAmt?: number;
+        Anlys1?: string;
+        Anlys2?: string;
+        Anlys3?: string;
+        Anlys4?: string;
+        Anlys5?: string;
+        Anlys6?: string;
+        CommisType?: string;
+        CommisRefNo?: string;
+        Configurable?: string;
+        FirstShipQty?: number;
+        OtherShipQty?: number;
+        LastShipNo?: number;
+        Reserved?: string;
+        ResvStubNo?: string;
+        Waitlisted?: string;
+        WaitlistNo?: string;
+        WeightUom?: string;
+        GrossWt?: number;
+        NetWt?: number;
+        DimensionUom?: string;
+        Flength?: number;
+        Width?: number;
+        Height?: number;
+        UnitVolume?: number;
+        Volume?: number;
+        PriceCpd?: number;
+        PtaxCpd?: number;
+        AtaxCpd?: number;
+        DiscCpd?: number;
+        GrossWtCpd?: number;
+        NetWtCpd?: number;
+        VolumeCpd?: number;
+        InnerPkgType?: string;
+        InnerQty?: number;
+        InnerPkgs?: number;
+        InnerExcsQty?: number;
+        OuterPkgType?: string;
+        OuterQty?: number;
+        OuterPkgs?: number;
+        OuterExcsQty?: number;
+        StartCtnNo?: number;
+        QtyShipped?: number;
+        ItemTaxCode?: string;
+        CustItemNo?: string;
+        SpecNo?: string;
+        BomNo?: string;
+        QtyPacked?: number;
+        JobNo?: string;
+        ProdBranch?: string;
+        AssemblyLine?: string;
+        ProdDueDate?: string;
+        MakeIt?: string;
+        ProdStartDate?: string;
+        SchedCount?: number;
+        StdAssort?: string;
+        ExtDescription?: string;
+        QtyPending?: number;
+        VendorNo?: string;
+        VendorPrice?: number;
+        VendorPack?: string;
+        VendorCcy?: string;
+        OriginQty?: number;
+        SltaxPcent?: number;
+        SltaxAmt?: number;
+        ReorderQty?: number;
+        IncludeScrapRate?: string;
+        MarkupPcent?: number;
+        Markup?: number;
+        ItemCode?: string;
+        MoldBomNo?: string;
+        MoldFormulaCode?: string;
+        MoldExpectedQty?: number;
+        Anlys15?: string;
+        Anlys16?: string;
+        Anlys17?: string;
+        Anlys18?: string;
+        Anlys19?: string;
+        Anlys20?: string;
+        ShipmarkRmk?: string;
+        LotSizeCost?: number;
+        ReleaseQty?: number;
+        BlanketRef?: string;
+        BlanketLineNo?: number;
+        OrderNoRecnum?: number;
+        OrderNoPosted?: string;
+        OrderNoClosed?: string;
+        OrderNoCustomerNo?: string;
+        OrderNoCustomerName?: string;
+        OrderNoOrderDate?: string;
+        OrderNoDueDate?: string;
+        OrderNoSchedDate?: string;
+        OrderNoCustomerPo?: string;
+        OrderNoShipTo?: string;
+        OrderNoAddress?: string;
+        OrderNoAddress2?: string;
+        OrderNoAddress3?: string;
+        OrderNoAddress4?: string;
+        OrderNoMultiShip?: string;
+        OrderNoAutoPo?: string;
+        OrderNoAutoJob?: string;
+        OrderNoComputeTax?: string;
+        OrderNoAutoResv?: string;
+        OrderNoAutoWait?: string;
+        OrderNoVendorNo?: string;
+        OrderNoPoNo?: string;
+        OrderNoPoPayTerms?: string;
+        OrderNoPoShipTo?: string;
+        OrderNoPoBuyer?: string;
+        OrderNoShipVia?: string;
+        OrderNoShipmentTerms?: string;
+        OrderNoSalesman?: string;
+        OrderNoPayTerms?: string;
+        OrderNoPriceCode?: string;
+        OrderNoAnlys1?: string;
+        OrderNoAnlys2?: string;
+        OrderNoCcy?: string;
+        OrderNoExchRate?: number;
+        OrderNoShipFrom?: string;
+        OrderNoLastSchedNo?: number;
+        OrderNoLastLineNo?: number;
+        OrderNoLastTextNo?: number;
+        OrderNoLastCtnNo?: number;
+        OrderNoTotPriceAmt?: number;
+        OrderNoTotPtaxAmt?: number;
+        OrderNoTotExtPrice?: number;
+        OrderNoTotLdiscAmt?: number;
+        OrderNoTotAtaxAmt?: number;
+        OrderNoTotItemAmt?: number;
+        OrderNoTdiscPcent?: number;
+        OrderNoTotTdiscAmt?: number;
+        OrderNoNetTradeAmt?: number;
+        OrderNoTotChgsAmt?: number;
+        OrderNoNetOrdrAmt?: number;
+        OrderNoTotGtaxAmt?: number;
+        OrderNoNetPayAmt?: number;
+        OrderNoDpsPcent?: number;
+        OrderNoTotDpsAmt?: number;
+        OrderNoNetBalAmt?: number;
+        OrderNoTotTdiscCpd?: number;
+        OrderNoTotGtaxCpd?: number;
+        OrderNoTotDpsCpd?: number;
+        OrderNoDpsReceiptNo?: string;
+        OrderNoDpsFundCode?: string;
+        OrderNoDpsReference?: string;
+        OrderNoDpsRcptDate?: string;
+        OrderNoCreatedDate?: string;
+        OrderNoCreatedBy?: string;
+        OrderNoRevisedDate?: string;
+        OrderNoRevisedBy?: string;
+        OrderNoPostedDate?: string;
+        OrderNoPostedBy?: string;
+        OrderNoPrevisedDate?: string;
+        OrderNoPrevisedBy?: string;
+        OrderNoLockType?: string;
+        OrderNoLockRefNo?: string;
+        OrderNoLastLogNo?: number;
+        OrderNoVendTaxCode?: string;
+        OrderNoCustTaxCode?: string;
+        OrderNoPackingOk?: string;
+        OrderNoWeightUom?: string;
+        OrderNoGrWt?: number;
+        OrderNoNtWt?: number;
+        OrderNoDimensionUom?: string;
+        OrderNoVolume?: number;
+        OrderNoOwnerBranch?: string;
+        OrderNoSourceBranch?: string;
+        OrderNoComments1?: string;
+        OrderNoComments2?: string;
+        OrderNoComments3?: string;
+        OrderNoComments4?: string;
+        OrderNoCheckCrlimit?: string;
+        OrderNoCheckCrbal?: number;
+        OrderNoWebPublished?: string;
+        OrderNoSendWebMsg?: string;
+        OrderNoWebUserName?: string;
+        OrderNoAttention?: string;
+        OrderNoTelNo?: string;
+        OrderNoFaxNo?: string;
+        OrderNoPortLoading?: string;
+        OrderNoPortDischarge?: string;
+        OrderNoVesselName?: string;
+        OrderNoForwarder?: string;
+        OrderNoLcNo?: string;
+        OrderNoOriginCountry?: string;
+        OrderNoMrpExclude?: string;
+        OrderNoSltaxType?: string;
+        OrderNoGsltaxPcent?: number;
+        OrderNoTotGsltaxAmt?: number;
+        OrderNoTotLsltaxAmt?: number;
+        OrderNoLastTextNo1?: number;
+        OrderNoComments5?: string;
+        OrderNoComments6?: string;
+        OrderNoComments7?: string;
+        OrderNoComments8?: string;
+        OrderNoAnlys7?: string;
+        OrderNoAnlys8?: string;
+        OrderNoFlag?: string;
+        OrderNoHoldBy?: string;
+        OrderNoQuoRefNo?: string;
+        OrderNoBrandCode?: string;
+        OrderNoItemCode?: string;
+        OrderNoPkgUnit?: string;
+        OrderNoWeightUnit?: string;
+        OrderNoAnlys9?: string;
+        OrderNoAnlys10?: string;
+        OrderNoAnlys11?: string;
+        OrderNoAnlys12?: string;
+        OrderNoAnlys13?: string;
+        OrderNoAnlys14?: string;
+        OrderNoOrderType?: string;
+        OrderNoRefCompanyCode?: string;
+        OrderNoRefPurchaseOrderNo?: string;
+    }
+
+    export namespace SalesOrderDetailRow {
+        export const idProperty = 'Recnum';
+        export const nameProperty = 'OrderNo';
+        export const localTextPrefix = 'Sales.SalesOrderDetail';
+
+        export namespace Fields {
+            export declare const Recnum;
+            export declare const OrderNo;
+            export declare const LineNo;
+            export declare const Posted;
+            export declare const Closed;
+            export declare const ItemNo;
+            export declare const Description;
+            export declare const Uom;
+            export declare const LotSize;
+            export declare const Qty;
+            export declare const Price;
+            export declare const Ptax;
+            export declare const NetPrice;
+            export declare const ExtPrice;
+            export declare const LdiscPcent;
+            export declare const LdiscAmt;
+            export declare const AtaxAmt;
+            export declare const NetItemAmt;
+            export declare const PriceAmt;
+            export declare const PtaxAmt;
+            export declare const Anlys1;
+            export declare const Anlys2;
+            export declare const Anlys3;
+            export declare const Anlys4;
+            export declare const Anlys5;
+            export declare const Anlys6;
+            export declare const CommisType;
+            export declare const CommisRefNo;
+            export declare const Configurable;
+            export declare const FirstShipQty;
+            export declare const OtherShipQty;
+            export declare const LastShipNo;
+            export declare const Reserved;
+            export declare const ResvStubNo;
+            export declare const Waitlisted;
+            export declare const WaitlistNo;
+            export declare const WeightUom;
+            export declare const GrossWt;
+            export declare const NetWt;
+            export declare const DimensionUom;
+            export declare const Flength;
+            export declare const Width;
+            export declare const Height;
+            export declare const UnitVolume;
+            export declare const Volume;
+            export declare const PriceCpd;
+            export declare const PtaxCpd;
+            export declare const AtaxCpd;
+            export declare const DiscCpd;
+            export declare const GrossWtCpd;
+            export declare const NetWtCpd;
+            export declare const VolumeCpd;
+            export declare const InnerPkgType;
+            export declare const InnerQty;
+            export declare const InnerPkgs;
+            export declare const InnerExcsQty;
+            export declare const OuterPkgType;
+            export declare const OuterQty;
+            export declare const OuterPkgs;
+            export declare const OuterExcsQty;
+            export declare const StartCtnNo;
+            export declare const QtyShipped;
+            export declare const ItemTaxCode;
+            export declare const CustItemNo;
+            export declare const SpecNo;
+            export declare const BomNo;
+            export declare const QtyPacked;
+            export declare const JobNo;
+            export declare const ProdBranch;
+            export declare const AssemblyLine;
+            export declare const ProdDueDate;
+            export declare const MakeIt;
+            export declare const ProdStartDate;
+            export declare const SchedCount;
+            export declare const StdAssort;
+            export declare const ExtDescription;
+            export declare const QtyPending;
+            export declare const VendorNo;
+            export declare const VendorPrice;
+            export declare const VendorPack;
+            export declare const VendorCcy;
+            export declare const OriginQty;
+            export declare const SltaxPcent;
+            export declare const SltaxAmt;
+            export declare const ReorderQty;
+            export declare const IncludeScrapRate;
+            export declare const MarkupPcent;
+            export declare const Markup;
+            export declare const ItemCode;
+            export declare const MoldBomNo;
+            export declare const MoldFormulaCode;
+            export declare const MoldExpectedQty;
+            export declare const Anlys15;
+            export declare const Anlys16;
+            export declare const Anlys17;
+            export declare const Anlys18;
+            export declare const Anlys19;
+            export declare const Anlys20;
+            export declare const ShipmarkRmk;
+            export declare const LotSizeCost;
+            export declare const ReleaseQty;
+            export declare const BlanketRef;
+            export declare const BlanketLineNo;
+            export declare const OrderNoRecnum;
+            export declare const OrderNoPosted;
+            export declare const OrderNoClosed;
+            export declare const OrderNoCustomerNo;
+            export declare const OrderNoCustomerName;
+            export declare const OrderNoOrderDate;
+            export declare const OrderNoDueDate;
+            export declare const OrderNoSchedDate;
+            export declare const OrderNoCustomerPo;
+            export declare const OrderNoShipTo;
+            export declare const OrderNoAddress;
+            export declare const OrderNoAddress2;
+            export declare const OrderNoAddress3;
+            export declare const OrderNoAddress4;
+            export declare const OrderNoMultiShip;
+            export declare const OrderNoAutoPo;
+            export declare const OrderNoAutoJob;
+            export declare const OrderNoComputeTax;
+            export declare const OrderNoAutoResv;
+            export declare const OrderNoAutoWait;
+            export declare const OrderNoVendorNo;
+            export declare const OrderNoPoNo;
+            export declare const OrderNoPoPayTerms;
+            export declare const OrderNoPoShipTo;
+            export declare const OrderNoPoBuyer;
+            export declare const OrderNoShipVia;
+            export declare const OrderNoShipmentTerms;
+            export declare const OrderNoSalesman;
+            export declare const OrderNoPayTerms;
+            export declare const OrderNoPriceCode;
+            export declare const OrderNoAnlys1;
+            export declare const OrderNoAnlys2;
+            export declare const OrderNoCcy;
+            export declare const OrderNoExchRate;
+            export declare const OrderNoShipFrom;
+            export declare const OrderNoLastSchedNo;
+            export declare const OrderNoLastLineNo;
+            export declare const OrderNoLastTextNo;
+            export declare const OrderNoLastCtnNo;
+            export declare const OrderNoTotPriceAmt;
+            export declare const OrderNoTotPtaxAmt;
+            export declare const OrderNoTotExtPrice;
+            export declare const OrderNoTotLdiscAmt;
+            export declare const OrderNoTotAtaxAmt;
+            export declare const OrderNoTotItemAmt;
+            export declare const OrderNoTdiscPcent;
+            export declare const OrderNoTotTdiscAmt;
+            export declare const OrderNoNetTradeAmt;
+            export declare const OrderNoTotChgsAmt;
+            export declare const OrderNoNetOrdrAmt;
+            export declare const OrderNoTotGtaxAmt;
+            export declare const OrderNoNetPayAmt;
+            export declare const OrderNoDpsPcent;
+            export declare const OrderNoTotDpsAmt;
+            export declare const OrderNoNetBalAmt;
+            export declare const OrderNoTotTdiscCpd;
+            export declare const OrderNoTotGtaxCpd;
+            export declare const OrderNoTotDpsCpd;
+            export declare const OrderNoDpsReceiptNo;
+            export declare const OrderNoDpsFundCode;
+            export declare const OrderNoDpsReference;
+            export declare const OrderNoDpsRcptDate;
+            export declare const OrderNoCreatedDate;
+            export declare const OrderNoCreatedBy;
+            export declare const OrderNoRevisedDate;
+            export declare const OrderNoRevisedBy;
+            export declare const OrderNoPostedDate;
+            export declare const OrderNoPostedBy;
+            export declare const OrderNoPrevisedDate;
+            export declare const OrderNoPrevisedBy;
+            export declare const OrderNoLockType;
+            export declare const OrderNoLockRefNo;
+            export declare const OrderNoLastLogNo;
+            export declare const OrderNoVendTaxCode;
+            export declare const OrderNoCustTaxCode;
+            export declare const OrderNoPackingOk;
+            export declare const OrderNoWeightUom;
+            export declare const OrderNoGrWt;
+            export declare const OrderNoNtWt;
+            export declare const OrderNoDimensionUom;
+            export declare const OrderNoVolume;
+            export declare const OrderNoOwnerBranch;
+            export declare const OrderNoSourceBranch;
+            export declare const OrderNoComments1;
+            export declare const OrderNoComments2;
+            export declare const OrderNoComments3;
+            export declare const OrderNoComments4;
+            export declare const OrderNoCheckCrlimit;
+            export declare const OrderNoCheckCrbal;
+            export declare const OrderNoWebPublished;
+            export declare const OrderNoSendWebMsg;
+            export declare const OrderNoWebUserName;
+            export declare const OrderNoAttention;
+            export declare const OrderNoTelNo;
+            export declare const OrderNoFaxNo;
+            export declare const OrderNoPortLoading;
+            export declare const OrderNoPortDischarge;
+            export declare const OrderNoVesselName;
+            export declare const OrderNoForwarder;
+            export declare const OrderNoLcNo;
+            export declare const OrderNoOriginCountry;
+            export declare const OrderNoMrpExclude;
+            export declare const OrderNoSltaxType;
+            export declare const OrderNoGsltaxPcent;
+            export declare const OrderNoTotGsltaxAmt;
+            export declare const OrderNoTotLsltaxAmt;
+            export declare const OrderNoLastTextNo1;
+            export declare const OrderNoComments5;
+            export declare const OrderNoComments6;
+            export declare const OrderNoComments7;
+            export declare const OrderNoComments8;
+            export declare const OrderNoAnlys7;
+            export declare const OrderNoAnlys8;
+            export declare const OrderNoFlag;
+            export declare const OrderNoHoldBy;
+            export declare const OrderNoQuoRefNo;
+            export declare const OrderNoBrandCode;
+            export declare const OrderNoItemCode;
+            export declare const OrderNoPkgUnit;
+            export declare const OrderNoWeightUnit;
+            export declare const OrderNoAnlys9;
+            export declare const OrderNoAnlys10;
+            export declare const OrderNoAnlys11;
+            export declare const OrderNoAnlys12;
+            export declare const OrderNoAnlys13;
+            export declare const OrderNoAnlys14;
+            export declare const OrderNoOrderType;
+            export declare const OrderNoRefCompanyCode;
+            export declare const OrderNoRefPurchaseOrderNo;
+        }
+
+        [
+            'Recnum',
+            'OrderNo',
+            'LineNo',
+            'Posted',
+            'Closed',
+            'ItemNo',
+            'Description',
+            'Uom',
+            'LotSize',
+            'Qty',
+            'Price',
+            'Ptax',
+            'NetPrice',
+            'ExtPrice',
+            'LdiscPcent',
+            'LdiscAmt',
+            'AtaxAmt',
+            'NetItemAmt',
+            'PriceAmt',
+            'PtaxAmt',
+            'Anlys1',
+            'Anlys2',
+            'Anlys3',
+            'Anlys4',
+            'Anlys5',
+            'Anlys6',
+            'CommisType',
+            'CommisRefNo',
+            'Configurable',
+            'FirstShipQty',
+            'OtherShipQty',
+            'LastShipNo',
+            'Reserved',
+            'ResvStubNo',
+            'Waitlisted',
+            'WaitlistNo',
+            'WeightUom',
+            'GrossWt',
+            'NetWt',
+            'DimensionUom',
+            'Flength',
+            'Width',
+            'Height',
+            'UnitVolume',
+            'Volume',
+            'PriceCpd',
+            'PtaxCpd',
+            'AtaxCpd',
+            'DiscCpd',
+            'GrossWtCpd',
+            'NetWtCpd',
+            'VolumeCpd',
+            'InnerPkgType',
+            'InnerQty',
+            'InnerPkgs',
+            'InnerExcsQty',
+            'OuterPkgType',
+            'OuterQty',
+            'OuterPkgs',
+            'OuterExcsQty',
+            'StartCtnNo',
+            'QtyShipped',
+            'ItemTaxCode',
+            'CustItemNo',
+            'SpecNo',
+            'BomNo',
+            'QtyPacked',
+            'JobNo',
+            'ProdBranch',
+            'AssemblyLine',
+            'ProdDueDate',
+            'MakeIt',
+            'ProdStartDate',
+            'SchedCount',
+            'StdAssort',
+            'ExtDescription',
+            'QtyPending',
+            'VendorNo',
+            'VendorPrice',
+            'VendorPack',
+            'VendorCcy',
+            'OriginQty',
+            'SltaxPcent',
+            'SltaxAmt',
+            'ReorderQty',
+            'IncludeScrapRate',
+            'MarkupPcent',
+            'Markup',
+            'ItemCode',
+            'MoldBomNo',
+            'MoldFormulaCode',
+            'MoldExpectedQty',
+            'Anlys15',
+            'Anlys16',
+            'Anlys17',
+            'Anlys18',
+            'Anlys19',
+            'Anlys20',
+            'ShipmarkRmk',
+            'LotSizeCost',
+            'ReleaseQty',
+            'BlanketRef',
+            'BlanketLineNo',
+            'OrderNoRecnum',
+            'OrderNoPosted',
+            'OrderNoClosed',
+            'OrderNoCustomerNo',
+            'OrderNoCustomerName',
+            'OrderNoOrderDate',
+            'OrderNoDueDate',
+            'OrderNoSchedDate',
+            'OrderNoCustomerPo',
+            'OrderNoShipTo',
+            'OrderNoAddress',
+            'OrderNoAddress2',
+            'OrderNoAddress3',
+            'OrderNoAddress4',
+            'OrderNoMultiShip',
+            'OrderNoAutoPo',
+            'OrderNoAutoJob',
+            'OrderNoComputeTax',
+            'OrderNoAutoResv',
+            'OrderNoAutoWait',
+            'OrderNoVendorNo',
+            'OrderNoPoNo',
+            'OrderNoPoPayTerms',
+            'OrderNoPoShipTo',
+            'OrderNoPoBuyer',
+            'OrderNoShipVia',
+            'OrderNoShipmentTerms',
+            'OrderNoSalesman',
+            'OrderNoPayTerms',
+            'OrderNoPriceCode',
+            'OrderNoAnlys1',
+            'OrderNoAnlys2',
+            'OrderNoCcy',
+            'OrderNoExchRate',
+            'OrderNoShipFrom',
+            'OrderNoLastSchedNo',
+            'OrderNoLastLineNo',
+            'OrderNoLastTextNo',
+            'OrderNoLastCtnNo',
+            'OrderNoTotPriceAmt',
+            'OrderNoTotPtaxAmt',
+            'OrderNoTotExtPrice',
+            'OrderNoTotLdiscAmt',
+            'OrderNoTotAtaxAmt',
+            'OrderNoTotItemAmt',
+            'OrderNoTdiscPcent',
+            'OrderNoTotTdiscAmt',
+            'OrderNoNetTradeAmt',
+            'OrderNoTotChgsAmt',
+            'OrderNoNetOrdrAmt',
+            'OrderNoTotGtaxAmt',
+            'OrderNoNetPayAmt',
+            'OrderNoDpsPcent',
+            'OrderNoTotDpsAmt',
+            'OrderNoNetBalAmt',
+            'OrderNoTotTdiscCpd',
+            'OrderNoTotGtaxCpd',
+            'OrderNoTotDpsCpd',
+            'OrderNoDpsReceiptNo',
+            'OrderNoDpsFundCode',
+            'OrderNoDpsReference',
+            'OrderNoDpsRcptDate',
+            'OrderNoCreatedDate',
+            'OrderNoCreatedBy',
+            'OrderNoRevisedDate',
+            'OrderNoRevisedBy',
+            'OrderNoPostedDate',
+            'OrderNoPostedBy',
+            'OrderNoPrevisedDate',
+            'OrderNoPrevisedBy',
+            'OrderNoLockType',
+            'OrderNoLockRefNo',
+            'OrderNoLastLogNo',
+            'OrderNoVendTaxCode',
+            'OrderNoCustTaxCode',
+            'OrderNoPackingOk',
+            'OrderNoWeightUom',
+            'OrderNoGrWt',
+            'OrderNoNtWt',
+            'OrderNoDimensionUom',
+            'OrderNoVolume',
+            'OrderNoOwnerBranch',
+            'OrderNoSourceBranch',
+            'OrderNoComments1',
+            'OrderNoComments2',
+            'OrderNoComments3',
+            'OrderNoComments4',
+            'OrderNoCheckCrlimit',
+            'OrderNoCheckCrbal',
+            'OrderNoWebPublished',
+            'OrderNoSendWebMsg',
+            'OrderNoWebUserName',
+            'OrderNoAttention',
+            'OrderNoTelNo',
+            'OrderNoFaxNo',
+            'OrderNoPortLoading',
+            'OrderNoPortDischarge',
+            'OrderNoVesselName',
+            'OrderNoForwarder',
+            'OrderNoLcNo',
+            'OrderNoOriginCountry',
+            'OrderNoMrpExclude',
+            'OrderNoSltaxType',
+            'OrderNoGsltaxPcent',
+            'OrderNoTotGsltaxAmt',
+            'OrderNoTotLsltaxAmt',
+            'OrderNoLastTextNo1',
+            'OrderNoComments5',
+            'OrderNoComments6',
+            'OrderNoComments7',
+            'OrderNoComments8',
+            'OrderNoAnlys7',
+            'OrderNoAnlys8',
+            'OrderNoFlag',
+            'OrderNoHoldBy',
+            'OrderNoQuoRefNo',
+            'OrderNoBrandCode',
+            'OrderNoItemCode',
+            'OrderNoPkgUnit',
+            'OrderNoWeightUnit',
+            'OrderNoAnlys9',
+            'OrderNoAnlys10',
+            'OrderNoAnlys11',
+            'OrderNoAnlys12',
+            'OrderNoAnlys13',
+            'OrderNoAnlys14',
+            'OrderNoOrderType',
+            'OrderNoRefCompanyCode',
+            'OrderNoRefPurchaseOrderNo'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

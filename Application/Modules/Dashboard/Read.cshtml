@@ -1,0 +1,110 @@
+﻿@model Matrix.MasterData.Entities.MessageRow
+@{
+    ViewData["Title"] = "Read Mail";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Scripts/fullcalendar/fullcalendar.min.css" />
+    <link rel="stylesheet" href="~/Scripts/fullcalendar/fullcalendar.print.css" media="print" />
+    <link rel="stylesheet" href="~/Content/iCheck/flat/blue.css" />
+    <link rel="stylesheet" href="~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="~/Scripts/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/Scripts/jquery.icheck.min.js"></script>
+    <script src="~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="~/Scripts/adminlte/demo.js"></script>
+}
+
+@section ContentHeader {
+    @*<h1>@ViewData["Title"]<small></small></h1>*@
+}
+
+<!-- /.col -->
+<div class="col-md-12">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"></h3>
+            <div class="box-tools pull-right">
+                <a href="#" class="btn btn-box-tool"  data-toggle="tooltip" title="Previous"><i class="fa fa-chevron-left" id="btnPrevious"></i></a>
+                <a href="#" class="btn btn-box-tool"  data-toggle="tooltip" title="Next"><i class="fa fa-chevron-right" id="btnNext"></i></a>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+            <div class="mailbox-read-info">
+                <h3>@Model.Summary</h3>
+                <h5>
+                    From: @Model.CreatedBy
+                    <span class="mailbox-read-time pull-right">@Model.CreatedDate.Value.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                </h5>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <!-- /.mailbox-controls -->
+            <div class="mailbox-read-message">
+              @Html.Raw(@Model.HtmlText)
+            </div>
+            <!-- /.mailbox-read-message -->
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+            <ul class="mailbox-attachments clearfix">
+                @foreach (var attach in Model.DetailList)
+                {
+                    <li>
+                        <span class="mailbox-attachment-icon"><i class="fa fa-file-pdf-o"></i></span>
+                        <div class="mailbox-attachment-info">
+                            <a href="#" class="mailbox-attachment-name"><i class="fa fa-paperclip"></i> @attach.FileName</a>
+                            <span class="mailbox-attachment-size">
+                                @attach.FileSize KB
+                                <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
+                            </span>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!-- /.box-footer -->
+        <div class="box-footer">
+            <div class="pull-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-reply"></i> Reply</button>
+                <button type="button" class="btn btn-default"><i class="fa fa-share"></i> Forward</button>
+            </div>
+            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button>
+            <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+        </div>
+        <!-- /.box-footer -->
+    </div>
+    <!-- /. box -->
+</div>
+<!-- /.col -->
+
+<script type="text/javascript">
+
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    $(function () {
+        
+        $('#btnPrevious').click(function () {
+            var id = getUrlVars()["messageId"];
+            id = id.replace("#", "");
+            window.location.href = Q.format("Previous?messageId={0}", id);
+        });
+
+        $('#btnNext').click(function () {
+            var id = getUrlVars()["messageId"];
+            id = id.replace("#", "");
+            window.location.href = Q.format("Next?messageId={0}", id);
+        });
+    });
+</script>

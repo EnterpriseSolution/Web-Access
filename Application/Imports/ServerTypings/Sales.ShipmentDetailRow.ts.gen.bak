@@ -1,0 +1,758 @@
+﻿
+namespace Matrix.Sales {
+    export interface ShipmentDetailRow {
+        Recnum?: number;
+        RefNo?: string;
+        EntryNo?: number;
+        Selected?: string;
+        OrderNo?: string;
+        LineNo?: number;
+        ItemNo?: string;
+        Description?: string;
+        Uom?: string;
+        LotSize?: number;
+        Configurable?: string;
+        QtyBalance?: number;
+        QtyDue?: number;
+        QtyShipped?: number;
+        Price?: number;
+        Ptax?: number;
+        NetPrice?: number;
+        ExtPrice?: number;
+        LdiscPcent?: number;
+        LdiscAmt?: number;
+        AtaxAmt?: number;
+        NetItemAmt?: number;
+        PriceAmt?: number;
+        PtaxAmt?: number;
+        LdiscRate?: number;
+        AtaxRate?: number;
+        LdiscAmtCpd?: number;
+        AtaxAmtCpd?: number;
+        LocPriceAmt?: number;
+        LocPtaxAmt?: number;
+        LocExtPrice?: number;
+        LocLdiscAmt?: number;
+        LocAtaxAmt?: number;
+        LocItemAmt?: number;
+        Anlys1?: string;
+        Anlys2?: string;
+        Anlys3?: string;
+        Anlys4?: string;
+        Anlys5?: string;
+        Anlys6?: string;
+        Posted?: string;
+        LogNo?: number;
+        Returned?: string;
+        ShipmentDate?: string;
+        CustomerNo?: string;
+        ShipFrom?: string;
+        CommisType?: string;
+        CommisRefNo?: string;
+        CustItemNo?: string;
+        AcctSales?: string;
+        AcctLdisc?: string;
+        AcctPtax?: string;
+        AcctAtax?: string;
+        ItemTaxCode?: string;
+        QtyReturned?: number;
+        RetPriceAmt?: number;
+        RetPtaxAmt?: number;
+        RetExtPrice?: number;
+        RetLdiscAmt?: number;
+        RetAtaxAmt?: number;
+        RetItemAmt?: number;
+        LretPriceAmt?: number;
+        LretPtaxAmt?: number;
+        LretExtPrice?: number;
+        LretLdiscAmt?: number;
+        LretAtaxAmt?: number;
+        LretItemAmt?: number;
+        QtyPacked?: number;
+        CostReturned?: number;
+        StdAssort?: string;
+        ExtDescription?: string;
+        VendorPack?: string;
+        SltaxPcent?: number;
+        SltaxAmt?: number;
+        LocSltaxAmt?: number;
+        AcctSltax?: string;
+        MarkupPcent?: number;
+        Markup?: number;
+        Anlys15?: string;
+        Anlys16?: string;
+        Anlys17?: string;
+        Anlys18?: string;
+        Anlys19?: string;
+        Anlys20?: string;
+        LotSizeCost?: number;
+        RefNoRecnum?: number;
+        RefNoShipmentDate?: string;
+        RefNoPosted?: string;
+        RefNoReturned?: string;
+        RefNoCustomerNo?: string;
+        RefNoCustomerName?: string;
+        RefNoShipTo?: string;
+        RefNoAddress?: string;
+        RefNoAddress2?: string;
+        RefNoAddress3?: string;
+        RefNoAddress4?: string;
+        RefNoCutoffDate?: string;
+        RefNoShipVia?: string;
+        RefNoShipmentTerms?: string;
+        RefNoVesselName?: string;
+        RefNoEtd?: string;
+        RefNoEta?: string;
+        RefNoPayTerms?: string;
+        RefNoDiscDays?: number;
+        RefNoDiscPercent?: number;
+        RefNoNetDays?: number;
+        RefNoDiscountDate?: string;
+        RefNoDueDate?: string;
+        RefNoExpectedDate?: string;
+        RefNoCcy?: string;
+        RefNoExchRate?: number;
+        RefNoShipFrom?: string;
+        RefNoOwnerBranch?: string;
+        RefNoSourceBranch?: string;
+        RefNoComputeTax?: string;
+        RefNoTotPriceAmt?: number;
+        RefNoTotPtaxAmt?: number;
+        RefNoTotExtPrice?: number;
+        RefNoTotLdiscAmt?: number;
+        RefNoTotAtaxAmt?: number;
+        RefNoTotItemAmt?: number;
+        RefNoTotTdiscAmt?: number;
+        RefNoNetTradeAmt?: number;
+        RefNoTotChgsAmt?: number;
+        RefNoNetOrdrAmt?: number;
+        RefNoTotGtaxAmt?: number;
+        RefNoNetPayAmt?: number;
+        RefNoDpsCover?: number;
+        RefNoDpsApplied?: number;
+        RefNoNetBalAmt?: number;
+        RefNoCpdTdiscAmt?: number;
+        RefNoCpdGtaxAmt?: number;
+        RefNoCpdDpsAmt?: number;
+        RefNoLocPriceAmt?: number;
+        RefNoLocPtaxAmt?: number;
+        RefNoLocExtPrice?: number;
+        RefNoLocLdiscAmt?: number;
+        RefNoLocAtaxAmt?: number;
+        RefNoLocItemAmt?: number;
+        RefNoLocTdiscAmt?: number;
+        RefNoLocChgsAmt?: number;
+        RefNoLocGtaxAmt?: number;
+        RefNoLocPayAmt?: number;
+        RefNoLocDpsApplied?: number;
+        RefNoCreatedDate?: string;
+        RefNoCreatedBy?: string;
+        RefNoRevisedDate?: string;
+        RefNoRevisedBy?: string;
+        RefNoPostedDate?: string;
+        RefNoPostedBy?: string;
+        RefNoPrevisedDate?: string;
+        RefNoPrevisedBy?: string;
+        RefNoLastEntryNo?: number;
+        RefNoLastChgsNo?: number;
+        RefNoLastTextNo?: number;
+        RefNoLastCtnNo?: number;
+        RefNoLockType?: string;
+        RefNoLockRefNo?: string;
+        RefNoLastLogNo?: number;
+        RefNoNewItemCount?: number;
+        RefNoNewChgsCount?: number;
+        RefNoAcctCustomer?: string;
+        RefNoAcctTdisc?: string;
+        RefNoAcctGtax?: string;
+        RefNoDpsApplyRef?: string;
+        RefNoVendTaxCode?: string;
+        RefNoCustTaxCode?: string;
+        RefNoRetPriceAmt?: number;
+        RefNoRetPtaxAmt?: number;
+        RefNoRetExtPrice?: number;
+        RefNoRetLdiscAmt?: number;
+        RefNoRetAtaxAmt?: number;
+        RefNoRetItemAmt?: number;
+        RefNoRetTdiscAmt?: number;
+        RefNoRetGtaxAmt?: number;
+        RefNoRetChgsAmt?: number;
+        RefNoRetPayAmt?: number;
+        RefNoLretPriceAmt?: number;
+        RefNoLretPtaxAmt?: number;
+        RefNoLretExtPrice?: number;
+        RefNoLretLdiscAmt?: number;
+        RefNoLretAtaxAmt?: number;
+        RefNoLretItemAmt?: number;
+        RefNoLretTdiscAmt?: number;
+        RefNoLretGtaxAmt?: number;
+        RefNoLretChgsAmt?: number;
+        RefNoLretPayAmt?: number;
+        RefNoWeightUom?: string;
+        RefNoGrWt?: number;
+        RefNoNtWt?: number;
+        RefNoDimensionUom?: string;
+        RefNoVolume?: number;
+        RefNoGlLink?: string;
+        RefNoGlLinkType?: string;
+        RefNoGlLinkNo?: string;
+        RefNoPackingOk?: string;
+        RefNoComments1?: string;
+        RefNoComments2?: string;
+        RefNoComments3?: string;
+        RefNoComments4?: string;
+        RefNoSettleAt?: string;
+        RefNoCheckCrlimit?: string;
+        RefNoCheckCrbal?: number;
+        RefNoAttention?: string;
+        RefNoTelNo?: string;
+        RefNoFaxNo?: string;
+        RefNoPortLoading?: string;
+        RefNoPortDischarge?: string;
+        RefNoForwarder?: string;
+        RefNoLcNo?: string;
+        RefNoOriginCountry?: string;
+        RefNoComments5?: string;
+        RefNoComments6?: string;
+        RefNoComments7?: string;
+        RefNoComments8?: string;
+        RefNoIssueBank?: string;
+        RefNoIssueDate?: string;
+        RefNoSltaxType?: string;
+        RefNoGsltaxPcent?: number;
+        RefNoTotGsltaxAmt?: number;
+        RefNoTotLsltaxAmt?: number;
+        RefNoLocGsltaxAmt?: number;
+        RefNoLocLsltaxAmt?: number;
+        RefNoSoSltaxType?: string;
+        RefNoSoGsltaxPcent?: number;
+        RefNoOrderCount?: number;
+        RefNoAcctSltax?: string;
+        RefNoLastTextNo1?: number;
+        RefNoAnlys1?: string;
+        RefNoAnlys2?: string;
+        RefNoAnlys7?: string;
+        RefNoAnlys8?: string;
+        RefNoDnOnly?: string;
+        RefNoInvoiced?: string;
+        RefNoInvoiceNo?: string;
+        RefNoFlag?: string;
+        RefNoHoldBy?: string;
+        RefNoAnlys9?: string;
+        RefNoAnlys10?: string;
+        RefNoAnlys11?: string;
+        RefNoAnlys12?: string;
+        RefNoAnlys13?: string;
+        RefNoAnlys14?: string;
+        RefNoManualShipmentDetail?: boolean;
+        RefNoRefCompanyCode?: string;
+        RefNoRefGrnNo?: string;
+        RefNoLcName?: string;
+    }
+
+    export namespace ShipmentDetailRow {
+        export const idProperty = 'Recnum';
+        export const nameProperty = 'RefNo';
+        export const localTextPrefix = 'Sales.ShipmentDetail';
+
+        export namespace Fields {
+            export declare const Recnum;
+            export declare const RefNo;
+            export declare const EntryNo;
+            export declare const Selected;
+            export declare const OrderNo;
+            export declare const LineNo;
+            export declare const ItemNo;
+            export declare const Description;
+            export declare const Uom;
+            export declare const LotSize;
+            export declare const Configurable;
+            export declare const QtyBalance;
+            export declare const QtyDue;
+            export declare const QtyShipped;
+            export declare const Price;
+            export declare const Ptax;
+            export declare const NetPrice;
+            export declare const ExtPrice;
+            export declare const LdiscPcent;
+            export declare const LdiscAmt;
+            export declare const AtaxAmt;
+            export declare const NetItemAmt;
+            export declare const PriceAmt;
+            export declare const PtaxAmt;
+            export declare const LdiscRate;
+            export declare const AtaxRate;
+            export declare const LdiscAmtCpd;
+            export declare const AtaxAmtCpd;
+            export declare const LocPriceAmt;
+            export declare const LocPtaxAmt;
+            export declare const LocExtPrice;
+            export declare const LocLdiscAmt;
+            export declare const LocAtaxAmt;
+            export declare const LocItemAmt;
+            export declare const Anlys1;
+            export declare const Anlys2;
+            export declare const Anlys3;
+            export declare const Anlys4;
+            export declare const Anlys5;
+            export declare const Anlys6;
+            export declare const Posted;
+            export declare const LogNo;
+            export declare const Returned;
+            export declare const ShipmentDate;
+            export declare const CustomerNo;
+            export declare const ShipFrom;
+            export declare const CommisType;
+            export declare const CommisRefNo;
+            export declare const CustItemNo;
+            export declare const AcctSales;
+            export declare const AcctLdisc;
+            export declare const AcctPtax;
+            export declare const AcctAtax;
+            export declare const ItemTaxCode;
+            export declare const QtyReturned;
+            export declare const RetPriceAmt;
+            export declare const RetPtaxAmt;
+            export declare const RetExtPrice;
+            export declare const RetLdiscAmt;
+            export declare const RetAtaxAmt;
+            export declare const RetItemAmt;
+            export declare const LretPriceAmt;
+            export declare const LretPtaxAmt;
+            export declare const LretExtPrice;
+            export declare const LretLdiscAmt;
+            export declare const LretAtaxAmt;
+            export declare const LretItemAmt;
+            export declare const QtyPacked;
+            export declare const CostReturned;
+            export declare const StdAssort;
+            export declare const ExtDescription;
+            export declare const VendorPack;
+            export declare const SltaxPcent;
+            export declare const SltaxAmt;
+            export declare const LocSltaxAmt;
+            export declare const AcctSltax;
+            export declare const MarkupPcent;
+            export declare const Markup;
+            export declare const Anlys15;
+            export declare const Anlys16;
+            export declare const Anlys17;
+            export declare const Anlys18;
+            export declare const Anlys19;
+            export declare const Anlys20;
+            export declare const LotSizeCost;
+            export declare const RefNoRecnum;
+            export declare const RefNoShipmentDate;
+            export declare const RefNoPosted;
+            export declare const RefNoReturned;
+            export declare const RefNoCustomerNo;
+            export declare const RefNoCustomerName;
+            export declare const RefNoShipTo;
+            export declare const RefNoAddress;
+            export declare const RefNoAddress2;
+            export declare const RefNoAddress3;
+            export declare const RefNoAddress4;
+            export declare const RefNoCutoffDate;
+            export declare const RefNoShipVia;
+            export declare const RefNoShipmentTerms;
+            export declare const RefNoVesselName;
+            export declare const RefNoEtd;
+            export declare const RefNoEta;
+            export declare const RefNoPayTerms;
+            export declare const RefNoDiscDays;
+            export declare const RefNoDiscPercent;
+            export declare const RefNoNetDays;
+            export declare const RefNoDiscountDate;
+            export declare const RefNoDueDate;
+            export declare const RefNoExpectedDate;
+            export declare const RefNoCcy;
+            export declare const RefNoExchRate;
+            export declare const RefNoShipFrom;
+            export declare const RefNoOwnerBranch;
+            export declare const RefNoSourceBranch;
+            export declare const RefNoComputeTax;
+            export declare const RefNoTotPriceAmt;
+            export declare const RefNoTotPtaxAmt;
+            export declare const RefNoTotExtPrice;
+            export declare const RefNoTotLdiscAmt;
+            export declare const RefNoTotAtaxAmt;
+            export declare const RefNoTotItemAmt;
+            export declare const RefNoTotTdiscAmt;
+            export declare const RefNoNetTradeAmt;
+            export declare const RefNoTotChgsAmt;
+            export declare const RefNoNetOrdrAmt;
+            export declare const RefNoTotGtaxAmt;
+            export declare const RefNoNetPayAmt;
+            export declare const RefNoDpsCover;
+            export declare const RefNoDpsApplied;
+            export declare const RefNoNetBalAmt;
+            export declare const RefNoCpdTdiscAmt;
+            export declare const RefNoCpdGtaxAmt;
+            export declare const RefNoCpdDpsAmt;
+            export declare const RefNoLocPriceAmt;
+            export declare const RefNoLocPtaxAmt;
+            export declare const RefNoLocExtPrice;
+            export declare const RefNoLocLdiscAmt;
+            export declare const RefNoLocAtaxAmt;
+            export declare const RefNoLocItemAmt;
+            export declare const RefNoLocTdiscAmt;
+            export declare const RefNoLocChgsAmt;
+            export declare const RefNoLocGtaxAmt;
+            export declare const RefNoLocPayAmt;
+            export declare const RefNoLocDpsApplied;
+            export declare const RefNoCreatedDate;
+            export declare const RefNoCreatedBy;
+            export declare const RefNoRevisedDate;
+            export declare const RefNoRevisedBy;
+            export declare const RefNoPostedDate;
+            export declare const RefNoPostedBy;
+            export declare const RefNoPrevisedDate;
+            export declare const RefNoPrevisedBy;
+            export declare const RefNoLastEntryNo;
+            export declare const RefNoLastChgsNo;
+            export declare const RefNoLastTextNo;
+            export declare const RefNoLastCtnNo;
+            export declare const RefNoLockType;
+            export declare const RefNoLockRefNo;
+            export declare const RefNoLastLogNo;
+            export declare const RefNoNewItemCount;
+            export declare const RefNoNewChgsCount;
+            export declare const RefNoAcctCustomer;
+            export declare const RefNoAcctTdisc;
+            export declare const RefNoAcctGtax;
+            export declare const RefNoDpsApplyRef;
+            export declare const RefNoVendTaxCode;
+            export declare const RefNoCustTaxCode;
+            export declare const RefNoRetPriceAmt;
+            export declare const RefNoRetPtaxAmt;
+            export declare const RefNoRetExtPrice;
+            export declare const RefNoRetLdiscAmt;
+            export declare const RefNoRetAtaxAmt;
+            export declare const RefNoRetItemAmt;
+            export declare const RefNoRetTdiscAmt;
+            export declare const RefNoRetGtaxAmt;
+            export declare const RefNoRetChgsAmt;
+            export declare const RefNoRetPayAmt;
+            export declare const RefNoLretPriceAmt;
+            export declare const RefNoLretPtaxAmt;
+            export declare const RefNoLretExtPrice;
+            export declare const RefNoLretLdiscAmt;
+            export declare const RefNoLretAtaxAmt;
+            export declare const RefNoLretItemAmt;
+            export declare const RefNoLretTdiscAmt;
+            export declare const RefNoLretGtaxAmt;
+            export declare const RefNoLretChgsAmt;
+            export declare const RefNoLretPayAmt;
+            export declare const RefNoWeightUom;
+            export declare const RefNoGrWt;
+            export declare const RefNoNtWt;
+            export declare const RefNoDimensionUom;
+            export declare const RefNoVolume;
+            export declare const RefNoGlLink;
+            export declare const RefNoGlLinkType;
+            export declare const RefNoGlLinkNo;
+            export declare const RefNoPackingOk;
+            export declare const RefNoComments1;
+            export declare const RefNoComments2;
+            export declare const RefNoComments3;
+            export declare const RefNoComments4;
+            export declare const RefNoSettleAt;
+            export declare const RefNoCheckCrlimit;
+            export declare const RefNoCheckCrbal;
+            export declare const RefNoAttention;
+            export declare const RefNoTelNo;
+            export declare const RefNoFaxNo;
+            export declare const RefNoPortLoading;
+            export declare const RefNoPortDischarge;
+            export declare const RefNoForwarder;
+            export declare const RefNoLcNo;
+            export declare const RefNoOriginCountry;
+            export declare const RefNoComments5;
+            export declare const RefNoComments6;
+            export declare const RefNoComments7;
+            export declare const RefNoComments8;
+            export declare const RefNoIssueBank;
+            export declare const RefNoIssueDate;
+            export declare const RefNoSltaxType;
+            export declare const RefNoGsltaxPcent;
+            export declare const RefNoTotGsltaxAmt;
+            export declare const RefNoTotLsltaxAmt;
+            export declare const RefNoLocGsltaxAmt;
+            export declare const RefNoLocLsltaxAmt;
+            export declare const RefNoSoSltaxType;
+            export declare const RefNoSoGsltaxPcent;
+            export declare const RefNoOrderCount;
+            export declare const RefNoAcctSltax;
+            export declare const RefNoLastTextNo1;
+            export declare const RefNoAnlys1;
+            export declare const RefNoAnlys2;
+            export declare const RefNoAnlys7;
+            export declare const RefNoAnlys8;
+            export declare const RefNoDnOnly;
+            export declare const RefNoInvoiced;
+            export declare const RefNoInvoiceNo;
+            export declare const RefNoFlag;
+            export declare const RefNoHoldBy;
+            export declare const RefNoAnlys9;
+            export declare const RefNoAnlys10;
+            export declare const RefNoAnlys11;
+            export declare const RefNoAnlys12;
+            export declare const RefNoAnlys13;
+            export declare const RefNoAnlys14;
+            export declare const RefNoManualShipmentDetail;
+            export declare const RefNoRefCompanyCode;
+            export declare const RefNoRefGrnNo;
+            export declare const RefNoLcName;
+        }
+
+        [
+            'Recnum',
+            'RefNo',
+            'EntryNo',
+            'Selected',
+            'OrderNo',
+            'LineNo',
+            'ItemNo',
+            'Description',
+            'Uom',
+            'LotSize',
+            'Configurable',
+            'QtyBalance',
+            'QtyDue',
+            'QtyShipped',
+            'Price',
+            'Ptax',
+            'NetPrice',
+            'ExtPrice',
+            'LdiscPcent',
+            'LdiscAmt',
+            'AtaxAmt',
+            'NetItemAmt',
+            'PriceAmt',
+            'PtaxAmt',
+            'LdiscRate',
+            'AtaxRate',
+            'LdiscAmtCpd',
+            'AtaxAmtCpd',
+            'LocPriceAmt',
+            'LocPtaxAmt',
+            'LocExtPrice',
+            'LocLdiscAmt',
+            'LocAtaxAmt',
+            'LocItemAmt',
+            'Anlys1',
+            'Anlys2',
+            'Anlys3',
+            'Anlys4',
+            'Anlys5',
+            'Anlys6',
+            'Posted',
+            'LogNo',
+            'Returned',
+            'ShipmentDate',
+            'CustomerNo',
+            'ShipFrom',
+            'CommisType',
+            'CommisRefNo',
+            'CustItemNo',
+            'AcctSales',
+            'AcctLdisc',
+            'AcctPtax',
+            'AcctAtax',
+            'ItemTaxCode',
+            'QtyReturned',
+            'RetPriceAmt',
+            'RetPtaxAmt',
+            'RetExtPrice',
+            'RetLdiscAmt',
+            'RetAtaxAmt',
+            'RetItemAmt',
+            'LretPriceAmt',
+            'LretPtaxAmt',
+            'LretExtPrice',
+            'LretLdiscAmt',
+            'LretAtaxAmt',
+            'LretItemAmt',
+            'QtyPacked',
+            'CostReturned',
+            'StdAssort',
+            'ExtDescription',
+            'VendorPack',
+            'SltaxPcent',
+            'SltaxAmt',
+            'LocSltaxAmt',
+            'AcctSltax',
+            'MarkupPcent',
+            'Markup',
+            'Anlys15',
+            'Anlys16',
+            'Anlys17',
+            'Anlys18',
+            'Anlys19',
+            'Anlys20',
+            'LotSizeCost',
+            'RefNoRecnum',
+            'RefNoShipmentDate',
+            'RefNoPosted',
+            'RefNoReturned',
+            'RefNoCustomerNo',
+            'RefNoCustomerName',
+            'RefNoShipTo',
+            'RefNoAddress',
+            'RefNoAddress2',
+            'RefNoAddress3',
+            'RefNoAddress4',
+            'RefNoCutoffDate',
+            'RefNoShipVia',
+            'RefNoShipmentTerms',
+            'RefNoVesselName',
+            'RefNoEtd',
+            'RefNoEta',
+            'RefNoPayTerms',
+            'RefNoDiscDays',
+            'RefNoDiscPercent',
+            'RefNoNetDays',
+            'RefNoDiscountDate',
+            'RefNoDueDate',
+            'RefNoExpectedDate',
+            'RefNoCcy',
+            'RefNoExchRate',
+            'RefNoShipFrom',
+            'RefNoOwnerBranch',
+            'RefNoSourceBranch',
+            'RefNoComputeTax',
+            'RefNoTotPriceAmt',
+            'RefNoTotPtaxAmt',
+            'RefNoTotExtPrice',
+            'RefNoTotLdiscAmt',
+            'RefNoTotAtaxAmt',
+            'RefNoTotItemAmt',
+            'RefNoTotTdiscAmt',
+            'RefNoNetTradeAmt',
+            'RefNoTotChgsAmt',
+            'RefNoNetOrdrAmt',
+            'RefNoTotGtaxAmt',
+            'RefNoNetPayAmt',
+            'RefNoDpsCover',
+            'RefNoDpsApplied',
+            'RefNoNetBalAmt',
+            'RefNoCpdTdiscAmt',
+            'RefNoCpdGtaxAmt',
+            'RefNoCpdDpsAmt',
+            'RefNoLocPriceAmt',
+            'RefNoLocPtaxAmt',
+            'RefNoLocExtPrice',
+            'RefNoLocLdiscAmt',
+            'RefNoLocAtaxAmt',
+            'RefNoLocItemAmt',
+            'RefNoLocTdiscAmt',
+            'RefNoLocChgsAmt',
+            'RefNoLocGtaxAmt',
+            'RefNoLocPayAmt',
+            'RefNoLocDpsApplied',
+            'RefNoCreatedDate',
+            'RefNoCreatedBy',
+            'RefNoRevisedDate',
+            'RefNoRevisedBy',
+            'RefNoPostedDate',
+            'RefNoPostedBy',
+            'RefNoPrevisedDate',
+            'RefNoPrevisedBy',
+            'RefNoLastEntryNo',
+            'RefNoLastChgsNo',
+            'RefNoLastTextNo',
+            'RefNoLastCtnNo',
+            'RefNoLockType',
+            'RefNoLockRefNo',
+            'RefNoLastLogNo',
+            'RefNoNewItemCount',
+            'RefNoNewChgsCount',
+            'RefNoAcctCustomer',
+            'RefNoAcctTdisc',
+            'RefNoAcctGtax',
+            'RefNoDpsApplyRef',
+            'RefNoVendTaxCode',
+            'RefNoCustTaxCode',
+            'RefNoRetPriceAmt',
+            'RefNoRetPtaxAmt',
+            'RefNoRetExtPrice',
+            'RefNoRetLdiscAmt',
+            'RefNoRetAtaxAmt',
+            'RefNoRetItemAmt',
+            'RefNoRetTdiscAmt',
+            'RefNoRetGtaxAmt',
+            'RefNoRetChgsAmt',
+            'RefNoRetPayAmt',
+            'RefNoLretPriceAmt',
+            'RefNoLretPtaxAmt',
+            'RefNoLretExtPrice',
+            'RefNoLretLdiscAmt',
+            'RefNoLretAtaxAmt',
+            'RefNoLretItemAmt',
+            'RefNoLretTdiscAmt',
+            'RefNoLretGtaxAmt',
+            'RefNoLretChgsAmt',
+            'RefNoLretPayAmt',
+            'RefNoWeightUom',
+            'RefNoGrWt',
+            'RefNoNtWt',
+            'RefNoDimensionUom',
+            'RefNoVolume',
+            'RefNoGlLink',
+            'RefNoGlLinkType',
+            'RefNoGlLinkNo',
+            'RefNoPackingOk',
+            'RefNoComments1',
+            'RefNoComments2',
+            'RefNoComments3',
+            'RefNoComments4',
+            'RefNoSettleAt',
+            'RefNoCheckCrlimit',
+            'RefNoCheckCrbal',
+            'RefNoAttention',
+            'RefNoTelNo',
+            'RefNoFaxNo',
+            'RefNoPortLoading',
+            'RefNoPortDischarge',
+            'RefNoForwarder',
+            'RefNoLcNo',
+            'RefNoOriginCountry',
+            'RefNoComments5',
+            'RefNoComments6',
+            'RefNoComments7',
+            'RefNoComments8',
+            'RefNoIssueBank',
+            'RefNoIssueDate',
+            'RefNoSltaxType',
+            'RefNoGsltaxPcent',
+            'RefNoTotGsltaxAmt',
+            'RefNoTotLsltaxAmt',
+            'RefNoLocGsltaxAmt',
+            'RefNoLocLsltaxAmt',
+            'RefNoSoSltaxType',
+            'RefNoSoGsltaxPcent',
+            'RefNoOrderCount',
+            'RefNoAcctSltax',
+            'RefNoLastTextNo1',
+            'RefNoAnlys1',
+            'RefNoAnlys2',
+            'RefNoAnlys7',
+            'RefNoAnlys8',
+            'RefNoDnOnly',
+            'RefNoInvoiced',
+            'RefNoInvoiceNo',
+            'RefNoFlag',
+            'RefNoHoldBy',
+            'RefNoAnlys9',
+            'RefNoAnlys10',
+            'RefNoAnlys11',
+            'RefNoAnlys12',
+            'RefNoAnlys13',
+            'RefNoAnlys14',
+            'RefNoManualShipmentDetail',
+            'RefNoRefCompanyCode',
+            'RefNoRefGrnNo',
+            'RefNoLcName'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

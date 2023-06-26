@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Enterprise.Vendor.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function() {
+
+        var ctrl = @Html.Raw(Json.Encode(Model));
+        if (ctrl === "C") {
+            new Matrix.Enterprise.VendorControlGrid($('#GridDiv'), {}).init();
+        }
+        else
+        {
+            new Matrix.Enterprise.VendorGrid($('#GridDiv'), {}).init();
+        }
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

@@ -1,0 +1,61 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+
+<#@ assembly name="$(TargetDir)Serenity.Core.dll" #>
+<#@ assembly name="$(TargetDir)Serenity.Web.dll" #>
+<#@ assembly name="$(TargetDir)Serenity.Application.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Serenity" #>
+<#@ import namespace="Serenity.CodeGeneration" #>
+<#@ import namespace="System.Diagnostics" #>
+
+<#@ include file="..\MultipleOutputHelper.ttinclude" #>
+<#@ include file="..\CodeGenerationHelpers.ttinclude" #>
+<#@ output extension=".txt" #>
+<#
+
+    //System.Diagnostics.Debugger.Launch();
+    var solutionDir = Host.ResolvePath(@"..\..\..\..\");
+    var webDir = Host.ResolvePath(@"..\..\");
+
+    List<Assembly> assemblies=new List<Assembly>{
+            typeof(Matrix.SiteInitialization).Assembly,
+            //typeof(Matrix.StringEnum).Assembly,
+            };
+
+    var generator = new ServerTypingsGenerator(assemblies.ToArray());
+    generator.RootNamespaces.Add("Matrix");
+
+    //if (System.IO.File.Exists(solutionDir + @"Matrix\Matrix.Script\Matrix.Script.csproj"))
+    //{
+    //var ssDir = solutionDir + @"Matrix\Matrix.Script\bin\debug\";
+    //var ssTypeLister = new SSTypeLister(
+    //ssDir + "Serenity.Script.Imports.dll",
+    //ssDir + "Serenity.Script.UI.dll",
+    //ssDir + "Matrix.Script.dll");
+    //var ssTypes = ssTypeLister.List();
+    //foreach (var type in ssTypes)
+    //generator.AddSSType(type);
+    //}
+
+    var tsTypeLister = new TSTypeLister(webDir);
+    var tsTypes = tsTypeLister.List();
+    foreach (var type in tsTypes)
+        generator.AddTSType(type);
+
+    var codeByFilename = generator.Run();
+    var manager = Manager.Create(Host, GenerationEnvironment);
+    foreach (var pair in codeByFilename) 
+    {
+        manager.StartNewFile(pair.Key);
+#>
+<#=            pair.Value#>
+<# 
+        manager.EndBlock(); 
+    }
+
+    manager.Process(true);
+
+    if (manager.AnyChanges)
+        new TypeScriptCompiler().Compile(webDir + @"Scripts\", "");
+#>

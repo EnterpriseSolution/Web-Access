@@ -1,0 +1,169 @@
+Q.ScriptData.set('Form.Enterprise.Department', 
+[
+
+{"name":"Dept","title":"Db.Enterprise.Department.Dept","editorParams":{"maxLength":4},"maxLength":4,"updatable":false,"width":150},
+{"name":"Description","title":"Db.Enterprise.Department.Description","editorParams":{"maxLength":30},"maxLength":30,"required":true,"width":150},
+{"name":"Suspended","title":"Db.Enterprise.Department.Suspended","editorType":"Boolean","editorParams":{"maxLength":1},"maxLength":1,"formatterType":"Checkbox","width":40,"filteringType":"Boolean"}]);
+
+
+
+
+Q.ScriptData.set('Form.Enterprise.Department',
+[{"name":"Dept","title":"Db.Enterprise.Department.Dept","editorParams":{"maxLength":4},"maxLength":4,"updatable":false,"width":150},
+{"name":"Description","title":"Db.Enterprise.Department.Description","editorParams":{"maxLength":30},"maxLength":30,"required":true,"width":150},
+{"name":"Suspended","title":"Db.Enterprise.Department.Suspended","editorType":"Boolean","editorParams":{"maxLength":1},"maxLength":1,
+    "formatterType":"Checkbox","width":40,"filteringType":"Boolean"},
+{"name":"RevisedBy","title":"Db.Enterprise.Department.RevisedBy","editorType":"Lookup","editorParams":{"lookupKey":"Enterprise.ItemGroupLookup","maxLength":10},
+     "maxLength":10,"width":150,"filteringType":"Lookup","filteringParams":{"lookupKey":"Enterprise.ItemGroupLookup"}},
+{"name":"CreatedBy","title":"Db.Enterprise.Department.CreatedBy","editorParams":{"maxLength":10},"maxLength":10,"width":150,"lookup":"ItemLookup","filter":"Non Suspended"}]);
+
+
+$createField: function(container, item) {
+			var fieldDiv = $('<div/>').addClass('field').addClass(item.name).data('PropertyItem', item).appendTo(container);
+			if (!ss.isNullOrEmptyString(item.cssClass)) {
+				fieldDiv.addClass(item.cssClass);
+			}
+			if (!ss.isNullOrEmptyString(item.formCssClass)) {
+				fieldDiv.addClass(item.formCssClass);
+				if (item.formCssClass.indexOf('line-break-') >= 0) {
+					var splitted = item.formCssClass.split(String.fromCharCode(32));
+					if (ss.indexOf(splitted, 'line-break-xs') >= 0) {
+						$("<div class='line-break' style='width: 100%' />").insertBefore(fieldDiv);
+					}
+					else if (ss.indexOf(splitted, 'line-break-sm') >= 0) {
+						$("<div class='line-break hidden-xs' style='width: 100%' />").insertBefore(fieldDiv);
+					}
+					else if (ss.indexOf(splitted, 'line-break-md') >= 0) {
+						$("<div class='line-break hidden-sm' style='width: 100%' />").insertBefore(fieldDiv);
+					}
+					else if (ss.indexOf(splitted, 'line-break-lg') >= 0) {
+						$("<div class='line-break hidden-md' style='width: 100%' />").insertBefore(fieldDiv);
+					}
+				}
+			}
+			var editorId = this.options.idPrefix + item.name;
+			var title = this.$determineText(item.title, function(prefix) {
+				return prefix + item.name;
+			});
+			
+			
+			<label>Item No:</label>
+<div>
+    <input id="txtItemNo" class="inputLookup" type="text" lookup="ItemLookup" filter="Non Suspended" />
+</div>
+
+<label>Sales Order:</label>
+<div>
+    <input id="txtSalesOrder" class="inputLookup" type="text" lookup="SalesOrderLookup" filter="Posted" />
+</div>
+
+<label>Purchase Order:</label>
+<div>
+    <input id="txtPurchaseOrder" type="text" lookup="PurchaseOrderOrderLookup" filter="Posted" />
+</div>
+<input type="text" value="1" id="hfCurrentPageIndex" name="hfCurrentPageIndex" />
+
+
+
+			
+			E:\Singapore\Singapore\Application\Scripts\serenity\Serenity.Script.UI.js
+			#9787
+			
+			 //enterprise solution
+		    var lookupattri = this.$determineText(item.lookup, function (prefix3) {
+		        return prefix3 + item.lookup;
+		    });
+		    if (!Q.isEmptyOrNull(lookupattri)) {
+		        element.attr('lookup', lookupattri);
+		    }
+		    var filterattri = this.$determineText(item.filter, function (prefix4) {
+		        return prefix4 + item.filter;
+		    });
+		    if (!Q.isEmptyOrNull(filterattri)) {
+		        element.attr('filter', filterattri);
+		    }
+		    //end 
+			
+			<input type="text" class="editor flexify s-StringEditor" id="Matrix_Enterprise_DepartmentDialog7_CreatedBy" 
+			   name="CreatedBy" lookup="ItemLookup" filter="Non Suspended" maxlength="10">
+			   
+		
+
+if (!Q.isEmptyOrNull(placeHolder)) {
+				element.attr('placeholder', placeHolder);
+			}
+
+		    //enterprise solution
+		    var lookupattri = this.$determineText(item.lookup, function (prefix3) {
+		        return prefix3 + item.lookup;
+		    });
+		    if (!Q.isEmptyOrNull(lookupattri)) {
+		        element.addClass('inputLookup');
+		        element.attr('lookup', lookupattri);
+		    }
+		    var filterattri = this.$determineText(item.filter, function (prefix4) {
+		        return prefix4 + item.filter;
+		    });
+		    if (!Q.isEmptyOrNull(filterattri)) {
+		        element.attr('filter', filterattri);
+		    }
+		    //end 
+
+			var editorParams = item.editorParams;
+
+Engineering/Reports
+
+
+<script type="text/javascript">
+
+    jQuery(function () {
+        new Matrix.Administration.LookupDialogController(jQuery(".inputLookup")).InitiaizeLookupUI();
+        new Matrix.Administration.LookupDialogController(jQuery(".buttonLookup")).InitiaizeLookupExecution();
+    });
+
+</script>
+
+			<div id="Matrix_Sales_QuotationDialog517_Toolbar" 
+			class="s-DialogToolbar s-Toolbar clearfix">
+			<div class="tool-buttons"><div class="buttons-outer"><div class="buttons-inner"><div class="tool-button undo-delete-button" style="display: none;"><div class="button-outer"><span class="button-inner">Undelete</span></div></div><div class="tool-button localization-button" style="display: none;"><div class="button-outer"><span class="button-inner">Localization</span></div></div><div class="tool-button clone-button" style="display: none;"><div class="button-outer"><span class="button-inner">Clone</span></div></div></div></div></div></div>
+			
+			
+			
+有icon 
+<a href="javascript:;">
+        <i class="nav-icon fa fa-sticky-note-o"></i>
+        <span>Engineering</span>
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+	
+fa-facebook
+
+
+没有icon 
+<a href="javascript:;">
+        <i class="nav-icon fa icon-layers"></i>
+        <span>Reports</span>
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+	
+	
+	
+	<div class="grid-canvas grid-canvas-top grid-canvas-left" tabindex="0" hidefocus=""
+	style="width: 5655px; height: 107px;"><div class="ui-widget-content slick-row even"
+	style="top:0px"><div class="slick-cell l23 r23">MIS</div><div class="slick-cell l22 r22"
+	
+	>02/09/2012</div><div class="slick-cell l21 r21">MIS</div><div class="slick-cell l20 r20">01/12/2006</div>
+	<div class="slick-cell l19 r19"></div><div class="slick-cell l18 r18"></div><div class="slick-cell l17 r17">0</div
+	><div class="slick-cell l16 r16" title="">1000</div><div class="slick-cell l15 r15">1000</div><div class="slick-cell l14 r14"></div><div class="slick-cell l13 r13"></div><div class="slick-cell l12 r12">0</div><div class="slick-cell l11 r11">1000</div><div class="slick-cell l10 r10">10</div><div class="slick-cell l9 r9"></div><div class="slick-cell l8 r8">10</div><div class="slick-cell l7 r7">100</div><div class="slick-cell l6 r6">1</div><div class="slick-cell l5 r5">SET</div><div class="slick-cell l4 r4">電波調時氣壓鬧鐘</div><div class="slick-cell l3 r3">3210000481</div></div><div class="ui-widget-content slick-row odd" style="top:27px"><div class="slick-cell l23 r23">MIS</div><div class="slick-cell l22 r22">02/09/2012</div><div class="slick-cell l21 r21">MIS</div><div class="slick-cell l20 r20">02/09/2012</div><div class="slick-cell l19 r19"></div><div class="slick-cell l18 r18"></div><div class="slick-cell l17 r17">0</div><div class="slick-cell l16 r16">600</div><div class="slick-cell l15 r15" title="">600</div><div class="slick-cell l14 r14"></div><div class="slick-cell l13 r13"></div><div class="slick-cell l12 r12">0</div><div class="slick-cell l11 r11">600</div><div class="slick-cell l10 r10">12</div><div class="slick-cell l9 r9"></div><div class="slick-cell l8 r8">12</div><div class="slick-cell l7 r7">50</div><div class="slick-cell l6 r6">1</div><div class="slick-cell l5 r5">SET</div><div class="slick-cell l4 r4">電波調時氣壓鬧鐘</div><div class="slick-cell l3 r3">3210000481</div></div></div>
+	
+
+editor flexify s-QuotationDetailEditor s-Sales-QuotationDetailEditor s-DataGrid require-layout route-handler readonly
+
+
+
+<div class="slick-viewport slick-viewport-top slick-viewport-left" tabindex="0" hidefocus="" 
+style="overflow: auto; height: 600px; width: 100%;">
+<div class="grid-canvas grid-canvas-top grid-canvas-left" tabindex="0" hidefocus="" style="width: 5655px; height: 107px;"><div class="ui-widget-content slick-row even" style="top:0px"><div class="slick-cell l0 r0 align-right"><a href="#Sales-QuotationDetailEditor/``1" data-item-type="Sales.QuotationDetailEditor" data-item-id="``1" class="s-EditLink s-Sales-QuotationDetailEditorLink">9</a></div><div class="slick-cell l1 r1" title=""><a href="#Sales-QuotationDetailEditor/``1" data-item-type="Sales.QuotationDetailEditor" data-item-id="``1" class="s-EditLink s-Sales-QuotationDetailEditorLink"></a></div><div class="slick-cell l2 r2" title="">1</div><div class="slick-cell l3 r3" title="">3210000481</div><div class="slick-cell l4 r4">電波調時氣壓鬧鐘</div><div class="slick-cell l5 r5">SET</div><div class="slick-cell l6 r6">1</div><div class="slick-cell l7 r7">100</div><div class="slick-cell l8 r8">10</div><div class="slick-cell l9 r9"></div><div class="slick-cell l10 r10">10</div></div><div class="ui-widget-content slick-row odd" style="top:27px"><div class="slick-cell l0 r0 align-right"><a href="#Sales-QuotationDetailEditor/``2" data-item-type="Sales.QuotationDetailEditor" data-item-id="``2" class="s-EditLink s-Sales-QuotationDetailEditorLink">85</a></div><div class="slick-cell l1 r1" title=""><a href="#Sales-QuotationDetailEditor/``2" data-item-type="Sales.QuotationDetailEditor" data-item-id="``2" class="s-EditLink s-Sales-QuotationDetailEditorLink"></a></div><div class="slick-cell l2 r2" title="">2</div><div class="slick-cell l3 r3" title="">3210000481</div><div class="slick-cell l4 r4">電波調時氣壓鬧鐘</div><div class="slick-cell l5 r5">SET</div><div class="slick-cell l6 r6">1</div><div class="slick-cell l7 r7">50</div><div class="slick-cell l8 r8">12</div><div class="slick-cell l9 r9"></div><div class="slick-cell l10 r10">12</div></div></div></div>
+
+
+	

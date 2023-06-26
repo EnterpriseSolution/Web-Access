@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Item";
+}
+
+<div id="GridDiv"></div>
+
+<div class="box-footer">
+    <button type="submit" class="btn btn-info pull-right" style="margin-left:6pt;width:80pt" v-on:click="OnPreview($event)">Process</button>
+    
+    <button type="button" class="btn btn-primary pull-right" style="margin-left:6pt;width:80pt" v-on:click="OnPreview($event)">Unselect All</button>
+
+    <button type="button" class="btn btn-primary pull-right" style="margin-left:6pt;width:80pt" v-on:click="OnPreview($event)">Select All</button>
+</div>
+
+<style type="text/css">
+    .form-horizontal .form-group {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+</style>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Matrix.MasterData.ItemApprovalGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+        
+       
+         $(".title-text").each(function (index) {
+            $(this).text("Item Master Approval");
+         });
+    });
+</script>

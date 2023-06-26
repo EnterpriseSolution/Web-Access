@@ -1,0 +1,70 @@
+﻿{
+  "$schema": "option-schema.json",
+  "options": {
+    "OperationStatus": [
+      {
+        "text": "Normal",
+        "value": 1
+      },
+      {
+        "text": "Out Of Service",
+        "value": 2
+      },
+      {
+        "text": "Maintenance",
+        "value": 3
+      }
+    ],
+    "TankType": [
+      {
+        "text": "Floating",
+        "value": 1
+      },
+      {
+        "text": "Fix",
+        "value": 2
+      },
+      {
+        "text": "Sphere",
+        "value": 3
+      },
+      {
+        "text": "Dummy",
+        "value": 4
+      }
+    ]
+  },
+
+  "Icons": {
+    "Default": [
+      {
+        "module": "Sales",
+        "value": "fa-bar-chart"
+      },
+      {
+        "module": "Purchasing",
+        "value": "fa-shopping-cart"
+      },
+      {
+        "module": "Inventory",
+        "value": "fa-database"
+      },
+      {
+        "module": "Engineering",
+        "value": "fa-header"
+      },
+      {
+        "module": "System Setup",
+        "value": "fa-asterisk"
+      },
+      {
+        "module": "Production",
+        "value": "fa-th"
+      },
+      {
+        "module": "Finance",
+        "value": "fa-cny"
+      }
+    ] 
+  }
+}

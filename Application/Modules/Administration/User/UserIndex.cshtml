@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "User";
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+       new Matrix.Administration.UserGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

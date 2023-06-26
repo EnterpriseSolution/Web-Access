@@ -1,0 +1,1797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Serenity.ColumnsKeyAttribute" Collapsed="true">
+    <Position X="53" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\ColumnsKeyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DialogTypeAttribute" Collapsed="true">
+    <Position X="58.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\DialogTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorAttribute" Collapsed="true">
+    <Position X="65.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\EditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.OptionsTypeAttribute" Collapsed="true">
+    <Position X="61.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Attribute\EditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ElementAttribute" Collapsed="true">
+    <Position X="67" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\ElementAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EntityTypeAttribute" Collapsed="true">
+    <Position X="51.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\EntityTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EnumKeyAttribute" Collapsed="true">
+    <Position X="53" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\EnumKeyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FlexifyAttribute" Collapsed="true">
+    <Position X="54.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\FlexifyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FormKeyAttribute" Collapsed="true">
+    <Position X="56.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\FormKeyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GeneratedCode" Collapsed="true">
+    <Position X="63.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Attribute\GeneratedCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.IdPropertyAttribute" Collapsed="true">
+    <Position X="56.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\IdPropertyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.IsActivePropertyAttribute" Collapsed="true">
+    <Position X="63.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\IsActivePropertyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ItemNameAttribute" Collapsed="true">
+    <Position X="65.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\ItemNameAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LocalTextPrefixAttribute" Collapsed="true">
+    <Position X="67" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\LocalTextPrefixAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.MaximizableAttribute" Collapsed="true">
+    <Position X="47.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\MaximizableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.NamePropertyAttribute" Collapsed="true">
+    <Position X="58.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\NamePropertyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.OptionAttribute" Collapsed="true">
+    <Position X="60" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\OptionAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PanelAttribute" Collapsed="true">
+    <Position X="67" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\PanelAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ResizableAttribute" Collapsed="true">
+    <Position X="68.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\ResizableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ResponsiveAttribute" Collapsed="true">
+    <Position X="47.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\ResponsiveAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceAttribute" Collapsed="true">
+    <Position X="63.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Attribute\ServiceAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CastExtensions" Collapsed="true">
+    <Position X="60" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAE=</HashCode>
+      <FileName>CastExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKEditorConfig" Collapsed="true">
+    <Position X="65.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hQAAAAAADAJEAIAAAQAQAEAIAIgAAAAAIhEAAAABAIA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKEditorEvents" Collapsed="true">
+    <Position X="68.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKEditorEventArgs" Collapsed="true">
+    <Position X="67" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKToolbarGroup" Collapsed="true">
+    <Position X="51.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKEditor" Collapsed="true">
+    <Position X="63.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAgAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAKA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKEditorInstance" Collapsed="true">
+    <Position X="47.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQBEAAAAAAAAAggAAQAAABAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CKElement" Collapsed="true">
+    <Position X="49.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CKEditor\CKEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CriteriaUtil" Collapsed="true">
+    <Position X="56.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Criteria\CriteriaUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.AlertOptions" Collapsed="true">
+    <Position X="49.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAMQAAAAAAAAQAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Dialogs\AlertOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.BlockUIOptions" Collapsed="true">
+    <Position X="58.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAIAAAAEA=</HashCode>
+      <FileName>Dialogs\BlockUIOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ConfirmOptions" Collapsed="true">
+    <Position X="54.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACEAAAAAAMQAABAAAAAAAAAQAAAAAAIAgAAAAAA=</HashCode>
+      <FileName>Dialogs\ConfirmOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.IdExtensions" Collapsed="true">
+    <Position X="54.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAoAAAAAA=</HashCode>
+      <FileName>Extensions\IdExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TabsExtensions" Collapsed="true">
+    <Position X="54.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAQIA=</HashCode>
+      <FileName>Extensions\TabsExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.AutoTableStyles" Collapsed="true">
+    <Position X="56.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAACAgAIAEAACgIoAAAAAAgAAAAAAAkCAAA=</HashCode>
+      <FileName>jsPDF\jsPDF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.AutoTableOptions" Collapsed="true">
+    <Position X="54.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAICAAAAAQAAAAAEAAAAAAgAEABCAAIAAAAAA=</HashCode>
+      <FileName>jsPDF\jsPDF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.AutoTableColumn" Collapsed="true">
+    <Position X="51.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>jsPDF\jsPDF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.AutoTableMargin" Collapsed="true">
+    <Position X="53" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>jsPDF\jsPDF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.jsPDF" Collapsed="true">
+    <Position X="51.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>jsPDF\jsPDF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LocalText" Collapsed="true">
+    <Position X="65.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAEAAABEAAIAAAAAEAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>LocalText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Lookup&lt;TItem&gt;" Collapsed="true">
+    <Position X="47.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAACAAAAAAAAAAQAAAgACAAAAAgAAAAAAA=</HashCode>
+      <FileName>Lookup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupOptions&lt;TItem&gt;" Collapsed="true">
+    <Position X="49.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>Lookup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyItem" Collapsed="true">
+    <Position X="63.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQpAAQAEGihEIAAiCgEGQFAgBAAKCJiBEYAQABKJA=</HashCode>
+      <FileName>PropertyGrid\PropertyItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Q" Collapsed="true">
+    <Position X="65.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MMCRkSIAHDUQg41CQCQgCBqB0IhCAcBTacAFCIEDAQI=</HashCode>
+      <FileName>Q\Q.Authorization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ScriptContext" Collapsed="true">
+    <Position X="53" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ScriptContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2Options" Collapsed="true">
+    <Position X="58.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCgDAoABEARAgAEAAMANYEBAABCFgAgAAhCQMhAAg=</HashCode>
+      <FileName>Select2\Select2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2QueryOptions" Collapsed="true">
+    <Position X="60" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAQAAAAAAgAAAAAAAAAAAAAEAAAAAAAQAA=</HashCode>
+      <FileName>Select2\Select2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2Result" Collapsed="true">
+    <Position X="61.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select2\Select2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2AjaxOptions" Collapsed="true">
+    <Position X="54.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIgAAIAAAAAAAAAAAQBCAABABAACAAAAAAAAAA=</HashCode>
+      <FileName>Select2\Select2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2Extensions" Collapsed="true">
+    <Position X="56.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAAAA=</HashCode>
+      <FileName>Select2\Select2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PostToServiceOptions" Collapsed="true">
+    <Position X="58.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAwAAACAAAAAAAAAA=</HashCode>
+      <FileName>Services\PostToServiceOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PostToUrlOptions" Collapsed="true">
+    <Position X="60" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Services\PostToUrlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DeleteRequest" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\DeleteRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DeleteResponse" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\DeleteResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ListRequest" Collapsed="true">
+    <Position X="12.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEAAAAAAQAAAABAQQAAABACAAAgAAAEAAABAEAA=</HashCode>
+      <FileName>Services\RequestResponse\ListRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ListResponse&lt;TEntity&gt;" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAAEAA=</HashCode>
+      <FileName>Services\RequestResponse\ListResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RetrieveLocalizationRequest" Collapsed="true">
+    <Position X="14.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\RetrieveLocalizationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RetrieveLocalizationResponse&lt;TEntity&gt;" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\RetrieveLocalizationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RetrieveRequest" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAABAAAAAABAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Services\RequestResponse\RetrieveRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RetrieveResponse&lt;TEntity&gt;" Collapsed="true">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\RetrieveResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SaveRequest&lt;TEntity&gt;" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\SaveRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SaveRequestWithAttachment&lt;TEntity&gt;" Collapsed="true">
+    <Position X="1" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\SaveRequestWithAttachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SaveResponse" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\SaveResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SaveWithLocalizationRequest&lt;TEntity&gt;" Collapsed="true">
+    <Position X="3.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\SaveWithLocalizationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UndeleteRequest" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\UndeleteRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UndeleteResponse">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\UndeleteResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UpdateLocalizationRequest&lt;TEntity&gt;" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Services\RequestResponse\UpdateLocalizationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceCallOptions&lt;TResponse&gt;" Collapsed="true">
+    <Position X="6.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACGAABgAgqAIwaAAQAAAgAAAgABwBICSQAQAAABAAA=</HashCode>
+      <FileName>Services\ServiceCallOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceCallOptions" Collapsed="true">
+    <Position X="6.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ServiceCallOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceError" Collapsed="true">
+    <Position X="65.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAIAAAAAA=</HashCode>
+      <FileName>Services\ServiceError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceRequest" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ServiceRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ServiceResponse" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ServiceResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickFormatterContext" Collapsed="true">
+    <Position X="54.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAEAAAAAgAAAAAgAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickColumn" Collapsed="true">
+    <Position X="49.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQBAAAABCBhEAASAAAAEgAIggAAAAJCAAQQABAwBA=</HashCode>
+      <FileName>SlickGrid\SlickColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickEvent" Collapsed="true">
+    <Position X="53" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAABAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickColumnSort" Collapsed="true">
+    <Position X="51.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRowCell" Collapsed="true">
+    <Position X="49.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickPositionInfo" Collapsed="true">
+    <Position X="67" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAQAEAAAAAIAAAICACAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRangeInfo" Collapsed="true">
+    <Position X="68.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAgAAAAAAAAAAIA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickAutoTooltips" Collapsed="true">
+    <Position X="68.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickAutoTooltipsOptions" Collapsed="true">
+    <Position X="47.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGrid" Collapsed="true">
+    <Position X="56.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>xBBDAgDNcCoOKiBnNPBKFIACKoJAogQZgPQjBgMCIyo=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGroupItemMetadataProvider" Collapsed="true">
+    <Position X="63.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRowSelectionModel" Collapsed="true">
+    <Position X="54.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRowMoveManager" Collapsed="true">
+    <Position X="51.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRowMoveManagerOptions" Collapsed="true">
+    <Position X="53" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGridOptions" Collapsed="true">
+    <Position X="58.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoIAIFAkAAEiAACBQJGEKQAAIQCQUAAQAAFCBYAQAEA=</HashCode>
+      <FileName>SlickGrid\SlickGridOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRemoteViewOptions" Collapsed="true">
+    <Position X="47.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAIEABIAAAAAAIAgAAAAAFAAAAAACAAyAEAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickSummaryOptions" Collapsed="true">
+    <Position X="56.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGroupInfo&lt;TItem&gt;" Collapsed="true">
+    <Position X="61.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAABAAAAAIAAIAAAAAAAAAAIAAAAAAAAAQA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGroup&lt;TItem&gt;" Collapsed="true">
+    <Position X="60" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAAAAAEAAAAAAAAQAAAAAQAABAAAgAIAIAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickGroupTotals&lt;TItem&gt;" Collapsed="true">
+    <Position X="65.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEEAAABAAAAAAEAAAAAAAAAgAAAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRemoteView" Collapsed="true">
+    <Position X="3.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAARBIEIJsAQEAgBQAQQAACgAABIiAAQAIqBAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickRemoteView&lt;TEntity&gt;" Collapsed="true">
+    <Position X="3.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAIJAAEAgAQAAQAACgQAAAiAAQAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickAggregator" Collapsed="true">
+    <Position X="14" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickAvg" Collapsed="true">
+    <Position X="10.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickSum" Collapsed="true">
+    <Position X="13" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickMin" Collapsed="true">
+    <Position X="15.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickMax" Collapsed="true">
+    <Position X="17.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Toastr" Collapsed="true">
+    <Position X="56.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAQAAAAAAABAAAgAAAAAAAAAAAEBAAAA=</HashCode>
+      <FileName>Toastr\Toastr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ToastrOptions" Collapsed="true">
+    <Position X="58.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACoAAAAAAAEAICCAAAACCAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Toastr\ToastrOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UserDefinition" Collapsed="true">
+    <Position X="60" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAQAAAAAACAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>UserDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ComponentModel.Dummy" Collapsed="true">
+    <Position X="61.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attribute\OptionAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Data.BaseCriteria" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADAAAAAAAAAAAAAgJDCAgAAAAIAAIAKAAAAGAAZByA=</HashCode>
+      <FileName>Criteria\BaseCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Data.BinaryCriteria" Collapsed="true">
+    <Position X="0.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Criteria\BinaryCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Data.Criteria" Collapsed="true">
+    <Position X="3" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Criteria\Criteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Data.UnaryCriteria" Collapsed="true">
+    <Position X="5.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Criteria\UnaryCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Data.ValueCriteria" Collapsed="true">
+    <Position X="7.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Criteria\ValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsService" Collapsed="true">
+    <Position X="68.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\DirectionsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ElevationService" Collapsed="true">
+    <Position X="47.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\ElevationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Geocoder" Collapsed="true">
+    <Position X="65.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\Geocoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ImageMapTypeOptions" Collapsed="true">
+    <Position X="60" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAEAAAAAAAQAZAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\ImageMapTypeOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MaxZoomService" Collapsed="true">
+    <Position X="51.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\MaxZoomService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MVCArray" Collapsed="true">
+    <Position X="36.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAACAAAAAAAAAAABACAAIAAAAKAAAAACAAAAABACAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\MVCArray.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewPanorama" Collapsed="true">
+    <Position X="38.5" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="google.maps.StreetViewPanorama.Callback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GoogleMaps\_Customs\StreetViewPanorama.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAACAIAAAAAAAAAAgAAECAAgQAAIAgAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\StreetViewPanorama.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewPanoramaOptions" Collapsed="true">
+    <Position X="68.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAEAAAQAAgAAAgAAAAEACACBAIAAABAACBACA=</HashCode>
+      <FileName>GoogleMaps\_Customs\StreetViewPanoramaOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewService" Collapsed="true">
+    <Position X="49.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\StreetViewService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.LatLng" Collapsed="true">
+    <Position X="61.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAEgAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Base\LatLng.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.LatLngBounds" Collapsed="true">
+    <Position X="63.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GABAEAAAAAAAAAAEgAEAAAAAIAAAAAACAAAAAAAQAIA=</HashCode>
+      <FileName>GoogleMaps\Base\LatLngBounds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Point" Collapsed="true">
+    <Position X="53" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>GoogleMaps\Base\Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Size" Collapsed="true">
+    <Position X="67" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAEgAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Base\Size.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapTypeControlOptions" Collapsed="true">
+    <Position X="60" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAABAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\MapTypeControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.OverviewMapControlOptions" Collapsed="true">
+    <Position X="63.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\OverviewMapControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.PanControlOptions" Collapsed="true">
+    <Position X="65.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\PanControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.RotateControlOptions" Collapsed="true">
+    <Position X="49.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\RotateControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ScaleControlOptions" Collapsed="true">
+    <Position X="51.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\ScaleControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewControlOptions" Collapsed="true">
+    <Position X="61.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\StreetViewControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ZoomControlOptions" Collapsed="true">
+    <Position X="61.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\ZoomControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GEvent" Collapsed="true">
+    <Position X="51.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAABAAAAAAAAAABAAAIABAAAAAAAgACAA=</HashCode>
+      <FileName>GoogleMaps\Events\GEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapsEventListener" Collapsed="true">
+    <Position X="56.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Events\MapsEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MouseEvent" Collapsed="true">
+    <Position X="53" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Events\MouseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.BicyclingLayer" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\BicyclingLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.FusionTablesCell" Collapsed="true">
+    <Position X="58.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\FusionTablesCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.FusionTablesLayer" Collapsed="true">
+    <Position X="20.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBACAAAAAAAAQAAAAAAAAAEAAAAAAAAAAAAAAAQAACA=</HashCode>
+      <FileName>GoogleMaps\Layers\FusionTablesLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.FusionTablesLayerOptions" Collapsed="true">
+    <Position X="60" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAABAkAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\FusionTablesLayerOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.FusionTablesMouseEvent" Collapsed="true">
+    <Position X="61.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAgAAAAAAAAAAAAAgAAAAAIAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\FusionTablesMouseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlAuthor" Collapsed="true">
+    <Position X="53" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlAuthor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlFeatureData" Collapsed="true">
+    <Position X="54.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAggAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlFeatureData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlLayer" Collapsed="true">
+    <Position X="25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABAAAAAAAAAAAAAAEAAAAAAAIAQAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlLayerMetadata" Collapsed="true">
+    <Position X="56.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAgAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlLayerMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlLayerOptions" Collapsed="true">
+    <Position X="58.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAAAAEAAAAEAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlLayerOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.KmlMouseEvent" Collapsed="true">
+    <Position X="60" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\KmlMouseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.TrafficLayer" Collapsed="true">
+    <Position X="43" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Layers\TrafficLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Map" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BhgDAQEAAAggAAAAAgAAAgJgIAAAAAABACAgAgAgACA=</HashCode>
+      <FileName>GoogleMaps\Map\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapOptions" Collapsed="true">
+    <Position X="53" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBBAASABAAIAEAAhAAlBTAAAgAAkAAABiCKpQCA=</HashCode>
+      <FileName>GoogleMaps\Map\MapOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ImageMapType" Collapsed="true">
+    <Position X="58.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\ImageMapType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapType" Collapsed="true">
+    <Position X="58.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAAAAAAACEAAAAAAAQARAAAAAAAAIAAAAAQAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapTypeRegistry" Collapsed="true">
+    <Position X="18.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapTypeStyle" Collapsed="true">
+    <Position X="61.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapTypeStyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapTypeStyler" Collapsed="true">
+    <Position X="63.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAABABA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapTypeStyler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Projection" Collapsed="true">
+    <Position X="61.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\Projection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StyledMapType" Collapsed="true">
+    <Position X="27.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\StyledMapType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StyledMapTypeOptions" Collapsed="true">
+    <Position X="53" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQARAAAAAAAAIAAAAAAAAQ=</HashCode>
+      <FileName>GoogleMaps\MapTypes\StyledMapTypeOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MVCObject" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABgBABAAAAAAAAAAAAABAAAAEACAAAAg=</HashCode>
+      <FileName>GoogleMaps\MVC\MVCObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Circle" Collapsed="true">
+    <Position X="45.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAAAAAAgAAAAAAAAAAAMAIAAAAAAAAAAAAAiAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.CircleOptions" Collapsed="true">
+    <Position X="61.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAABAAAAgAAAAAECAAAAAAAAABAAAAAAgIAAE=</HashCode>
+      <FileName>GoogleMaps\Overlays\CircleOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GroundOverlay" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAgAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\GroundOverlay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GroundOverlayOptions" Collapsed="true">
+    <Position X="53" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\GroundOverlayOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.InfoWindow" Collapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACIAIAAAAAEAEAAAAAAAAgAAACEAAACAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\InfoWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.InfoWindowOptions" Collapsed="true">
+    <Position X="61.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAgAAAAAAAEQAAAAAABAAAIAAAAABA=</HashCode>
+      <FileName>GoogleMaps\Overlays\InfoWindowOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapCanvasProjection" Collapsed="true">
+    <Position X="51.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAEICAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\MapCanvasProjection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MapPanes" Collapsed="true">
+    <Position X="54.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAEAAEAAAAAAEABAAAAAAAAAAAAAAAAAAAAIAIA=</HashCode>
+      <FileName>GoogleMaps\Overlays\MapPanes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Marker" Collapsed="true">
+    <Position X="22.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DRAAACEEQCAIAAAAEAkAEwEAFAABAhAABIHQAAAgAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Marker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MarkerImage" Collapsed="true">
+    <Position X="65.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAgAAABAAAAAAAAAAAAAAACAAAAAgAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\MarkerImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MarkerOptions" Collapsed="true">
+    <Position X="67" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEARAAAMggkAABEAAIAAAAAAAJAAQAAAEAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\MarkerOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MarkerShape" Collapsed="true">
+    <Position X="68.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\MarkerShape.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.OverlayView" Collapsed="true">
+    <Position X="29.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAQAAAAAAAgAAAAEAAIEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\OverlayView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Polygon" Collapsed="true">
+    <Position X="34" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBEQAAAAAAAAAAAAAAAAAAEAAAACIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Polygon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.PolygonOptions" Collapsed="true">
+    <Position X="54.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAABAAAAkAAAAAECAACAAAAAABAAAAAAgAAAE=</HashCode>
+      <FileName>GoogleMaps\Overlays\PolygonOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Polyline" Collapsed="true">
+    <Position X="40.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAAAAAAAAAAAAAAAAAAEAAAACIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Polyline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.PolylineOptions" Collapsed="true">
+    <Position X="56.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAoAAAAAECAACAAAAAABAAAAAAAAAAE=</HashCode>
+      <FileName>GoogleMaps\Overlays\PolylineOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Rectangle" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAACAAAgAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.RectangleOptions" Collapsed="true">
+    <Position X="67" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAABAAAAgAAAAAECAAAAAAAAABAAAAAAgAAgE=</HashCode>
+      <FileName>GoogleMaps\Overlays\RectangleOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsLeg" Collapsed="true">
+    <Position X="60" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAACAAABAAAAAQQAAAAAAABAAAAAAAAAAIA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsLeg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsRenderer" Collapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FFAABQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsRendererOptions" Collapsed="true">
+    <Position X="61.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAAAAAAABBAAAAAABABAAAAUAAEAAEBBAAEAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsRendererOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsRequest" Collapsed="true">
+    <Position X="63.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAApACAAAABAAAAAgEAAAAAIAAEAAAAAAgAQAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsResult" Collapsed="true">
+    <Position X="65.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsRoute" Collapsed="true">
+    <Position X="67" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAUAAAAAAAAgA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsRoute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsStep" Collapsed="true">
+    <Position X="47.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAACAAIAAAAAAAQAAAAMAABAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DirectionsWaypoint" Collapsed="true">
+    <Position X="49.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsWaypoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Distance" Collapsed="true">
+    <Position X="51.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\Distance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DistanceMatrixRequest" Collapsed="true">
+    <Position X="53" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAsAAAAACBAAAAAAEgAAAAAAAEAAAAAAAAQAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DistanceMatrixResponse" Collapsed="true">
+    <Position X="54.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DistanceMatrixResponseElement" Collapsed="true">
+    <Position X="56.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixResponseElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DistanceMatrixResponseRow" Collapsed="true">
+    <Position X="58.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixResponseRow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.DistanceMatrixService" Collapsed="true">
+    <Position X="60" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.Duration" Collapsed="true">
+    <Position X="63.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\Duration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.ElevationResult" Collapsed="true">
+    <Position X="68.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\ElevationResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GeocoderAddressComponent" Collapsed="true">
+    <Position X="67" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderAddressComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GeocoderGeometry" Collapsed="true">
+    <Position X="68.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderGeometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GeocoderRequest" Collapsed="true">
+    <Position X="47.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAiAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAgA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.GeocoderResult" Collapsed="true">
+    <Position X="49.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.LocationElevationRequest" Collapsed="true">
+    <Position X="68.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\LocationElevationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.MaxZoomResult" Collapsed="true">
+    <Position X="49.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\MaxZoomResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.PathElevationRequest" Collapsed="true">
+    <Position X="51.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\PathElevationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewAddressControlOptions" Collapsed="true">
+    <Position X="60" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewAddressControlOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewLink" Collapsed="true">
+    <Position X="63.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAgQAAAAAAAAAAAAAACAAAAAAAAACAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewLocation" Collapsed="true">
+    <Position X="65.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewPanoramaData" Collapsed="true">
+    <Position X="67" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAIAAAAAAAAAAAIACAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewPanoramaData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewPov" Collapsed="true">
+    <Position X="47.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAACAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewPov.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.StreetViewTileData" Collapsed="true">
+    <Position X="51.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAIAAAAAAAIABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewTileData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.adsense.AdUnit" Collapsed="true">
+    <Position X="31.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAFAAAAACAAAAAAAEAAIAEAAgAAAgAAAAAABAAAAAA=</HashCode>
+      <FileName>GoogleMaps\AdSenseLibrary\AdUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.adsense.AdUnitOptions" Collapsed="true">
+    <Position X="47.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAABAAAAAgAAAAAAAAAQgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\AdSenseLibrary\AdUnitOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.geometry.Encoding" Collapsed="true">
+    <Position X="49.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>GoogleMaps\GeometryLibrary\Encoding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.geometry.Spherical" Collapsed="true">
+    <Position X="58.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAUAAgIAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\GeometryLibrary\Spherical.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.panoramio.PanoramioFeature" Collapsed="true">
+    <Position X="68.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAgAAAAAgAAAAAAAAACAACAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\PanoramioLibrary\PanoramioFeature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.panoramio.PanoramioLayer" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JBAAAAAAAAAAAAAAAAAAAAEAAAKAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\PanoramioLibrary\PanoramioLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.panoramio.PanoramioLayerOptions" Collapsed="true">
+    <Position X="47.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAgAAgAAAAAAAgAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\PanoramioLibrary\PanoramioLayerOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google.maps.panoramio.PanoramioMouseEvent" Collapsed="true">
+    <Position X="49.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAgAAAAAAAAAAAAAAACAAAIAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\PanoramioLibrary\PanoramioMouseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Html.Mousetrap" Collapsed="true">
+    <Position X="54.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAABBAQAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Mousetrap\Mousetrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Html.MousetrapInstance" Collapsed="true">
+    <Position X="56.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAABBAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Mousetrap\Mousetrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Promise" Collapsed="true">
+    <Position X="0.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAAAACAAAAAAQAAAAAAAAAAAAAEAKAAgAACBAA=</HashCode>
+      <FileName>Promise\Promise.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Promise&lt;TValue&gt;" Collapsed="true">
+    <Position X="0.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgAAABAA=</HashCode>
+      <FileName>Promise\Promise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="jQueryApi.jQueryValidator" Collapsed="true">
+    <Position X="47.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABACAAUAAAAAABAAAAAAgACAgAAAAAIAAAAAAAAEA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="jQueryApi.jQueryValidationRules" Collapsed="true">
+    <Position X="68.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACBAAAADEQCBAQEUAAAAEAAAAAAAABCBARAAABAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="jQueryApi.jQueryValidationObject" Collapsed="true">
+    <Position X="67" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAIAAAAAACAAAAAAAAAAAAAAAAAAQAAAAAABAAAAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="jQueryApi.jQueryValidatorOptions" Collapsed="true">
+    <Position X="49.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAIIEAQAEIABIAAABCEAAAgAAAQAMCAAgAACQEAAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Serenity.CaptureOperationType" Collapsed="true">
+    <Position X="51.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Services\CaptureOperationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Serenity.ColumnSelection" Collapsed="true">
+    <Position X="53" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAI=</HashCode>
+      <FileName>Services\RequestResponse\ListRequest.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Serenity.RetrieveColumnSelection" Collapsed="true">
+    <Position X="53" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAI=</HashCode>
+      <FileName>Services\RequestResponse\RetrieveRequest.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.ControlPosition" Collapsed="true">
+    <Position X="54.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAIAAAAAAAAAGAAAAAJAFBAgAAAAAQAAIA=</HashCode>
+      <FileName>GoogleMaps\Controls\ControlPosition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.MapTypeControlStyle" Collapsed="true">
+    <Position X="67" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\MapTypeControlStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.ScaleControlStyle" Collapsed="true">
+    <Position X="54.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\ScaleControlStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.ZoomControlStyle" Collapsed="true">
+    <Position X="61.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAgAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Controls\ZoomControlStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.MapTypeId" Collapsed="true">
+    <Position X="68.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEBAAAE=</HashCode>
+      <FileName>GoogleMaps\Map\MapTypeId.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.MapTypeStyleElementType" Collapsed="true">
+    <Position X="47.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapTypeStyleElementType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.MapTypeStyleFeatureType" Collapsed="true">
+    <Position X="49.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4AKCAAQAAAAAAAAAAAAZgKAAAIACAGAAtIACAAGEBIA=</HashCode>
+      <FileName>GoogleMaps\MapTypes\MapTypeStyleFeatureType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.Animation" Collapsed="true">
+    <Position X="49.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Overlays\Animation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.DirectionsStatus" Collapsed="true">
+    <Position X="56.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAgAAAAAAAAAAAACAIEAAABAAAAAQA=</HashCode>
+      <FileName>GoogleMaps\Services\DirectionsStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.DistanceMatrixElementStatus" Collapsed="true">
+    <Position X="58.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAABAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixElementStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.DistanceMatrixStatus" Collapsed="true">
+    <Position X="60" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAgAAAAAAAAAAAACAAEAAABAAAAIQA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.ElevationStatus" Collapsed="true">
+    <Position X="61.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAACAAEAAABAAAAAQA=</HashCode>
+      <FileName>GoogleMaps\Services\ElevationStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.GeocoderLocationType" Collapsed="true">
+    <Position X="63.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAIAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderLocationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.GeocoderStatus" Collapsed="true">
+    <Position X="65.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAgAAAAAAAAAAAACAIEAAABAAAAAQA=</HashCode>
+      <FileName>GoogleMaps\Services\GeocoderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.MaxZoomStatus" Collapsed="true">
+    <Position X="51.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\MaxZoomStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.TravelMode" Collapsed="true">
+    <Position X="58.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\TravelMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.UnitSystem" Collapsed="true">
+    <Position X="60" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\UnitSystem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.StreetViewStatus" Collapsed="true">
+    <Position X="56.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAABAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\StreetView\StreetViewStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="google.maps.adsense.AdFormat" Collapsed="true">
+    <Position X="47.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAIASAAAAAAAAEAAAAAiABQAAAAAIAAAAAIAA=</HashCode>
+      <FileName>GoogleMaps\AdSenseLibrary\AdFormat.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Serenity.SlickAsyncPostRender" Collapsed="true">
+    <Position X="60" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAKBAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickColumn.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.SlickColumnFormatter" Collapsed="true">
+    <Position X="61.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAKBAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickColumn.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.SlickFormatter" Collapsed="true">
+    <Position X="63.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>SlickGrid\SlickColumn.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.CancellableViewCallback&lt;TEntity&gt;" Collapsed="true">
+    <Position X="47.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.SlickRemoteViewAjaxCallback&lt;TEntity&gt;" Collapsed="true">
+    <Position X="65.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.SlickRemoteViewProcessCallback&lt;TEntity&gt;" Collapsed="true">
+    <Position X="68.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Serenity.SlickRemoteViewFilter&lt;TEntity&gt;" Collapsed="true">
+    <Position X="67" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>SlickGrid\SlickRemoteView.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="google.maps.ImageMapTypeOptionsDelegate" Collapsed="true">
+    <Position X="51.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\ImageMapTypeOptions.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="google.maps.StreetViewPanoramaOptionsDelegate" Collapsed="true">
+    <Position X="47.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\_Customs\StreetViewPanoramaOptions.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="google.maps.DistanceMatrixServiceCallback" Collapsed="true">
+    <Position X="49.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Services\DistanceMatrixService.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="GMapsSharp.Lib.MapsEventHandler" Collapsed="true">
+    <Position X="58.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleMaps\Events\MapsEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="jQueryApi.jQueryValidationHighlight" Collapsed="true">
+    <Position X="53" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAABAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="jQueryApi.jQueryValidationMethod" Collapsed="true">
+    <Position X="54.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="jQueryApi.jQueryValidationMethodWithParameters" Collapsed="true">
+    <Position X="56.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\jQueryValidator.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

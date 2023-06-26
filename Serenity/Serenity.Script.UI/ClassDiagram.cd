@@ -1,0 +1,1464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Serenity.AsyncLookupEditor" Collapsed="true">
+    <Position X="0.5" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Editor\AsyncLookupEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.BooleanEditor" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\BooleanEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CheckTreeEditor&lt;TItem, TOptions&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="85.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\CheckTreeEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.CheckTreeEditor&lt;TOptions&gt;" Collapsed="true">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\CheckTreeEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.687" />
+  </Class>
+  <Class Name="Serenity.GridSelectAllButtonHelper" Collapsed="true">
+    <Position X="94.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Editor\CheckTreeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CheckTreeItem&lt;TSource&gt;" Collapsed="true">
+    <Position X="87.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAEAAAAAAEAAQAAAAAAAAAAgAACAAAAAA=</HashCode>
+      <FileName>Editor\CheckTreeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CheckTreeItem" Collapsed="true">
+    <Position X="89.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\CheckTreeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DateEditor" Collapsed="true">
+    <Position X="43.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgwAAABQAAAAAAgAAAAAAAAAAAAAAABAAAAoAAQAgAg=</HashCode>
+      <FileName>Editor\DateEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.DateTimeEditor" Collapsed="true">
+    <Position X="51.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQBAAAAAAAAAAgAAABAAAAAAAAAACBAAAAoAAQAAAA=</HashCode>
+      <FileName>Editor\DateTimeEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.DateYearEditor" Collapsed="true">
+    <Position X="69.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\DateYearEditorOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DateYearEditorOptions" Collapsed="true">
+    <Position X="6.5" Y="20" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\DateYearEditorOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DecimalEditor" Collapsed="true">
+    <Position X="56" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\DecimalEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.DecimalEditorOptions" Collapsed="true">
+    <Position X="80.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAAAAgAACAAAA=</HashCode>
+      <FileName>Editor\DecimalEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorTypeEditor" Collapsed="true">
+    <Position X="71.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\EditorTypeEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.EmailEditor" Collapsed="true">
+    <Position X="65" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAoAABAAAA=</HashCode>
+      <FileName>Editor\EmailEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.EmailEditorOptions" Collapsed="true">
+    <Position X="78.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\EmailEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EnumEditor" Collapsed="true">
+    <Position X="66" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\EnumEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.EnumEditorOptions" Collapsed="true">
+    <Position X="82.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAA=</HashCode>
+      <FileName>Editor\EnumEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.HtmlContentEditor" Collapsed="true">
+    <Position X="34.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAIAAAAAAAgAABEIAAAAAAoAAAAACA=</HashCode>
+      <FileName>Editor\HtmlContentEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.HtmlContentEditorOptions" Collapsed="true">
+    <Position X="84" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\HtmlContentEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.HtmlNoteContentEditor" Collapsed="true">
+    <Position X="33.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\HtmlNoteContentEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.HtmlReportContentEditor" Collapsed="true">
+    <Position X="35.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\HtmlReportContentEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.ImageUploadEditor" Collapsed="true">
+    <Position X="45.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAAAAACQAAgAAAAAAAACAAAAgAAAAAoCAAABAA=</HashCode>
+      <FileName>Editor\ImageUploadEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.UploadInputOptions" Collapsed="true">
+    <Position X="80.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAACAAAAAAQQAAAAAACAAAA=</HashCode>
+      <FileName>Editor\ImageUploadHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UploadHelper" Collapsed="true">
+    <Position X="78.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABAAgIAAAAAEAAAAAMAACAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Editor\ImageUploadHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UploadResponse" Collapsed="true">
+    <Position X="82.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAAAAAAEAAAAAAAIACAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\ImageUploadHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.IntegerEditor" Collapsed="true">
+    <Position X="58.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\IntegerEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.IntegerEditorOptions" Collapsed="true">
+    <Position X="89.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\IntegerEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupEditor" Collapsed="true">
+    <Position X="2.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\LookupEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupEditorOptions" Collapsed="true">
+    <Position X="94.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBAAYQEABAAAUAAgAAAJAAAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>Editor\LookupEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupEditorBase&lt;TOptions, TItem&gt;" Collapsed="true">
+    <Position X="1.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\LookupEditorBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupEditorBase&lt;TItem&gt;" Collapsed="true">
+    <Position X="67.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACgAAERAABEAAAAIoAAAIAABAEgAAIQCGBIABAmA=</HashCode>
+      <FileName>Editor\LookupEditorBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.MaskedEditor" Collapsed="true">
+    <Position X="22" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\MaskedEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.MaskedEditorOptions" Collapsed="true">
+    <Position X="78.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Editor\MaskedEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.MultipleImageUploadEditor" Collapsed="true">
+    <Position X="30.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAACQAAgQAAAAAAACAAAAwAAAAAoCAAABAA=</HashCode>
+      <FileName>Editor\MultipleImageUploadEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.PasswordEditor" Collapsed="true">
+    <Position X="18.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\PasswordEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PersonNameEditor" Collapsed="true">
+    <Position X="41.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\PersonNameEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.PhoneEditor" Collapsed="true">
+    <Position X="47.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAACAgBAAIAAAgAAFCgACBIAgAAEgAAEAEAA=</HashCode>
+      <FileName>Editor\PhoneEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.PhoneEditorOptions" Collapsed="true">
+    <Position X="91" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEIAAAAAAgAAAAACAAAAACAAAAAA=</HashCode>
+      <FileName>Editor\PhoneEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RadioButtonEditor" Collapsed="true">
+    <Position X="53.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAEAAA=</HashCode>
+      <FileName>Editor\RadioButtonEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.RadioButtonEditorOptions" Collapsed="true">
+    <Position X="94.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAA=</HashCode>
+      <FileName>Editor\RadioButtonEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2AjaxEditor&lt;TOptions, TItem&gt;" Collapsed="true">
+    <Position X="60.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACAAAEQQACAAAAABAAGAAAAAAAAgAAAAgAAAAAFA=</HashCode>
+      <FileName>Editor\Select2AjaxEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.Select2Item" Collapsed="true">
+    <Position X="94.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Editor\Select2Editor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Select2Editor&lt;TOptions, TItem&gt;" Collapsed="true">
+    <Position X="67" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAEGAQAEAAACAAAAAhAQBAEwABAAAAAAAAsCAAAABE=</HashCode>
+      <FileName>Editor\Select2Editor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.SelectEditor" Collapsed="true">
+    <Position X="69.75" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="Serenity.Select2Editor&lt;TOptions, TItem&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="67.75" Y="5.941" />
+        <Point X="67.75" Y="6.375" />
+        <Point X="70.562" Y="6.375" />
+        <Point X="70.562" Y="6.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAIAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\SelectEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.SelectEditorOptions" Collapsed="true">
+    <Position X="6.5" Y="19" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\SelectEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.StringEditor" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\StringEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TextAreaEditor" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\TextAreaEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TextAreaEditorOptions" Collapsed="true">
+    <Position X="85.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\TextAreaEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TimeEditor" Collapsed="true">
+    <Position X="33" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Serenity.Widget&lt;TOptions&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="43.25" Y="2.691" />
+        <Point X="43.25" Y="3.125" />
+        <Point X="33.75" Y="3.125" />
+        <Point X="33.75" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Editor\TimeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TimeEditorOptions" Collapsed="true">
+    <Position X="87.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAQAAAAAAACAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\TimeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.URLEditor" Collapsed="true">
+    <Position X="21" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\URLEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EntityDialog&lt;TEntity, TOptions&gt;">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityDialog\EntityDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EntityDialog&lt;TEntity, TOptions&gt;" Collapsed="true">
+    <Position X="3.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACAAAIA=</HashCode>
+      <FileName>EntityDialog\EntityDialog_Delete.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.EntityDialog&lt;TEntity&gt;" Collapsed="true">
+    <Position X="5.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sRQIgLQGUAMKWkAUIUkNBIQACALRBIJgQEIEF5aJwWc=</HashCode>
+      <FileName>EntityDialog\EntityDialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.DataChangeInfo" Collapsed="true">
+    <Position X="94.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>EntityDialog\EntityDialog_Save.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ValidationHelper" Collapsed="true">
+    <Position X="87.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAA=</HashCode>
+      <FileName>EntityDialog\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterableAttribute" Collapsed="true">
+    <Position X="89.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilterableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterDialog" Collapsed="true">
+    <Position X="19.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEABA=</HashCode>
+      <FileName>FilterPanel\FilterDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterDisplayBar" Collapsed="true">
+    <Position X="12.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilterDisplayBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.BaseEditorFiltering&lt;TEditor&gt;" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAACAAAABEAAAAABAIAAAAAQAAAAAAAAQEAgAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\BaseEditorFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.BaseFiltering" Collapsed="true">
+    <Position X="16" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAiYAQACkEFAAABAIAAAAAQAAAAAAAAAAAAAAoAg=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\BaseFiltering.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.BooleanFiltering" Collapsed="true">
+    <Position X="17.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\BooleanFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DateFiltering" Collapsed="true">
+    <Position X="8.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\DateFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DateTimeFiltering" Collapsed="true">
+    <Position X="10.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\DateTimeFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DecimalFiltering" Collapsed="true">
+    <Position X="12.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\DecimalFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorFiltering" Collapsed="true">
+    <Position X="15" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAAIAEAAAAABAAAAAAAAAAAAAAAAQEAwAAEAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\EditorFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EnumFiltering" Collapsed="true">
+    <Position X="17.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\EnumFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilteringTypeRegistry" Collapsed="true">
+    <Position X="91" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAABQBAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\FilteringTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.IntegerFiltering" Collapsed="true">
+    <Position X="19.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\IntegerFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.LookupFiltering" Collapsed="true">
+    <Position X="21.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\LookupFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.StringFiltering" Collapsed="true">
+    <Position X="19.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\StringFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterLine" Collapsed="true">
+    <Position X="92.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAEAAAIAAAAAAAAAQAAAAAAAAAAAAAAAABAABoAA=</HashCode>
+      <FileName>FilterPanel\FilterLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterOperator" Collapsed="true">
+    <Position X="94.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAEQAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilterOperator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterOperators" Collapsed="true">
+    <Position X="78.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAKAAAAAAAAECggAAAQAAAAAAIAoAAAIAAAAEAAQAAA=</HashCode>
+      <FileName>FilterPanel\FilterOperators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterPanel" Collapsed="true">
+    <Position X="15" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAUggGQEAkgFAAAQEEQQEAAAMBkAEAAAwABE=</HashCode>
+      <FileName>FilterPanel\FilterPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterStore" Collapsed="true">
+    <Position X="80.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAAAwIACAAABAAAAAQAAAAAAAAAAAQAAAAAoAA=</HashCode>
+      <FileName>FilterPanel\FilterStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FilterWidgetBase&lt;TOptions&gt;" Collapsed="true">
+    <Position X="14" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAABAAAAJAAAAAQAAAAA=</HashCode>
+      <FileName>FilterPanel\FilterWidgetBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DataGrid&lt;TItem, TOptions&gt;" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DataGrid&lt;TItem&gt;" Collapsed="true">
+    <Position X="49.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MYCIQ6YOpA5AjHi8DaUCFIULQCRHAoF+DYDvpRUBpiE=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.GridRows&lt;TItem&gt;" Collapsed="true">
+    <Position X="91" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ColumnPickerDialog" Collapsed="true">
+    <Position X="17.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAQAAQAAAAAAAIAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GridPersistanceFlags" Collapsed="true">
+    <Position X="89.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgBQAAAAAAAAAEAiAAAIAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PersistedGridSettings" Collapsed="true">
+    <Position X="89.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAQAgAAAAAAAAACAEAAAAAAAAgAAAAAAAgAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PersistedGridColumn" Collapsed="true">
+    <Position X="87.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAQAEAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\DataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DialogTypeRegistry" Collapsed="true">
+    <Position X="87.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAgAAA=</HashCode>
+      <FileName>Grid\DialogTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EntityGrid&lt;TEntity, TOptions&gt;" Collapsed="true">
+    <Position X="80.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\EntityGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EntityGrid&lt;TEntity&gt;" Collapsed="true">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\EntityGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FormatterTypeRegistry" Collapsed="true">
+    <Position X="85.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAADAAAAAABQBAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\FormatterTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GridRowSelectionMixin" Collapsed="true">
+    <Position X="92.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAKABAAAIABgAIQAAAAAAAAAAAACAAAAAAAgBAAAA=</HashCode>
+      <FileName>Grid\GridRowSelectionMixin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GridUtils" Collapsed="true">
+    <Position X="78.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgIAAAQACACAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\GridUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PopupMenuButton" Collapsed="true">
+    <Position X="37.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\PopupMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PopupMenuButtonOptions" Collapsed="true">
+    <Position X="4.75" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAgAQIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\PopupMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PopupToolButton" Collapsed="true">
+    <Position X="37.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\PopupToolButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PopupToolButtonOptions" Collapsed="true">
+    <Position X="4.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\PopupToolButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyItemSlickConverter" Collapsed="true">
+    <Position X="82.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\PropertyItemSlickConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.QuickFilter&lt;TWidget, TOptions&gt;" Collapsed="true">
+    <Position X="87.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAAAEIAEAAAAgIAAAAAAAAAAAACQACAABAgAA=</HashCode>
+      <FileName>Grid\QuickFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.QuickFilterArgs&lt;TWidget&gt;" Collapsed="true">
+    <Position X="89.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAIAAAAAAAAAAAQAAAAAAAgAAgAAAgAAAAgAA=</HashCode>
+      <FileName>Grid\QuickFilterArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.QuickSearchInput" Collapsed="true">
+    <Position X="62.75" Y="4" Width="1.5" />
+    <InheritanceLine Type="Serenity.Widget&lt;TOptions&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="43.25" Y="2.691" />
+        <Point X="43.25" Y="3.134" />
+        <Point X="63.5" Y="3.134" />
+        <Point X="63.5" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EASAAAAAAAEAEAABAAAAAAAAAABAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Grid\QuickSearchInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.QuickSearchInputOptions" Collapsed="true">
+    <Position X="92.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAADAAAAgAAAAEAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Grid\QuickSearchInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.QuickSearchField" Collapsed="true">
+    <Position X="91" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\QuickSearchInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ReflectionOptionsSetter" Collapsed="true">
+    <Position X="82.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid\ReflectionOptionsSetter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SubDialogHelper" Collapsed="true">
+    <Position X="84" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQBAIAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>Grid\SubDialogHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GoogleMap" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Misc\GoogleMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.GoogleMapOptions" Collapsed="true">
+    <Position X="87.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEAIIAAAAAAAQAAAgABAAAAAAAAA=</HashCode>
+      <FileName>Misc\GoogleMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Recaptcha" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Serenity.Widget&lt;TOptions&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="43.25" Y="2.691" />
+        <Point X="43.25" Y="3.125" />
+        <Point X="36.062" Y="3.125" />
+        <Point X="36.062" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Misc\Recaptcha.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.RecaptchaOptions" Collapsed="true">
+    <Position X="80.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Misc\Recaptcha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DialogButton" Collapsed="true">
+    <Position X="84" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAgA=</HashCode>
+      <FileName>PropertyDialog\PropertyDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyDialog&lt;TEntity, TOptions&gt;" Collapsed="true">
+    <Position X="78.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyDialog\PropertyDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyDialog&lt;TEntity&gt;" Collapsed="true">
+    <Position X="1" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAABAACBIAAgAQIAEABAAACQJhBAAAAAIAEAABABA=</HashCode>
+      <FileName>PropertyDialog\PropertyDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyPanel&lt;TEntity, TOptions&gt;" Collapsed="true">
+    <Position X="84" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyDialog\PropertyPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyPanel&lt;TEntity&gt;" Collapsed="true">
+    <Position X="11.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAACAIAAgAQIAEABAAACAJAAAAAAAIAEAABAAA=</HashCode>
+      <FileName>PropertyDialog\PropertyPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CategoryAttribute" Collapsed="true">
+    <Position X="82.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\CategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CollapsibleAttribute" Collapsed="true">
+    <Position X="91" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\CollapsibleAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CssClassAttribute" Collapsed="true">
+    <Position X="92.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\CssClassAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DefaultValueAttribute" Collapsed="true">
+    <Position X="82.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\DefaultValueAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorOptionAttribute" Collapsed="true">
+    <Position X="89.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\EditorOptionAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorTypeAttribute" Collapsed="true">
+    <Position X="15.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\EditorTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorTypeAttributeBase" Collapsed="true">
+    <Position X="15.25" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\EditorTypeAttributeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.HiddenAttribute" Collapsed="true">
+    <Position X="80.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\HiddenAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.HintAttribute" Collapsed="true">
+    <Position X="82.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\HintAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.InsertableAttribute" Collapsed="true">
+    <Position X="87.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\InsertableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.MaxLengthAttribute" Collapsed="true">
+    <Position X="80.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\MaxLengthAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.OneWayAttribute" Collapsed="true">
+    <Position X="85.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\OneWayAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PlaceholderAttribute" Collapsed="true">
+    <Position X="92.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\PlaceholderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ReadOnlyAttribute" Collapsed="true">
+    <Position X="78.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\ReadOnlyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.RequiredAttribute" Collapsed="true">
+    <Position X="92.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\RequiredAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UpdatableAttribute" Collapsed="true">
+    <Position X="92.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\UpdatableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorTypeRegistry" Collapsed="true">
+    <Position X="92.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAABQBAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\EditorTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyGrid" Collapsed="true">
+    <Position X="39.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEgogAEJAASEgAAAogIAgACABIAAgAAAAAAAECAAA=</HashCode>
+      <FileName>PropertyGrid\PropertyGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyGridOptions" Collapsed="true">
+    <Position X="80.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAIAACAAAAAAAAAAQAAAIEAAAAAAQAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\PropertyGridOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyItemHelper" Collapsed="true">
+    <Position X="13.5" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\PropertyItemHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PropertyEditorHelper" Collapsed="true">
+    <Position X="13.5" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\PropertyItemHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorTypeInfo" Collapsed="true">
+    <Position X="91" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAA=</HashCode>
+      <FileName>PropertyGrid\PublicEditorTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PublicEditorTypes" Collapsed="true">
+    <Position X="85.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAA=</HashCode>
+      <FileName>PropertyGrid\PublicEditorTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ReflectionUtils" Collapsed="true">
+    <Position X="84" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\ReflectionUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.BooleanFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="78.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\BooleanFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.CheckboxFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="84" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\CheckboxFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.DateFormatter" Collapsed="true">
+    <Position X="10.75" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\DateFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.DateTimeFormatter" Collapsed="true">
+    <Position X="10.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\DateTimeFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EnumFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="84" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAABAAAAAABAA=</HashCode>
+      <FileName>SlickGrid\Formatters\EnumFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.EnumTypeRegistry" Collapsed="true">
+    <Position X="85.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\EnumTypeRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FileDownloadFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="87.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAEAAAAAAAABBgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\FileDownloadFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.MinuteFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="82.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\MinuteFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.NumberFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="84" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\NumberFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.UrlFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="84" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAgAAACAAAAgAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\UrlFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Serenity.LazyLoadHelper" Collapsed="true">
+    <Position X="92.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\LazyLoadHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickHelper" Collapsed="true">
+    <Position X="80.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickColumnHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickFormatting" Collapsed="true">
+    <Position X="78.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYIAAAAAAAAAAAAAAEEAAAAAACAAAAUBAAQAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickFormatting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.SlickTreeHelper" Collapsed="true">
+    <Position X="82.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAIAAAAAAAAAAAAAgAICAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\SlickTreeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.CascadedWidgetLink&lt;TParent&gt;" Collapsed="true">
+    <Position X="80.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAABAAABAgAAAAAAAAAAAAAAEgAAAAAA=</HashCode>
+      <FileName>Widget\CascadedWidgetLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DialogExtensions" Collapsed="true">
+    <Position X="85.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQAAAAAAAEAAAAAAAAAAIAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Widget\DialogExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.EditorUtils" Collapsed="true">
+    <Position X="94.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIFIAAgAAAAAhAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Widget\EditorUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Flexify" Collapsed="true">
+    <Position X="28.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAABAAAAAAAAAAAAAEAAAAAAAAAAIAAAAQAYAAAA=</HashCode>
+      <FileName>Widget\Flexify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FlexifyExtensions" Collapsed="true">
+    <Position X="82.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAIAAAAIAAAAAAAAAAAAABAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Widget\Flexify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.FlexifyOptions" Collapsed="true">
+    <Position X="84" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEIACAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\Flexify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.JsRender" Collapsed="true">
+    <Position X="91" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Widget\JsRender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.PrefixedContext" Collapsed="true">
+    <Position X="94.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAgAIAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Widget\PrefixedContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TemplatedDialog&lt;TOptions&gt;" Collapsed="true">
+    <Position X="4" Y="14.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\TemplatedDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TemplatedDialog" Collapsed="true">
+    <Position X="18.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEMBIBAAAiEIAAAACAEAZAAhAAACBABYCAABA=</HashCode>
+      <FileName>Widget\TemplatedDialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Serenity.TemplatedPanel&lt;TOptions&gt;" Collapsed="true">
+    <Position X="11.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\TemplatedPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TemplatedPanel" Collapsed="true">
+    <Position X="21.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEEAIAAAAgAAAAAIAAEABAAgAAAABABIAAAAA=</HashCode>
+      <FileName>Widget\TemplatedPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TemplatedWidget&lt;TOptions&gt;" Collapsed="true">
+    <Position X="16.75" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\TemplatedWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.TemplatedWidget" Collapsed="true">
+    <Position X="40.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAACAgAAgAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Widget\TemplatedWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Toolbar" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAABAQAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Widget\Toolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ToolbarOptions" Collapsed="true">
+    <Position X="89.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\Toolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ToolButton" Collapsed="true">
+    <Position X="91" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEQAAAAgAABCAAAAABIACAAAAAEAAAA=</HashCode>
+      <FileName>Widget\Toolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ValidationExtensions" Collapsed="true">
+    <Position X="85.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAACAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Widget\ValidationExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Widget" Collapsed="true">
+    <Position X="40.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAACAACGEAAQAEAAgAAAAIAADAAEAEIAAQAQAAAAA=</HashCode>
+      <FileName>Widget\Widget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Widget&lt;TOptions&gt;" Collapsed="true">
+    <Position X="42.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\WidgetWithOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.WidgetExtensions" Collapsed="true">
+    <Position X="89.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAQBAAAAAAAEAAABCAAEAAAAAAAAAAABE=</HashCode>
+      <FileName>Widget\WidgetExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.WidgetPrototype" Collapsed="true">
+    <Position X="91" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Widget\WidgetPrototype.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.DateTimeEditorOptions" Collapsed="true">
+    <Position X="78.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAACAQAAAAAAAAAAAAAAAAIAAAAAAAAgAA=</HashCode>
+      <FileName>Editor\DateTimeEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.UploadedFile" Collapsed="true">
+    <Position X="94.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\ImageUploadEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.ImageUploadEditorOptions" Collapsed="true">
+    <Position X="85.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAEAAAAAAAAAAAQAAABIAACAAAAgAQAAAAEBA=</HashCode>
+      <FileName>Editor\ImageUploadEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportDialog" Collapsed="true">
+    <Position X="7.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAgBBAIAAA=</HashCode>
+      <FileName>Reporting\ReportDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportExecuteRequest" Collapsed="true">
+    <Position X="87.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAIAQAAAAAAA=</HashCode>
+      <FileName>Reporting\ReportModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportRetrieveRequest" Collapsed="true">
+    <Position X="89.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reporting\ReportModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportRetrieveResponse" Collapsed="true">
+    <Position X="91" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAEAAAAAAABAAAAAAAAACAAE=</HashCode>
+      <FileName>Reporting\ReportModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportPage" Collapsed="true">
+    <Position X="38.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAIAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Reporting\ReportPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Serenity.Reporting.ReportDialogOptions" Collapsed="true">
+    <Position X="85.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reporting\ReportDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.ComponentModel.DisplayNameAttribute" Collapsed="true">
+    <Position X="26.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\Attributes\DisplayNameAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Serenity.IEditDialog" Collapsed="true">
+    <Position X="8.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityDialog\EntityDialog.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IFiltering" Collapsed="true">
+    <Position X="85.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAYAAAAEAEAAAAAIAAAAAAAAAAAAAAAAAAAAoAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\IFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IQuickFiltering" Collapsed="true">
+    <Position X="91" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilterPanel\FilteringTypes\IQuickFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IDataGrid" Collapsed="true">
+    <Position X="82.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAABAAAIAAA=</HashCode>
+      <FileName>Grid\IDataGrid.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IBooleanValue" Collapsed="true">
+    <Position X="80.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IBooleanValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IDoubleValue" Collapsed="true">
+    <Position X="84" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IDoubleValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IGetEditValue" Collapsed="true">
+    <Position X="87.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IGetEditValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IReadOnly" Collapsed="true">
+    <Position X="92.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IReadOnly.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.ISetEditValue" Collapsed="true">
+    <Position X="94.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\ISetEditValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IStringValue" Collapsed="true">
+    <Position X="80.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IStringValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IValidateRequired" Collapsed="true">
+    <Position X="82.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\IValidateRequired.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IInitializeColumn" Collapsed="true">
+    <Position X="89.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\IInitializeColumn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.ISlickFormatter" Collapsed="true">
+    <Position X="78.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlickGrid\Formatters\ISlickFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IAsyncInit" Collapsed="true">
+    <Position X="78.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\IAsyncInit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Serenity.IDialog" Collapsed="true">
+    <Position X="8.75" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\TemplatedDialog.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Serenity.PropertyGridMode" Collapsed="true">
+    <Position X="78.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGrid\PropertyGridOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Serenity.CustomValidationRule" Collapsed="true">
+    <Position X="78.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widget\ValidationExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
