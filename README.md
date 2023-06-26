@@ -1,7 +1,7 @@
 # Enterprise Solution Web Access
 ASP.NET MVC / TypeScript application platform designed to access business applications with a service based architecture.  \
-This project is one of the package of Enterprise Solution. Thanks to the Serenity,it is very easy to build web application in a short time.  \
-It’s easy to get up and running in development machine. clone with your favourite tools, run nuget and click F5 to make it running.  \
+This project is one of the package of Enterprise Solution. Thanks to the Serenity,it is very easy to build web application in a short time.  
+It’s easy to get up and running in development machine. clone with your favourite tools, run nuget and click F5 to make it running.  
 The database(Framework,Enterprise) is confidential, we can not keep it open,but you can create your own db by run against with Framework.sql easily. 
 
 ## Development
